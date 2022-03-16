@@ -4,6 +4,7 @@
 
 /** @var string $content */
 
+use cinghie\multilanguage\widgets\MultiLanguageWidget;
 use common\models\Menu;
 use common\widgets\Alert;
 use frontend\assets\AdminAsset;
@@ -70,15 +71,23 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status'=>10])->all(
                         <?php foreach ($menus as $menu) : ?>
                         <li class="nav-item dropdown">
 
-                            <a class="nav-link" href="<?=$menu->url?>"><?=$menu->name_uz?></a>
+                            <a class="nav-link" href="<?=$menu->url?>"><?=$menu[$name]?></a>
                             <?php foreach (Menu::find()->where(['not', ['parent' => null]])->where('parent=' . $menu->id)->all() as $item):?>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="<?=$item->url?>"><?=$item->name_uz?></a></li>
+                                <li><a class="dropdown-item" href="<?=$item->url?>"><?=$item[$name]?></a></li>
                             </ul>
                             <?php endforeach;?>
                         </li>
                         <?php endforeach; ?>
 
+                    </ul>
+                    <ul class="pull-right">
+                        <?= MultiLanguageWidget::widget([
+                            'widget_type' => 'classic', // classic or selector
+                            'image_type' => 'classic', // classic or rounded
+                            'width' => '25',
+                            'calling_controller' => $this->context
+                        ]); ?>
                     </ul>
                 </div>
             </div>

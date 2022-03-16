@@ -12,6 +12,43 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [],
+    'controllerMap' => [
+        'elfinder' => [
+            'class' => 'mihaildev\elfinder\Controller',
+            'access' => ['@'],
+//						'uploadMaxSize'=>'2M',
+            'roots' => [
+                //   'global'=>[
+                //      'baseUrl'=>'https://urdu.uz',
+                //       'basePath'=>Yii::getAlias('@public'),
+                //       'path'=>'/uploads/global/',
+                //       'name' => 'Global'
+                //   ],
+                //   'users'=>[
+                //       'baseUrl'=>'https://urdu.uz',
+                //       'basePath'=>Yii::getAlias('@public'),
+                //       'path'=>'/uploads/users/',
+                //       'name' => 'Users'
+                //  ],
+                'Documents' => [
+                    'baseUrl' => 'http://medical.loc/',
+                    'class' => 'mihaildev\elfinder\volume\UserPath',
+                    'basePath' => Yii::getAlias('@uploads'),
+                    'path' => 'user_files/user_{id}',
+                    'name' => 'My Documents',
+
+                ],
+
+                /**
+                 * 'my'=> [
+                 * 'path'   => '/my/some/',
+                 * 'basePath'=>Yii::getAlias('@public'),
+                 * 'name'   => ['category' => 'my','message' => 'Some Name'],
+                 * 'access' => ['read' => '*', 'write' => 'UserFilesAccess'] ,
+                 * ]*/
+            ],
+        ],
+    ],
     'homeUrl'=>'/admin',
 
     'components' => [
