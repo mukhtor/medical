@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\Sections;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -255,6 +256,19 @@ class SiteController extends Controller
 
         return $this->render('resendVerificationEmail', [
             'model' => $model
+        ]);
+    }
+
+    public function actionSection(){
+        $section = Sections::find()->where(['status'=>10])->all();
+        return $this->render('sections',[
+            'sections'=>$section
+        ]);
+    }
+    public function actionSectionMore($id){
+        $more_section = Sections::findOne(['id'=>$id]);
+        return $this->render('section_more',[
+            'more' => $more_section
         ]);
     }
 }
