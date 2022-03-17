@@ -2,6 +2,9 @@
 
 namespace frontend\controllers;
 
+use common\models\Employees;
+use common\models\Menu;
+use common\models\News;
 use common\models\Sections;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
@@ -269,6 +272,32 @@ class SiteController extends Controller
         $more_section = Sections::findOne(['id'=>$id]);
         return $this->render('section_more',[
             'more' => $more_section
+        ]);
+    }
+    public function actionEmployee(){
+        $employees = Employees::find()->where(['status'=>10])->all();
+        return $this->render('employees',[
+            'employees'=>$employees
+        ]);
+    }
+    public function actionEmployeeMore($id){
+        $more_employee = Employees::findOne(['id'=>$id]);
+        return $this->render('employee_more',[
+            'more' => $more_employee
+        ]);
+    }
+    public function actionNews(){
+        $news = News::find()->where(['status'=>10])->all();
+        $menu = Menu::find()->where(['status'=>10])->all();
+        return $this->render('news',[
+            'news' => $news,
+            'menu'=>$menu
+        ]);
+    }
+    public function actionNewsMore($id){
+        $more_news = News::findOne(['id'=>$id]);
+        return $this->render('news_more',[
+            'more' => $more_news
         ]);
     }
 }

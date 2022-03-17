@@ -13,6 +13,7 @@ use yii\bootstrap4\Breadcrumbs;
 use yii\bootstrap4\Html;
 use yii\bootstrap4\Nav;
 use yii\bootstrap4\NavBar;
+use yii\helpers\Url;
 
 AdminAsset::register($this);
 $title = "title_" . Yii::$app->language;
@@ -71,10 +72,10 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status'=>10])->all(
                         <?php foreach ($menus as $menu) : ?>
                         <li class="nav-item dropdown">
 
-                            <a class="nav-link" href="<?=$menu->url?>"><?=$menu[$name]?></a>
+                            <a class="nav-link" href="<?= Url::to([$menu->url]) ?>"><?=$menu[$name]?></a>
                             <?php foreach (Menu::find()->where(['not', ['parent' => null]])->where('parent=' . $menu->id)->all() as $item):?>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="<?=$item->url?>"><?=$item[$name]?></a></li>
+                                <li><a class="dropdown-item" href="<?= Url::to([$item->url]) ?>"><?=$item[$name]?></a></li>
                             </ul>
                             <?php endforeach;?>
                         </li>

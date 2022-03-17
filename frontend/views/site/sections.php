@@ -9,7 +9,7 @@ $name = "name_" . Yii::$app->language;
             <div class="col-md-12">
                 <div class="block text-center">
                     <span class="text-white">All Department</span>
-                    <h1 class="text-capitalize mb-5 text-lg">Care Department</h1>
+                    <h1 class="text-capitalize mb-5 text-lg"><?=Yii::t('app','Department')?></h1>
                 </div>
             </div>
         </div>
@@ -20,10 +20,8 @@ $name = "name_" . Yii::$app->language;
         <div class="row justify-content-center">
             <div class="col-lg-7 text-center">
                 <div class="section-title">
-                    <h2>Award winning patient care</h2>
+                    <h2><?=Yii::t('app','Our departments')?></h2>
                     <div class="divider mx-auto my-4"></div>
-                    <p>Lets know moreel necessitatibus dolor asperiores illum possimus sint voluptates incidunt
-                        molestias nostrum laudantium. Maiores porro cumque quaerat.</p>
                 </div>
             </div>
         </div>
