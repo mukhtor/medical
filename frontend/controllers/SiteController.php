@@ -5,6 +5,7 @@ namespace frontend\controllers;
 use common\models\Employees;
 use common\models\Menu;
 use common\models\News;
+use common\models\Register;
 use common\models\Sections;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
@@ -298,6 +299,13 @@ class SiteController extends Controller
         $more_news = News::findOne(['id'=>$id]);
         return $this->render('news_more',[
             'more' => $more_news
+        ]);
+    }
+
+    public function actionRegister(){
+        $register = new Register();
+        return $this->render('register',[
+            'register'=>$register
         ]);
     }
 }
