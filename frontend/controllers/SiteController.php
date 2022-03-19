@@ -304,8 +304,17 @@ class SiteController extends Controller
 
     public function actionRegister(){
         $register = new Register();
+        if ($this->request->isPost && $register->load($this->request->post())){
+            $register->date = strtotime($_POST['Register']['date']);
+            $register->save();
+            var_dump('isop');
+            exit();
+        }
         return $this->render('register',[
             'register'=>$register
         ]);
+    }
+    public function actionGallery(){
+        return $this->render('gallery');
     }
 }

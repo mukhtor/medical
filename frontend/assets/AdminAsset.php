@@ -10,6 +10,7 @@ class AdminAsset extends AssetBundle
     public $baseUrl = '@web/style';
     public $css = [
         'css/style.css',
+        'css/cards-gallery.css',
         'plugins/bootstrap/css/bootstrap.min.css',
         'plugins/icofont/icofont.min.css',
         'plugins/slick-carousel/slick/slick.css',

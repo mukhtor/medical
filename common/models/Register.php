@@ -47,7 +47,8 @@ class Register extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['section_id', 'employee_id', 'date', 'status', 'created_at', 'updated_at'], 'integer'],
+            [['section_id','employee_id','date','fullname','phone','information','email'],'required'],
+            [['section_id', 'employee_id', 'status', 'created_at', 'updated_at'], 'integer'],
             [['information'], 'string'],
             [['status'], 'default', 'value' => self::ACTIVE_STATUS],
             [['fullname'], 'string', 'max' => 255],

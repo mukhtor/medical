@@ -4,6 +4,7 @@ use common\models\Employees;
 use common\models\Sections;
 use kartik\select2\Select2;
 use yii\bootstrap4\ActiveForm;
+use yii\bootstrap4\Html;
 use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
@@ -46,52 +47,63 @@ use yii\helpers\ArrayHelper;
                 <div class="appoinment-wrap mt-5 mt-lg-0 pl-lg-5">
                     <h2 class="mb-2 title-color">Book an appoinment</h2>
                     <p class="mb-4">Mollitia dicta commodi est recusandae iste, natus eum asperiores corrupti qui velit . Iste dolorum atque similique praesentium soluta.</p>
-                    <?php $form = ActiveForm::begin(['action' =>['site/register'],'options' => ['class'=>'appoinment-form']]); ?>
+                    <?php $form = ActiveForm::begin(['options' => ['class'=>'appoinment-form']]); ?>
 
                     <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
-
-
+                                    <?=$form->field($register,'section_id')->dropDownList(
+                                            ArrayHelper::map(Sections::find()->where(['status'=>10])->all(),'id','name_uz'),
+                                        ['prompt'=>'--Select Section--']
+                                    )->label(false)?>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <?= $form->field($register, 'date')->widget(\yii\jui\DatePicker::class,[
-
-                                    ]) ?>
-
+                                    <?=$form->field($register,'employee_id')->dropDownList(
+                                        ArrayHelper::map(Employees::find()->where(['status'=>10])->all(),'id','fullname_uz'),
+                                        ['prompt'=>'--Select Employee--']
+                                    )->label(false)?>
                                 </div>
                             </div>
 
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input name="time" id="time" type="text" class="form-control" placeholder="Time">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <input name="name" id="name" type="text" class="form-control" placeholder="Full Name">
+                                    <?= $form->field($register, 'date')->input('date')->label(false) ?>
+
                                 </div>
                             </div>
 
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input name="phone" id="phone" type="Number" class="form-control" placeholder="Phone Number">
+                                    <?= $form->field($register, 'fullname')->textInput(['placeholder'=>'Full Name'])->label(false) ?>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <?= $form->field($register, 'email')->input('email',['placeholder'=>'Email'])->label(false) ?>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <?= $form->field($register, 'phone')->widget(\yii\widgets\MaskedInput::class,[
+                                            'mask' => '+99-999-999-99-99',
+                                        'options' => [
+                                                'placeholder'=>'Phone'
+                                        ]
+                                    ])->label(false) ?>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group-2 mb-4">
-                            <textarea name="message" id="message" class="form-control" rows="6" placeholder="Your Message"></textarea>
+                            <?=$form->field($register,'information')->textarea()->label(false)?>
                         </div>
 
-                        <a class="btn btn-main btn-round-full" href="confirmation.html">Make Appoinment<i class="icofont-simple-right ml-2"></i></a>
+                    <div class="form-group">
+                        <?= Html::submitButton(Yii::t('app', 'Submit'), ['class' => 'btn btn-info']) ?>
+                    </div>
+
                     <?php ActiveForm::end(); ?>
 
                 </div>

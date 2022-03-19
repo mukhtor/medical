@@ -59,7 +59,7 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status'=>10])->all(
         <nav class="navbar navbar-expand-lg navigation" id="navbar">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
-                    <img src="style/images/logo.png" alt="" class="img-fluid">
+                    <img src="<?= '/style/images/logo.png'?>" alt="" class="img-fluid">
                 </a>
 
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain"
