@@ -23,7 +23,8 @@
         "mihaildev/yii2-ckeditor": "^1.0",
         "mihaildev/yii2-elfinder": "^1.3",
         "kartik-v/yii2-widget-datepicker": "^1.4",
-        "hail812/yii2-adminlte3": "~1.1"
+        "hail812/yii2-adminlte3": "~1.1",
+        "kv4nt/yii2-owl-carousel2": "^1.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

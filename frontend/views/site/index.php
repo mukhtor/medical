@@ -1,7 +1,7 @@
 <?php
 
 /** @var yii\web\View $this */
-
+use kv4nt\owlcarousel\OwlCarouselWidget;
 $this->title = 'My Yii Application';
 ?>
 <section class="banner">
@@ -311,266 +311,21 @@ $this->title = 'My Yii Application';
         </div>
     </div>
 </section>
-<section class="section testimonial-2 gray-bg">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-7">
-                <div class="section-title text-center">
-                    <h2>We served over 5000+ Patients</h2>
-                    <div class="divider mx-auto my-4"></div>
-                    <p>Lets know moreel necessitatibus dolor asperiores illum possimus sint voluptates incidunt
-                        molestias nostrum laudantium. Maiores porro cumque quaerat.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="owl-carousel owl-theme">
+    <div class="item"><h4>1</h4></div>
+    <div class="item"><h4>2</h4></div>
+    <div class="item"><h4>3</h4></div>
+    <div class="item"><h4>4</h4></div>
+    <div class="item"><h4>5</h4></div>
+    <div class="item"><h4>6</h4></div>
+    <div class="item"><h4>7</h4></div>
+    <div class="item"><h4>8</h4></div>
+    <div class="item"><h4>9</h4></div>
+    <div class="item"><h4>10</h4></div>
+    <div class="item"><h4>11</h4></div>
+    <div class="item"><h4>12</h4></div>
+</div>
 
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-12 testimonial-wrap-2 slick-initialized slick-slider slick-dotted">
-                <div class="slick-list draggable">
-                    <div class="slick-track"
-                         style="opacity: 1; width: 6660px; transform: translate3d(-2220px, 0px, 0px);">
-                        <div class="testimonial-block style-2 gray-bg slick-slide slick-cloned"
-                             data-slick-index="-2" aria-hidden="true" tabindex="-1" style="width: 547px;">
-                            <div class="testimonial-thumb">
-                                <img src="style/images/team/test-thumb4.jpg" alt="" class="img-fluid">
-                            </div>
-
-                            <div class="client-info">
-                                <h4>Nice Environment!</h4>
-                                <span>Partho Sarothi</span>
-                                <p class="mt-4">
-                                    They provide great service facilty consectetur adipisicing elit. Itaque rem,
-                                    praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit
-                                    placeat.
-                                </p>
-                            </div>
-                            <i class="icofont-quote-right"></i>
-                        </div>
-                        <div class="testimonial-block style-2 gray-bg slick-slide slick-cloned"
-                             data-slick-index="-1" aria-hidden="true" tabindex="-1" style="width: 547px;">
-                            <div class="testimonial-thumb">
-                                <img src="style/images/team/test-thumb1.jpg" alt="" class="img-fluid">
-                            </div>
-
-                            <div class="client-info">
-                                <h4>Modern Service!</h4>
-                                <span>Kolis Mullar</span>
-                                <p>
-                                    They provide great service facilty consectetur adipisicing elit. Itaque rem,
-                                    praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit
-                                    placeat.
-                                </p>
-                            </div>
-                            <i class="icofont-quote-right"></i>
-                        </div>
-                        <div class="testimonial-block style-2 gray-bg slick-slide" data-slick-index="0"
-                             aria-hidden="true" tabindex="-1" role="tabpanel" id="slick-slide10"
-                             aria-describedby="slick-slide-control10" style="width: 547px;">
-                            <i class="icofont-quote-right"></i>
-
-                            <div class="testimonial-thumb">
-                                <img src="style/images/team/test-thumb1.jpg" alt="" class="img-fluid">
-                            </div>
-
-                            <div class="client-info ">
-                                <h4>Amazing service!</h4>
-                                <span>John Partho</span>
-                                <p>
-                                    They provide great service facilty consectetur adipisicing elit. Itaque rem,
-                                    praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit
-                                    placeat.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="testimonial-block style-2 gray-bg slick-slide" data-slick-index="1"
-                             aria-hidden="true" tabindex="-1" role="tabpanel" id="slick-slide11"
-                             style="width: 547px;">
-                            <div class="testimonial-thumb">
-                                <img src="style/images/team/test-thumb2.jpg" alt="" class="img-fluid">
-                            </div>
-
-                            <div class="client-info">
-                                <h4>Expert doctors!</h4>
-                                <span>Mullar Sarth</span>
-                                <p>
-                                    They provide great service facilty consectetur adipisicing elit. Itaque rem,
-                                    praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit
-                                    placeat.
-                                </p>
-                            </div>
-
-                            <i class="icofont-quote-right"></i>
-                        </div>
-                        <div class="testimonial-block style-2 gray-bg slick-slide slick-current slick-active"
-                             data-slick-index="2" aria-hidden="false" tabindex="0" role="tabpanel"
-                             id="slick-slide12" aria-describedby="slick-slide-control11" style="width: 547px;">
-                            <div class="testimonial-thumb">
-                                <img src="style/images/team/test-thumb3.jpg" alt="" class="img-fluid">
-                            </div>
-
-                            <div class="client-info">
-                                <h4>Good Support!</h4>
-                                <span>Kolis Mullar</span>
-                                <p>
-                                    They provide great service facilty consectetur adipisicing elit. Itaque rem,
-                                    praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit
-                                    placeat.
-                                </p>
-                            </div>
-
-                            <i class="icofont-quote-right"></i>
-                        </div>
-                        <div class="testimonial-block style-2 gray-bg slick-slide slick-active" data-slick-index="3"
-                             aria-hidden="false" tabindex="0" role="tabpanel" id="slick-slide13"
-                             style="width: 547px;">
-                            <div class="testimonial-thumb">
-                                <img src="style/images/team/test-thumb4.jpg" alt="" class="img-fluid">
-                            </div>
-
-                            <div class="client-info">
-                                <h4>Nice Environment!</h4>
-                                <span>Partho Sarothi</span>
-                                <p class="mt-4">
-                                    They provide great service facilty consectetur adipisicing elit. Itaque rem,
-                                    praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit
-                                    placeat.
-                                </p>
-                            </div>
-                            <i class="icofont-quote-right"></i>
-                        </div>
-                        <div class="testimonial-block style-2 gray-bg slick-slide" data-slick-index="4"
-                             aria-hidden="true" tabindex="-1" role="tabpanel" id="slick-slide14"
-                             aria-describedby="slick-slide-control12" style="width: 547px;">
-                            <div class="testimonial-thumb">
-                                <img src="style/images/team/test-thumb1.jpg" alt="" class="img-fluid">
-                            </div>
-
-                            <div class="client-info">
-                                <h4>Modern Service!</h4>
-                                <span>Kolis Mullar</span>
-                                <p>
-                                    They provide great service facilty consectetur adipisicing elit. Itaque rem,
-                                    praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit
-                                    placeat.
-                                </p>
-                            </div>
-                            <i class="icofont-quote-right"></i>
-                        </div>
-                        <div class="testimonial-block style-2 gray-bg slick-slide slick-cloned" data-slick-index="5"
-                             aria-hidden="true" tabindex="-1" style="width: 547px;">
-                            <i class="icofont-quote-right"></i>
-
-                            <div class="testimonial-thumb">
-                                <img src="style/images/team/test-thumb1.jpg" alt="" class="img-fluid">
-                            </div>
-
-                            <div class="client-info ">
-                                <h4>Amazing service!</h4>
-                                <span>John Partho</span>
-                                <p>
-                                    They provide great service facilty consectetur adipisicing elit. Itaque rem,
-                                    praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit
-                                    placeat.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="testimonial-block style-2 gray-bg slick-slide slick-cloned" data-slick-index="6"
-                             aria-hidden="true" tabindex="-1" style="width: 547px;">
-                            <div class="testimonial-thumb">
-                                <img src="style/images/team/test-thumb2.jpg" alt="" class="img-fluid">
-                            </div>
-
-                            <div class="client-info">
-                                <h4>Expert doctors!</h4>
-                                <span>Mullar Sarth</span>
-                                <p>
-                                    They provide great service facilty consectetur adipisicing elit. Itaque rem,
-                                    praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit
-                                    placeat.
-                                </p>
-                            </div>
-
-                            <i class="icofont-quote-right"></i>
-                        </div>
-                        <div class="testimonial-block style-2 gray-bg slick-slide slick-cloned" data-slick-index="7"
-                             aria-hidden="true" tabindex="-1" style="width: 547px;">
-                            <div class="testimonial-thumb">
-                                <img src="style/images/team/test-thumb3.jpg" alt="" class="img-fluid">
-                            </div>
-
-                            <div class="client-info">
-                                <h4>Good Support!</h4>
-                                <span>Kolis Mullar</span>
-                                <p>
-                                    They provide great service facilty consectetur adipisicing elit. Itaque rem,
-                                    praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit
-                                    placeat.
-                                </p>
-                            </div>
-
-                            <i class="icofont-quote-right"></i>
-                        </div>
-                        <div class="testimonial-block style-2 gray-bg slick-slide slick-cloned" data-slick-index="8"
-                             aria-hidden="true" tabindex="-1" style="width: 547px;">
-                            <div class="testimonial-thumb">
-                                <img src="style/images/team/test-thumb4.jpg" alt="" class="img-fluid">
-                            </div>
-
-                            <div class="client-info">
-                                <h4>Nice Environment!</h4>
-                                <span>Partho Sarothi</span>
-                                <p class="mt-4">
-                                    They provide great service facilty consectetur adipisicing elit. Itaque rem,
-                                    praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit
-                                    placeat.
-                                </p>
-                            </div>
-                            <i class="icofont-quote-right"></i>
-                        </div>
-                        <div class="testimonial-block style-2 gray-bg slick-slide slick-cloned" data-slick-index="9"
-                             aria-hidden="true" tabindex="-1" style="width: 547px;">
-                            <div class="testimonial-thumb">
-                                <img src="style/images/team/test-thumb1.jpg" alt="" class="img-fluid">
-                            </div>
-
-                            <div class="client-info">
-                                <h4>Modern Service!</h4>
-                                <span>Kolis Mullar</span>
-                                <p>
-                                    They provide great service facilty consectetur adipisicing elit. Itaque rem,
-                                    praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit
-                                    placeat.
-                                </p>
-                            </div>
-                            <i class="icofont-quote-right"></i>
-                        </div>
-                    </div>
-                </div>
-
-
-                <ul class="slick-dots" style="" role="tablist">
-                    <li class="" role="presentation">
-                        <button type="button" role="tab" id="slick-slide-control10" aria-controls="slick-slide10"
-                                aria-label="1 of 3" tabindex="-1">1
-                        </button>
-                    </li>
-                    <li role="presentation" class="slick-active">
-                        <button type="button" role="tab" id="slick-slide-control11" aria-controls="slick-slide12"
-                                aria-label="2 of 3" tabindex="-1">2
-                        </button>
-                    </li>
-                    <li role="presentation">
-                        <button type="button" role="tab" id="slick-slide-control12" aria-controls="slick-slide14"
-                                aria-label="3 of 3" tabindex="0" aria-selected="true">3
-                        </button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
 <section class="section clients">
     <div class="container">
         <div class="row justify-content-center">
@@ -751,3 +506,21 @@ $this->title = 'My Yii Application';
         </div>
     </div>
 </section>
+<script type="text/javascript">
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:5
+            }
+        }
+    })
+</script>
