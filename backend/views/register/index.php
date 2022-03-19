@@ -1,27 +1,26 @@
 <?php
 
-use common\models\News;
+use common\models\Register;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
-use yii\widgets\Pjax;
+
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\search\NewsSearch */
+/* @var $searchModel common\models\search\RegisterSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'News');
+$this->title = Yii::t('app', 'Registers');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="news-index">
+<div class="register-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create News'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Create Register'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php Pjax::begin(); ?>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
@@ -31,28 +30,24 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'title_uz',
-            'title_ru',
-            'title_en',
-//            'text_uz:ntext',
-            //'text_ru:ntext',
-            //'text_en:ntext',
-            //'image',
-            //'author',
+            'section_id',
+            'employee_id',
+            'fullname',
+            'phone',
+            //'email:email',
+            //'date',
+            //'information:ntext',
+            //'status',
             //'created_at',
             //'updated_at',
-            //'show_count',
-            //'status',
-            //'cate_id',
             [
                 'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, News $model, $key, $index, $column) {
+                'urlCreator' => function ($action, Register $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
                  }
             ],
         ],
     ]); ?>
 
-    <?php Pjax::end(); ?>
 
 </div>

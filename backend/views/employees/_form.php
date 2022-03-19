@@ -2,7 +2,9 @@
 
 use common\models\Position;
 use common\models\Sections;
+use kartik\date\DatePicker;
 use kartik\select2\Select2;
+use mihaildev\elfinder\InputFile;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
@@ -19,7 +21,6 @@ use yii\widgets\ActiveForm;
 
             <?php $form = ActiveForm::begin(); ?>
 
-git
             <?= $form->field($model, 'fullname_en')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'fullname_ru')->textInput(['maxlength' => true]) ?>
@@ -48,9 +49,11 @@ git
 
             <?= $form->field($model, 'phone_2')->textInput(['maxlength' => true]) ?>
 
-            <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'email')->input('email') ?>
 
-            <?= $form->field($model, 'data_birth')->textInput() ?>
+            <?= $form->field($model,'data_birth')->widget(DatePicker::class,[
+
+            ])?>
 
             <?= $form->field($model, 'address_birth')->textInput(['maxlength' => true]) ?>
 
@@ -60,7 +63,18 @@ git
 
             <?= $form->field($model, 'degree')->textInput(['maxlength' => true]) ?>
 
-            <?= $form->field($model, 'image')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'image')->widget(InputFile::class, [
+                'language' => 'ru',
+                'controller' => 'elfinder', // вставляем название контроллера, по умолчанию равен elfinder
+                'filter' => 'image',
+                // фильтр файлов, можно задать массив фильтров https://github.com/Studio-42/elFinder/wiki/Client-configuration-options#wiki-onlyMimes
+                'template' => '<div class="input-group">{input}<span class="input-group-btn">{button}</span></div>',
+                'options' => ['class' => 'form-control'],
+
+                'buttonOptions' => ['class' => 'btn btn-default'],
+                'multiple' => false,       // возможность выбора нескольких файлов
+
+            ]); ?>
 
             <div class="form-group">
                 <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>

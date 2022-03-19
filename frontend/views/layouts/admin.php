@@ -58,7 +58,7 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status'=>10])->all(
         </div>
         <nav class="navbar navbar-expand-lg navigation" id="navbar">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="<?=Url::to(['/'])?>">
                     <img src="<?= '/style/images/logo.png'?>" alt="" class="img-fluid">
                 </a>
 
