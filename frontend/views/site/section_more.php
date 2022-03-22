@@ -7,6 +7,7 @@ use yii\helpers\Url;
 $title = "title_" . Yii::$app->language;
 $name = "name_" . Yii::$app->language;
 $desc = "desc_" . Yii::$app->language;
+$fullname = "fullname_" . Yii::$app->language;
 ?>
 <section class="page-title bg-1">
     <div class="overlay"></div>
@@ -16,12 +17,6 @@ $desc = "desc_" . Yii::$app->language;
                 <div class="block text-center">
                     <span class="text-white">Department Details</span>
                     <h1 class="text-capitalize mb-5 text-lg">Single Department</h1>
-
-                    <!-- <ul class="list-inline breadcumb-nav">
-                      <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
-                      <li class="list-inline-item"><span class="text-white">/</span></li>
-                      <li class="list-inline-item"><a href="#" class="text-white-50">Department Details</a></li>
-                    </ul> -->
                 </div>
             </div>
         </div>
@@ -49,7 +44,7 @@ $desc = "desc_" . Yii::$app->language;
                         <h5 class="mb-4">Xodimlar</h5>
 
                         <?php foreach (Employees::find()->where(['section_id'=>$more->id])->all() as $value) :?>
-                        <a href="#"><?=$value->fullname_uz?></a>
+                        <a href="<?=Url::to(['site/employee-more','id'=>$value->id])?>"><?=$value[$fullname]?></a>
                         <?php endforeach;?>
                     </div>
 

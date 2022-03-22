@@ -12,13 +12,12 @@ use yii\helpers\Url;
 
 $this->title = 'My Yii Application';
 $title = "title_" . Yii::$app->language;
+$fullname = "fullname_" . Yii::$app->language;
 $name = "name_" . Yii::$app->language;
 $desc = "desc_" . Yii::$app->language;
 ?>
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
             crossorigin="anonymous"></script>
@@ -266,17 +265,18 @@ $desc = "desc_" . Yii::$app->language;
 
         <div class="row">
             <?php foreach ($sections as $section) : ?>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="service-item mb-4">
-                        <div class="icon d-flex align-items-center">
-                            <i class="icofont-medical-sign-alt text-lg"></i>
-                            <h4 class="mt-3 mb-3"><?= $section[$name] ?></h4>
-                        </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <a href="<?=Url::to(['site/section-more','id'=>$section->id])?>">
+                        <div class="service-item mb-4">
+                            <div class="icon d-flex align-items-center">
+                                <i class="icofont-medical-sign-alt text-lg"></i>
+                                <h4 class="mt-3 mb-3"><?= $section[$name] ?></h4>
+                            </div>
 
-                        <div class="content">
-                            <p class="mb-4"><?= $section[$desc] ?></p>
+                            <div class="content text-center">
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             <?php endforeach; ?>
         </div>
@@ -299,24 +299,30 @@ $desc = "desc_" . Yii::$app->language;
                 <?php if ($item->id == 1): ?>
                     <div class="carousel-item active">
                         <div class="col-md-3">
-                            <div class="card card-body">
+                            <div class="card ">
                                 <img style="height: 190px" class="img-fluid" src="<?= $item->image ?>">
                                 <a class="taga" href="<?= Url::to(['site/employee-more', 'id' => $item->id]) ?>">
-                                    <h5 class="text-center my-4"><?= $item->fullname_en ?></h5>
+                                    <h5 class="text-center my-4"><?= $item[$fullname] ?></h5>
                                 </a>
-                                <sup class="text-center"><?=$item->position[$name]?></sup>
+                                <p style="color: rgba(0,0,0,0.53)"
+                                   class="text-center "><?= $item->position[$name] ?></p>
+
+                                <p style="color: rgba(0,0,0,0.53)"
+                                   class="text-center "><?= $item->section[$name] ?></p>
                             </div>
                         </div>
                     </div>
                 <?php else: ?>
                     <div class="carousel-item">
                         <div class="col-md-3">
-                            <div class="card card-body">
+                            <div class="card">
                                 <img style="height: 190px" class="img-fluid" src="<?= $item->image ?>">
                                 <a class="taga" href="<?= Url::to(['site/employee-more', 'id' => $item->id]) ?>">
-                                    <h5 class="text-center my-4"><?= $item->fullname_en ?></h5>
+                                    <h5 class="text-center my-4"><?= $item[$fullname] ?></h5>
                                 </a>
-                                <sup class="text-center"><?=$item->position[$name]?></sup>
+                                <p class="text-center" style="color: rgba(0,0,0,0.53)"><?= $item->position[$name] ?></p>
+                                <p class="text-center" style="color: rgba(0,0,0,0.53)"><?= $item->section[$name] ?></p>
+
                             </div>
                         </div>
                     </div>
@@ -334,7 +340,7 @@ $desc = "desc_" . Yii::$app->language;
     })
 
     $('.carousel .carousel-item').each(function () {
-        var minPerSlide = 4;
+        var minPerSlide = 4
         var next = $(this).next();
         if (!next.length) {
             next = $(this).siblings(':first');

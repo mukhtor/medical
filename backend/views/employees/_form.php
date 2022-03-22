@@ -4,10 +4,12 @@ use common\models\Position;
 use common\models\Sections;
 use kartik\date\DatePicker;
 use kartik\select2\Select2;
+use mihaildev\ckeditor\CKEditor;
 use mihaildev\elfinder\InputFile;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use mihaildev\elfinder\ElFinder as ElFinderAlias;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Employees */
@@ -21,11 +23,14 @@ use yii\widgets\ActiveForm;
 
             <?php $form = ActiveForm::begin(); ?>
 
-            <?= $form->field($model, 'fullname_en')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'fullname_uz')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'fullname_ru')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'fullname_en')->textInput(['maxlength' => true]) ?>
 
-
+            <?= $form->field($model, 'activity')->widget(CKEditor::className(), [
+                'editorOptions' => ElFinderAlias::ckeditorOptions('elfinder', []),
+            ]); ?>
 
             <?= $form->field($model, 'section_id')->widget(Select2::class, [
                 'data' => ArrayHelper::map(Sections::find()->all(), 'id', 'name_uz'),

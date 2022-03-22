@@ -53,6 +53,7 @@ class Employees extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['fullname_uz','fullname_ru','fullname_en','activity'],'required'],
             [['section_id', 'position_id', 'status', 'created_at', 'updated_at'], 'integer'],
             [['data_birth'], 'safe'],
             [['status'],'default','value' => self::ACTIVE_STATUS],
@@ -98,5 +99,9 @@ class Employees extends \yii\db\ActiveRecord
     }
     public function getPosition(){
         return $this->hasOne(Position::class,['id'=>'position_id']);
+    }
+
+    public function getSection(){
+        return $this->hasOne(Sections::class,['id'=>'section_id']);
     }
 }
