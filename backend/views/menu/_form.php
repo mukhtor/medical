@@ -30,7 +30,12 @@ use yii\widgets\ActiveForm;
             'allowClear' => true
         ],
     ]) ?>
-
+    <?=$form->field($model,'status')->dropDownList([
+            10=>'Menu',
+            9=>'Category'
+    ],[
+            'prompt'=>'Menu Turini Tanlang'
+    ])?>
 
 
     <div class="form-group">

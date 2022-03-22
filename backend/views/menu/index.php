@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'name_uz',
             'name_en',
             'name_ru',
-            'slug',
+//            'slug',
             //'url:url',
             //'parent',
             //'status',

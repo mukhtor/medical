@@ -96,4 +96,7 @@ class Employees extends \yii\db\ActiveRecord
     {
         return new \common\models\query\EmployeesQuery(get_called_class());
     }
+    public function getPosition(){
+        return $this->hasOne(Position::class,['id'=>'position_id']);
+    }
 }

@@ -52,7 +52,10 @@ use yii\widgets\ActiveForm;
             <?= $form->field($model, 'email')->input('email') ?>
 
             <?= $form->field($model,'data_birth')->widget(DatePicker::class,[
-
+                'pluginOptions' => [
+                    'autoclose' => true,
+                    'format' => 'dd-M-yyyy'
+                ]
             ])?>
 
             <?= $form->field($model, 'address_birth')->textInput(['maxlength' => true]) ?>

@@ -1,5 +1,6 @@
 <?php
 
+use yii\bootstrap4\LinkPager;
 use yii\helpers\Url;
 
 $title = "title_" . Yii::$app->language;
@@ -57,11 +58,11 @@ $text = "text_" . Yii::$app->language;
 
                             <div class="blog-item-content">
                                 <div class="blog-item-meta mb-3 mt-4">
-                                    <span class="text-muted text-capitalize mr-3"><i class="icofont-comment mr-2"></i>5 Comments</span>
-                                    <span class="text-black text-capitalize mr-3"><i class="icofont-calendar mr-1"></i> 28th January</span>
+                                    <span class="text-muted text-capitalize mr-3"><i class="icofont-eye-alt mr-2"></i>5</span>
+                                    <span class="text-black text-capitalize mr-3"><i class="icofont-calendar mr-1"></i><?=date('d M Y',$new->created_at)?></span>
                                 </div>
 
-                                <h3 class="title mt-4 mb-5"><a href=""><?=$new[$title]?></a></h3>
+                                <h5 class="title mt-4 mb-5"><a href=""><?=$new[$title]?></a></h5>
 
 
                                 <a href="<?= Url::to(['site/news-more','id'=>$new->id])?>" target="_blank" class="btn btn-red"><?=Yii::t('app','Read More')?> <i class="icofont-simple-right ml-2"></i></a>
@@ -73,10 +74,9 @@ $text = "text_" . Yii::$app->language;
                     <div class="col-lg-8">
                         <nav class="pagination py-2 d-inline-block">
                             <div class="nav-links">
-                                <span aria-current="page" class="page-numbers current">1</span>
-                                <a class="page-numbers" href="#">2</a>
-                                <a class="page-numbers" href="#">3</a>
-                                <a class="page-numbers" href="#"><i class="icofont-thin-double-right"></i></a>
+                                <?=LinkPager::widget([
+                                    'pagination' => $pages,
+                                ]);?>
                             </div>
                         </nav>
                     </div>
@@ -94,16 +94,6 @@ $text = "text_" . Yii::$app->language;
                             <input type="text" class="form-control" placeholder="search">
                             <i class="ti-search"></i>
                         </form>
-                    </div>
-                    <div class="sidebar-widget category mb-3">
-                        <h5 class="mb-4">Categories</h5>
-
-                        <ul class="list-unstyled">
-                            <li class="align-items-center">
-                                <a href="#">Medicine</a>
-                                <span>(14)</span>
-                            </li>
-                        </ul>
                     </div>
                     <div class="sidebar-widget tags mb-3">
                         <h5 class="mb-4">Tags</h5>

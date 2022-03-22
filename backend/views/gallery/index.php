@@ -1,5 +1,6 @@
 <?php
 
+use common\models\Gallery;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;

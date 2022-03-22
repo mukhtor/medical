@@ -70,7 +70,12 @@ class NewsController extends Controller
         $model = new News();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
+            if ($model->load($this->request->post())) {
+//                var_dump($_POST['News']['created_at']);
+//                exit();
+                $model->created_at=strtotime($_POST['News']['created_at']);
+                $model->author=\Yii::$app->user->identity->id;
+                $model->save();
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
@@ -93,7 +98,11 @@ class NewsController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            $model->author=\Yii::$app->user->identity->id;
+            $model->updated_at=strtotime($_POST['News']['created_at']);
+            $model->cate_id = json_encode($_POST['News']['cate_id']);
+            $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

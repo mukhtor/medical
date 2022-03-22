@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 use common\models\Employees;
+use common\models\Gallery;
 use common\models\Menu;
 use common\models\News;
 use common\models\Register;
@@ -11,6 +12,7 @@ use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
 use yii\base\InvalidArgumentException;
+use yii\data\Pagination;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -27,6 +29,7 @@ use frontend\models\ContactForm;
 class SiteController extends Controller
 {
     public $layout = 'admin';
+
     /**
      * {@inheritdoc}
      */
@@ -81,7 +84,14 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $sections = Sections::find()->where(['status' => 10])->all();
+        $latest_news = News::find()->where(['status' => 10])->orderBy(['id' => SORT_DESC])->limit('6')->all();
+//        var_dump($latest_news->all());
+//        exit();
+        return $this->render('index', [
+            'sections' => $sections,
+            'latest_news' => $latest_news
+        ]);
     }
 
     /**
@@ -223,8 +233,8 @@ class SiteController extends Controller
      * Verify email address
      *
      * @param string $token
-     * @throws BadRequestHttpException
      * @return yii\web\Response
+     * @throws BadRequestHttpException
      */
     public function actionVerifyEmail($token)
     {
@@ -263,58 +273,85 @@ class SiteController extends Controller
         ]);
     }
 
-    public function actionSection(){
-        $section = Sections::find()->where(['status'=>10])->all();
-        return $this->render('sections',[
-            'sections'=>$section
-        ]);
-    }
-    public function actionSectionMore($id){
-        $more_section = Sections::findOne(['id'=>$id]);
-        return $this->render('section_more',[
-            'more' => $more_section
-        ]);
-    }
-    public function actionEmployee(){
-        $employees = Employees::find()->where(['status'=>10])->all();
-        return $this->render('employees',[
-            'employees'=>$employees
-        ]);
-    }
-    public function actionEmployeeMore($id){
-        $more_employee = Employees::findOne(['id'=>$id]);
-        return $this->render('employee_more',[
-            'more' => $more_employee
-        ]);
-    }
-    public function actionNews(){
-        $news = News::find()->where(['status'=>10])->all();
-        $menu = Menu::find()->where(['status'=>10])->all();
-        return $this->render('news',[
-            'news' => $news,
-            'menu'=>$menu
-        ]);
-    }
-    public function actionNewsMore($id){
-        $more_news = News::findOne(['id'=>$id]);
-        return $this->render('news_more',[
-            'more' => $more_news
+    public function actionSection()
+    {
+        $section = Sections::find()->where(['status' => 10])->all();
+        return $this->render('sections', [
+            'sections' => $section
         ]);
     }
 
-    public function actionRegister(){
+    public function actionSectionMore($id)
+    {
+        $more_section = Sections::findOne(['id' => $id]);
+        return $this->render('section_more', [
+            'more' => $more_section
+        ]);
+    }
+
+    public function actionEmployee()
+    {
+        $employees = Employees::find()->where(['status' => 10])->all();
+        return $this->render('employees', [
+            'employees' => $employees
+        ]);
+    }
+
+    public function actionEmployeeMore($id)
+    {
+        $more_employee = Employees::findOne(['id' => $id]);
+        return $this->render('employee_more', [
+            'more' => $more_employee
+        ]);
+    }
+
+    public function actionNews()
+    {
+        $menu = Menu::find()->where(['status' => 9])->all();
+
+        $query = News::find()->where(['status' => 10]);
+        $countQuery = clone $query;
+        $pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize' => 2,'pageSizeParam' => false]);
+        $news = $query->offset($pages->offset)
+            ->limit($pages->limit)
+            ->all();
+
+        return $this->render('news', [
+            'news' => $news,
+            'menu' => $menu,
+            'pages'=>$pages
+        ]);
+    }
+
+    public function actionNewsMore($id)
+    {
+        $menu = Menu::find()->where(['status' => 9])->all();
+        $more_news = News::findOne(['id' => $id]);
+        return $this->render('news_more', [
+            'more' => $more_news,
+            'menu'=>$menu
+        ]);
+    }
+
+    public function actionRegister()
+    {
         $register = new Register();
-        if ($this->request->isPost && $register->load($this->request->post())){
+        if ($this->request->isPost && $register->load($this->request->post())) {
             $register->date = strtotime($_POST['Register']['date']);
             $register->save();
             var_dump('isop');
             exit();
         }
-        return $this->render('register',[
-            'register'=>$register
+        return $this->render('register', [
+            'register' => $register
         ]);
     }
-    public function actionGallery(){
-        return $this->render('gallery');
+
+    public function actionGallery()
+    {
+        $galleries = Gallery::find()->all();
+        return $this->render('gallery', [
+            'galleries' => $galleries
+        ]);
     }
 }

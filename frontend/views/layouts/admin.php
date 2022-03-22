@@ -40,8 +40,7 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status'=>10])->all(
                         <ul class="top-bar-info list-inline-item pl-0 mb-0">
                             <li class="list-inline-item"><a href="mailto:support@gmail.com"><i
                                             class="icofont-support-faq mr-2"></i>support@novena.com</a></li>
-                            <li class="list-inline-item"><i class="icofont-location-pin mr-2"></i>Address Ta-134/A, New
-                                York, USA
+                            <li class="list-inline-item"><i class="icofont-location-pin mr-2"></i>HJ5M+WGX, Urganch, Uzbekistan
                             </li>
                         </ul>
                     </div>
@@ -59,7 +58,8 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status'=>10])->all(
         <nav class="navbar navbar-expand-lg navigation" id="navbar">
             <div class="container">
                 <a class="navbar-brand" href="<?=Url::to(['/'])?>">
-                    <img src="<?= '/style/images/logo.png'?>" alt="" class="img-fluid">
+<!--                    <img src="--><?php //= '/style/images/logo.png'?><!--" alt="" class="img-fluid">-->
+                    <h4 style="font-size: 32px;">XVKTTM.UZ</h4>
                 </a>
 
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain"
@@ -103,7 +103,7 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status'=>10])->all(
             <?= $content ?>
     </main>
     <!-- footer Start -->
-    <footer class="footer section gray-bg">
+    <footer class="footer section bg-gray" >
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mr-auto col-sm-6">
@@ -180,23 +180,6 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status'=>10])->all(
             </div>
 
             <div class="footer-btm py-4 mt-5">
-                <div class="row align-items-center justify-content-between">
-                    <div class="col-lg-6">
-                        <div class="copyright">
-                            © Copyright Reserved to <span class="text-color">Novena</span> by <a
-                                    href="https://themefisher.com/" target="_blank">Themefisher</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="subscribe-form text-lg-right mt-5 mt-lg-0">
-                            <form action="#" class="subscribe">
-                                <input type="text" class="form-control" placeholder="Your Email address">
-                                <a href="#" class="btn btn-main-2 btn-round-full">Subscribe</a>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="row">
                     <div class="col-lg-4">
                         <a class="backtop js-scroll-trigger" href="#top">
@@ -204,12 +187,6 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status'=>10])->all(
                         </a>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="col-lg-12">
-            <div class="copyright text-lg-center">
-                Distributed by <a href="https://themewagon.com/" target="_blank">Themewagon</a>
             </div>
         </div>
     </footer>

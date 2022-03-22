@@ -69,13 +69,13 @@ use mihaildev\elfinder\ElFinder as ElFinderAlias;
 
             <?= $form->field($model, 'cate_id')->widget(Select2::class,[
                 'data' => ArrayHelper::map(Menu::find()->all(),'id','name_uz'),
-                'options' => ['placeholder' => 'Select a state ...'],
+                'options' => ['placeholder' => 'Select a state ...','multiple' => true, 'autocomplete' => 'off'],
                 'pluginOptions' => [
                     'allowClear' => true
                 ],
             ]) ?>
 
-            <?= $form->field($model,'created_at')->widget(DatePicker::class,[
+            <?= $form->field($model,'created_at')->widget(\kartik\date\DatePicker::class,[
 
             ])?>
             <div class="form-group">
