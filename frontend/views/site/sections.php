@@ -8,7 +8,6 @@ $name = "name_" . Yii::$app->language;
         <div class="row">
             <div class="col-md-12">
                 <div class="block text-center">
-                    <span class="text-white">All Department</span>
                     <h1 class="text-capitalize mb-5 text-lg"><?=Yii::t('app','Department')?></h1>
                 </div>
             </div>
@@ -17,15 +16,6 @@ $name = "name_" . Yii::$app->language;
 </section>
 <section class="section service-2">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-7 text-center">
-                <div class="section-title">
-                    <h2><?=Yii::t('app','Our departments')?></h2>
-                    <div class="divider mx-auto my-4"></div>
-                </div>
-            </div>
-        </div>
-
         <div class="row">
             <?php foreach ($sections as $section): ?>
                 <div class="col-lg-4 col-md-6 ">

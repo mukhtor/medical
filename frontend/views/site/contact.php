@@ -16,8 +16,7 @@ $this->title = 'Contact';
         <div class="row">
             <div class="col-md-12">
                 <div class="block text-center">
-                    <span class="text-white">Contact Us</span>
-                    <h1 class="text-capitalize mb-5 text-lg">Get in Touch</h1>
+                    <h1 class="text-capitalize mb-5 text-lg">Contact Us</h1>
 
                     <!-- <ul class="list-inline breadcumb-nav">
                       <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
@@ -36,7 +35,8 @@ $this->title = 'Contact';
                 <div class="contact-block mb-4 mb-lg-0">
                     <i class="icofont-live-support"></i>
                     <h5>Call Us</h5>
-                    +823-4565-13456
+                    +99862-228-10-65<br>
+                    +99862-228-11-22
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6 col-md-6">
@@ -50,7 +50,7 @@ $this->title = 'Contact';
                 <div class="contact-block mb-4 mb-lg-0">
                     <i class="icofont-location-pin"></i>
                     <h5>Location</h5>
-                    North Main Street,Brooklyn Australia
+                    HJ5M+WGX, Urganch, Uzbekistan
                 </div>
             </div>
         </div>
@@ -63,7 +63,6 @@ $this->title = 'Contact';
                 <div class="section-title text-center">
                     <h2 class="text-md mb-2">Contact us</h2>
                     <div class="divider mx-auto my-4"></div>
-                    <p class="mb-5">Laboriosam exercitationem molestias beatae eos pariatur, similique, excepturi mollitia sit perferendis maiores ratione aliquam?</p>
                 </div>
             </div>
         </div>

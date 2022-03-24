@@ -296,6 +296,13 @@ class SiteController extends Controller
             'employees' => $employees
         ]);
     }
+    public function actionManagers()
+    {
+        $employees = Employees::find()->where(['status' => 10])->andWhere(['position_id'=>1])->all();
+        return $this->render('managers', [
+            'employees' => $employees
+        ]);
+    }
 
     public function actionEmployeeMore($id)
     {
@@ -349,9 +356,16 @@ class SiteController extends Controller
 
     public function actionGallery()
     {
-        $galleries = Gallery::find()->all();
+        $galleries = Gallery::find()->where(['type'=>1])->all();
         return $this->render('gallery', [
             'galleries' => $galleries
+        ]);
+    }
+    public function actionVideo()
+    {
+        $video = Gallery::find()->where(['type'=>2])->all();
+        return $this->render('video', [
+            'video' => $video
         ]);
     }
 }

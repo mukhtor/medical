@@ -20,7 +20,7 @@
 <section class="gallery-block cards-gallery">
     <div class="container">
         <div class="heading">
-            <h2>Cards Gallery</h2>
+            <h2></h2>
         </div>
         <div class="row">
          <?php foreach ($galleries as $gallery):?>

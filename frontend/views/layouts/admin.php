@@ -63,7 +63,7 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status'=>10])->all(
             <div class="container">
                 <a class="navbar-brand" href="<?=Url::to(['/'])?>">
 <!--                    <img src="--><?php //= '/style/images/logo.png'?><!--" alt="" class="img-fluid">-->
-                    <h4 style="font-size: 32px;">XVKTTM.UZ</h4>
+                    <h4 style="font-size: 32px;"><i class="icofont-medical-sign-alt"></i> XVKTTM.UZ</h4>
                 </a>
 
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain"
@@ -113,7 +113,9 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status'=>10])->all(
                 <div class="col-lg-4 mr-auto col-sm-6">
                     <div class="widget mb-5 mb-lg-0">
                         <div class="logo mb-4">
-                            <img src="style/images/logo.png" alt="" class="img-fluid">
+                            <a class="navbar-brand" href="<?=Url::to(['/'])?>">
+                                <h4 style="font-size: 32px;"><i class="icofont-medical-sign-alt"></i> XVKTTM.UZ</h4>
+                            </a>
                         </div>
                         <p>Tempora dolorem voluptatum nam vero assumenda voluptate, facilis ad eos obcaecati tenetur
                             veritatis eveniet distinctio possimus.</p>
@@ -161,23 +163,24 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status'=>10])->all(
 
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="widget widget-contact mb-5 mb-lg-0">
-                        <h4 class="text-capitalize mb-3">Get in Touch</h4>
+                        <h4 class="text-capitalize mb-3">Biz bilan aloqa</h4>
                         <div class="divider mb-4"></div>
 
                         <div class="footer-contact-block mb-4">
                             <div class="icon d-flex align-items-center">
                                 <i class="icofont-email mr-3"></i>
-                                <span class="h6 mb-0">Support Available for 24/7</span>
+                                <span class="h6 mb-0"> Xizmat ko'rsatish vaxti 24/7</span>
                             </div>
                             <h4 class="mt-2"><a href="tel:+23-345-67890">Support@email.com</a></h4>
                         </div>
 
-                        <div class="footer-contact-block">
+                        <div class="footer-contact-block ">
                             <div class="icon d-flex align-items-center">
                                 <i class="icofont-support mr-3"></i>
-                                <span class="h6 mb-0">Mon to Fri : 08:30 - 18:00</span>
+                                <span class="h6 mb-0">Xizmat ko'rsatish vaxti 24/7</span>
                             </div>
-                            <h4 class="mt-2"><a href="tel:+23-345-67890">+23-456-6588</a></h4>
+                            <h4 class="mt-3"><a href="tel:+99862-228-10-65">+99862-228-10-65</a></h4>
+                            <h4 class="mt-2"><a href="tel:+99862-228-11-22">+99862-228-11-22</a></h4>
                         </div>
                     </div>
                 </div>
@@ -195,6 +198,7 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status'=>10])->all(
         </div>
     </footer>
     <?php $this->endBody() ?>
+    <script src="//code.jivo.ru/widget/966fFDVT9J" async></script>
     </body>
     </html>
 <?php $this->endPage()?>

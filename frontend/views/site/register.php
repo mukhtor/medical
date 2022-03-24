@@ -17,7 +17,6 @@ use yii\helpers\ArrayHelper;
         <div class="row">
             <div class="col-md-12">
                 <div class="block text-center">
-                    <span class="text-white">Book your Seat</span>
                     <h1 class="text-capitalize mb-5 text-lg">Appoinment</h1>
 
                     <!-- <ul class="list-inline breadcumb-nav">

@@ -14,8 +14,7 @@ $fullname = "fullname_" . Yii::$app->language;
         <div class="row">
             <div class="col-md-12">
                 <div class="block text-center">
-                    <span class="text-white">All Doctors</span>
-                    <h1 class="text-capitalize mb-5 text-lg">Specalized doctors</h1>
+                    <h1 class="text-capitalize mb-5 text-lg"><?=Yii::t('app','Employees')?></h1>
                 </div>
             </div>
         </div>
@@ -25,10 +24,7 @@ $fullname = "fullname_" . Yii::$app->language;
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6 text-center">
-                <div class="section-title">
-                    <h2><?=Yii::t('app','Managers')?></h2>
-                    <div class="divider mx-auto my-4"></div>
-                </div>
+
             </div>
         </div>
 
@@ -52,8 +48,8 @@ $fullname = "fullname_" . Yii::$app->language;
                         </div>
                     </div>
                     <div class="content mt-3">
-                        <h4 class="mb-0"><a href="<?= Url::to(['site/employee-more','id'=>$employee->id])?>"><?=$employee[$fullname]?></a></h4>
-                        <p><?=$employee->position[$name]?></p>
+                        <h4 class="mb-0 text-center"><a href="<?= Url::to(['site/employee-more','id'=>$employee->id])?>"><?=$employee[$fullname]?></a></h4>
+                        <p class="text-center"><?=$employee->position[$name]?></p>
                     </div>
                 </div>
             </div>
