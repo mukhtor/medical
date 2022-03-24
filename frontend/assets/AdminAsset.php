@@ -10,6 +10,7 @@ class AdminAsset extends AssetBundle
     public $baseUrl = '@web/style';
     public $css = [
         'css/style.css',
+        'css/site.min.css',
         'css/cards-gallery.css',
         'plugins/bootstrap/css/bootstrap.min.css',
         'plugins/icofont/icofont.min.css',
@@ -19,6 +20,7 @@ class AdminAsset extends AssetBundle
     public $js = [
         'js/contact.js',
         'js/script.js',
+        'js/specialview.js',
         'plugins/jquery/jquery.js',
         'plugins/bootstrap/js/popper.js',
         'plugins/bootstrap/js/bootstrap.min.js',

@@ -59,7 +59,7 @@ use mihaildev\elfinder\ElFinder as ElFinderAlias;
             <?= $form->field($model,'data_birth')->widget(DatePicker::class,[
                 'pluginOptions' => [
                     'autoclose' => true,
-                    'format' => 'dd-M-yyyy'
+                    'format' => 'yyyy-mm-dd'
                 ]
             ])?>
 

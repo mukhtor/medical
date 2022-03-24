@@ -68,7 +68,7 @@ use mihaildev\elfinder\ElFinder as ElFinderAlias;
             ]) ?>
 
             <?= $form->field($model, 'cate_id')->widget(Select2::class,[
-                'data' => ArrayHelper::map(Menu::find()->all(),'id','name_uz'),
+                'data' => ArrayHelper::map(Menu::find()->where(['status'=>9])->all(),'id','name_uz'),
                 'options' => ['placeholder' => 'Select a state ...','multiple' => true, 'autocomplete' => 'off'],
                 'pluginOptions' => [
                     'allowClear' => true

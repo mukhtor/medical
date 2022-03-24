@@ -11,8 +11,8 @@ $fullname = "fullname_" . Yii::$app->language;
         <div class="row">
             <div class="col-md-12">
                 <div class="block text-center">
-                    <span class="text-white">Doctor Details</span>
-                    <h1 class="text-capitalize mb-5 text-lg">Alexandar james</h1>
+                    <span class="text-white"><?=$more->position[$name]?></span>
+                    <h1 class="text-capitalize mb-5 text-lg"><?=$more[$fullname]?></h1>
 
                     <!-- <ul class="list-inline breadcumb-nav">
                       <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
@@ -28,29 +28,21 @@ $fullname = "fullname_" . Yii::$app->language;
         <div class="row">
             <div class="col-lg-4 col-md-6">
                 <div class="doctor-img-block">
-                    <img src="/style/images/team/1.jpg" alt="" class="img-fluid w-100">
+                    <img src="<?=$more->image?>"  alt="" class="img-fluid w-100">
 
                     <div class="info-block mt-4">
                         <h4 class="mb-0"><?=$more[$fullname]?></h4>
                         <p><?=$more->position[$name]?></p>
 
-                        <ul class="list-inline mt-4 doctor-social-links">
-                            <li class="list-inline-item"><a href="#"><i class="icofont-facebook"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="icofont-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="icofont-skype"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="icofont-linkedin"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="icofont-pinterest"></i></a></li>
-                        </ul>
                     </div>
                     <div class="skill-list">
                         <h5 class="mb-4">Qo'shimcha Ma'lumotlari</h5>
                         <ul class="list-unstyled department-service">
-                            <li><i class="icofont-check mr-2"></i>International Drug Database</li>
-                            <li><i class="icofont-check mr-2"></i>Stretchers and Stretcher Accessories</li>
-                            <li><i class="icofont-check mr-2"></i>Cushions and Mattresses</li>
-                            <li><i class="icofont-check mr-2"></i>Cholesterol and lipid tests</li>
-                            <li><i class="icofont-check mr-2"></i>Critical Care Medicine Specialists</li>
-                            <li><i class="icofont-check mr-2"></i>Emergency Assistance</li>
+                            <li><strong>Mutaxassisligi </strong> <?=$more->spec?></li>
+                            <li><strong>Ma'lumoti </strong> <?=$more->degree?></li>
+                            <li><strong>Tugatgan Muassasasi </strong> <?=$more->completed_institution?></li>
+                            <li><strong>Tug'ilgan Manzili </strong> <?=$more->address_birth?></li>
+                            <li><strong>Tug'ilgan Sanasi </strong> <?=$more->data_birth?></li>
                         </ul>
                     </div>
                     <div class="sidebar-widget  gray-bg p-4">
@@ -59,8 +51,8 @@ $fullname = "fullname_" . Yii::$app->language;
                             <p class="mb-0">Telefon Raqami</p>
                             <h4 class="text-color"><?=$more->phone_1?></h4>
                             <h4 class="text-color"><?=$more->phone_2?></h4>
-                            <p class="mb-0">Email Manzili</p>
-                            <h4 class="text-color-2"><?=$more->email?></h4>
+                            <p class="mb-0">Elektron pochta manzili</p>
+                            <h5 class="text-color-2"><?=$more->email?></h5>
                         </div>
                     </div>
 

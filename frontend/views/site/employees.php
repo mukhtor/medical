@@ -26,7 +26,7 @@ $fullname = "fullname_" . Yii::$app->language;
         <div class="row justify-content-center">
             <div class="col-lg-6 text-center">
                 <div class="section-title">
-                    <h2>Doctors</h2>
+                    <h2><?=Yii::t('app','Managers')?></h2>
                     <div class="divider mx-auto my-4"></div>
                 </div>
             </div>
@@ -42,9 +42,9 @@ $fullname = "fullname_" . Yii::$app->language;
             <?php endforeach;?>
         </div>
 
-        <div class="row shuffle-wrapper portfolio-gallery shuffle" style="position: relative; overflow: hidden; height: 1113px; transition: height 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;">
+        <div class="row shuffle-wrapper portfolio-gallery shuffle" >
           <?php foreach ($employees as $employee) :?>
-            <div class="col-lg-3 col-sm-6 col-md-6 mb-4 shuffle-item shuffle-item--visible" data-groups="[&quot;cat1&quot;,&quot;cat2&quot;]" style="position: absolute; top: 0px; left: 0px; visibility: visible; will-change: transform; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-property: transform, opacity;">
+            <div class="col-lg-3 col-sm-6 col-md-6 mb-4 shuffle-item shuffle-item--visible" >
                 <div class="position-relative doctor-inner-box">
                     <div class="doctor-profile">
                         <div class="doctor-img">
@@ -53,7 +53,7 @@ $fullname = "fullname_" . Yii::$app->language;
                     </div>
                     <div class="content mt-3">
                         <h4 class="mb-0"><a href="<?= Url::to(['site/employee-more','id'=>$employee->id])?>"><?=$employee[$fullname]?></a></h4>
-                        <p>Cardiology</p>
+                        <p><?=$employee->position[$name]?></p>
                     </div>
                 </div>
             </div>

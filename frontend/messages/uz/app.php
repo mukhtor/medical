@@ -1,4 +1,5 @@
 <?php
 return [
-'Learn More'=>'Batafsil'
+'Learn More'=>'Batafsil',
+    'Managers'=>'Mudirlar'
 ];

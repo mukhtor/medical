@@ -16,6 +16,7 @@ use yii\bootstrap4\NavBar;
 use yii\helpers\Url;
 
 AdminAsset::register($this);
+
 $title = "title_" . Yii::$app->language;
 $name = "name_" . Yii::$app->language;
 $menus = Menu::find()->where(['parent' => null])->andWhere(['status'=>10])->all()
@@ -48,8 +49,11 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status'=>10])->all(
                         <div class="text-lg-right top-right-bar mt-2 mt-lg-0">
                             <a href="tel:+23-345-67890">
                                 <span>Call Now : </span>
-                                <span class="h4">823-4565-13456</span>
+                                <span class="h4">+99862-228-10-65</span>
                             </a>
+
+                            <a class="vi-open" id="elem" href="javascript:(0)"><i class="fas fa-glasses"></i></a>
+
                         </div>
                     </div>
                 </div>
@@ -193,4 +197,4 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status'=>10])->all(
     <?php $this->endBody() ?>
     </body>
     </html>
-<?php $this->endPage();
+<?php $this->endPage()?>

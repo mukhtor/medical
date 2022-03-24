@@ -2,11 +2,13 @@
 
 /** @var yii\web\View $this */
 
-/** @var \common\models\Sections $sections */
+/** @var Sections $sections */
 
-/** @var \common\models\News $latest_news */
+/** @var News $latest_news */
 
 use common\models\Employees;
+use common\models\News;
+use common\models\Sections;
 use kv4nt\owlcarousel\OwlCarouselWidget;
 use yii\helpers\Url;
 
@@ -15,6 +17,7 @@ $title = "title_" . Yii::$app->language;
 $fullname = "fullname_" . Yii::$app->language;
 $name = "name_" . Yii::$app->language;
 $desc = "desc_" . Yii::$app->language;
+$text = "text_" . Yii::$app->language;
 ?>
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -79,7 +82,7 @@ $desc = "desc_" . Yii::$app->language;
 <section class="banner">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 col-md-12 col-xl-7">
+            <div class="col-lg-6 col-md-6 col-xl-7">
                 <div class="block">
                     <div class="divider mb-3"></div>
                     <h3 class="mb-4 pr-5" style="font-style: italic;color: rgba(0,0,0,0.54)">"Hech qachon davolanishni
@@ -87,6 +90,24 @@ $desc = "desc_" . Yii::$app->language;
                         qoldirmang"<br><br>
                         “Shifokor qo'rqoq bo'lmasligi kerak. Ruhi zaif odamga kasallar ishonmaydi."
                     </h3><sub style="font-size: 20px">(Gippokrat)</sub>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xl-5">
+                <div class="block widget mb-5 mb-lg-0">
+                    <div class="divider mb-3"></div>
+                    <ul class=" footer-menu lh-35" style="font-size: 20px">
+                      <div class="row">
+                          <div class="col-lg-6">
+                              <li class="my-3"><a target="_blank" href="https://pm.gov.uz/uz#/">Virtual Qabulxona</a></li>
+                              <li class="my-3"><a target="_blank" href="https://reg.ssv.uz/Chmu/Index">Imtiyozli xizmatlar ko'rsatish</a></li>
+                          </div>
+                          <div class="col-lg-6">
+                              <li class="my-3"><a target="_blank" href="https://reg.ssv.uz/">Elektron poliklinika</a></li>
+                              <li class="my-3"><a target="_blank" href="https://data.gov.uz/uz/sphere/2">Sog'likni saqlash sohasi faktlari va raqamlari</a></li>
+
+                          </div>
+                      </div>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -101,19 +122,17 @@ $desc = "desc_" . Yii::$app->language;
                         <div class="feature-icon mb-4">
                             <i class="icofont-surgeon-alt"></i>
                         </div>
-                        <span>24 Hours Service</span>
-                        <h4 class="mb-3">Online Appoinment</h4>
-                        <p class="mb-4">Get ALl time support for emergency.We have introduced the principle of
-                            family medicine.</p>
-                        <a href="appoinment.html" class="btn btn-main btn-round-full">Make a appoinment</a>
+                        <span>Kuniga 24 soat xizmat</span>
+                        <h4 class="mb-3">Muassasa Haqida</h4>
+                        <p class="mb-4">Eng so'ngi texnologiyalar va jihozlar bilan taminlangan. Oliy toifali shifokorlar sizning xizmatingizda!</p>
+                        <a href="<?=Url::to(['site/about'])?>" class="btn btn-main btn-round-full">Batafsil</a>
                     </div>
 
                     <div class="feature-item mb-5 mb-lg-0">
                         <div class="feature-icon mb-4">
                             <i class="icofont-ui-clock"></i>
                         </div>
-                        <span>Timing schedule</span>
-                        <h4 class="mb-3">Working Hours</h4>
+                        <h4 class="mb-3">Ish Vaxti</h4>
                         <ul class="w-hours list-unstyled">
                             <li class="d-flex justify-content-between">Sun - Wed : <span>8:00 - 17:00</span></li>
                             <li class="d-flex justify-content-between">Thu - Fri : <span>9:00 - 17:00</span></li>
@@ -125,10 +144,10 @@ $desc = "desc_" . Yii::$app->language;
                         <div class="feature-icon mb-4">
                             <i class="icofont-support"></i>
                         </div>
-                        <span>Emegency Cases</span>
-                        <h4 class="mb-3">1-800-700-6200</h4>
-                        <p>Get ALl time support for emergency.We have introduced the principle of family
-                            medicine.Get Conneted with us for any urgency .</p>
+                        <span></span>
+                        <h4 class="mb-3">+99862-228-10-65</h4>
+                        <h4 class="mb-3">+99862-228-11-22</h4>
+                        <p>Biz sizga xizmat ko'rsatishdan mamnunmiz!<br><strong>24/7</strong></p>
                     </div>
                 </div>
             </div>
@@ -171,7 +190,7 @@ $desc = "desc_" . Yii::$app->language;
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="counter-stat">
                         <i class="icofont-doctor"></i>
-                        <span class="h3"><?= \common\models\Sections::find()->count() ?></span>
+                        <span class="h3"><?= Sections::find()->count() ?></span>
                         <p><?= Yii::t('app', 'Sections') ?></p>
                     </div>
                 </div>
@@ -193,7 +212,7 @@ $desc = "desc_" . Yii::$app->language;
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="counter-stat">
                         <i class="icofont-globe"></i>
-                        <span class="h3"><?= \common\models\News::find()->count() ?></span>
+                        <span class="h3"><?= News::find()->count() ?></span>
                         <p><?= Yii::t('app', 'News') ?></p>
                     </div>
                 </div>
@@ -232,10 +251,11 @@ $desc = "desc_" . Yii::$app->language;
                             <div class="widget">
                                 <ul class="list-unstyled footer-menu lh-35">
                                     <li><a style="text-decoration: none"
-                                           href="<?= Url::to(['site/news-more', 'id' => $news->id]) ?>"><?= substr($news[$title], 0, 150) ?>
-                                            ...</a></li>
+                                           href="<?= Url::to(['site/news-more', 'id' => $news->id]) ?>"><?= $news[$title]?>
+                                        </a></li>
                                 </ul>
                             </div>
+                            <p><?=substr($news[$text],0,200)?>...</p>
                         </div>
                     </div>
                 </div>
@@ -357,3 +377,11 @@ $desc = "desc_" . Yii::$app->language;
         }
     });
 </script>
+<?php
+$script = <<< JS
+  elem.onclick = function() {
+  SpecialView.visibleOn();
+  };
+JS;
+$this->registerJs($script);
+?>
