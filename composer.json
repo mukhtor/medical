@@ -25,7 +25,7 @@
         "kartik-v/yii2-widget-datepicker": "^1.4",
         "hail812/yii2-adminlte3": "~1.1",
         "kv4nt/yii2-owl-carousel2": "^1.0",
-        "tugmaks/yii2-jivosite": "*"
+        "kartik-v/yii2-widget-depdrop": "^1.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

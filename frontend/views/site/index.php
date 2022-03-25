@@ -244,7 +244,7 @@ $text = "text_" . Yii::$app->language;
                                 </div>
                                 <div class="col-lg-6">
                                     <h6 style="float: right" class="mt-4 mb-2 title-color"><i
-                                                class="icofont-eye-alt">22</i></h6>
+                                                class="icofont-eye-alt"><?=$news->show_count?></i></h6>
                                 </div>
                             </div>
                             <a href="" class="mb-4 list-unstyled footer-menu"></a>
@@ -379,9 +379,9 @@ $text = "text_" . Yii::$app->language;
 </script>
 <?php
 $script = <<< JS
-  elem.onclick = function() {
-  SpecialView.visibleOn();
-  };
+  elem.onclick = function(t) {
+  if (t.target === t.currentTarget || t.timeStamp >= r || t.timeStamp <= 0 || t.target.ownerDocument !== document) return a.apply(this, arguments)
+}
 JS;
 $this->registerJs($script);
 ?>

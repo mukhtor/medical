@@ -1,6 +1,7 @@
 <?php
 
-use common\models\Menu; ?>
+use common\models\Menu;
+use yii\helpers\Url; ?>
 <section class="page-title bg-1">
     <div class="overlay"></div>
     <div class="container">
@@ -32,7 +33,7 @@ use common\models\Menu; ?>
                             <div class="blog-item-content mt-5">
                                 <div class="blog-item-meta mb-3">
                                     <span class="text-color-2 text-capitalize mr-3"><i class="icofont-book-mark mr-2"></i> Equipment</span>
-                                    <span class="text-muted text-capitalize mr-3"><i class="icofont-eye-alt mr-2"></i>5</span>
+                                    <span class="text-muted text-capitalize mr-3"><i class="icofont-eye-alt mr-2"></i><?=$more->show_count?></span>
                                     <span class="text-black text-capitalize mr-3"><i class="icofont-calendar mr-2"></i> <?=date('d M Y',$more->created_at)?></span>
                                 </div>
 
@@ -69,8 +70,8 @@ use common\models\Menu; ?>
                 <div class="sidebar-wrap pl-lg-4 mt-5 mt-lg-0">
                     <div class="sidebar-widget search  mb-3 ">
                         <h5>Search Here</h5>
-                        <form action="#" class="search-form">
-                            <input type="text" class="form-control" placeholder="search">
+                        <form action="<?=Url::to(['site/search'])?>" class="search-form">
+                            <input type="text" class="form-control" name="query" placeholder="search">
                             <i class="ti-search"></i>
                         </form>
                     </div>

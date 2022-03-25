@@ -314,9 +314,9 @@ class SiteController extends Controller
 
     public function actionNews()
     {
+        $query = News::find()->where(['status' => 10]);
         $menu = Menu::find()->where(['status' => 9])->all();
 
-        $query = News::find()->where(['status' => 10]);
         $countQuery = clone $query;
         $pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize' => 2,'pageSizeParam' => false]);
         $news = $query->offset($pages->offset)
@@ -334,6 +334,8 @@ class SiteController extends Controller
     {
         $menu = Menu::find()->where(['status' => 9])->all();
         $more_news = News::findOne(['id' => $id]);
+        $more_news->show_count += 1;
+        $more_news->save();
         return $this->render('news_more', [
             'more' => $more_news,
             'menu'=>$menu
@@ -367,5 +369,47 @@ class SiteController extends Controller
         return $this->render('video', [
             'video' => $video
         ]);
+    }
+    public function actionSearch(){
+        $query = Yii::$app->request->get('query');
+        $query = News::find()->andFilterWhere(['like','title_uz',$query])
+        ->orFilterWhere(['like','title_en',$query])
+        ->orFilterWhere(['like','title_ru',$query])
+            ->orFilterWhere(['like','text_en',$query])
+            ->orFilterWhere(['like','text_ru',$query])
+            ->orFilterWhere(['like','text_uz',$query]);
+
+        $menu = Menu::find()->where(['status' => 9])->all();
+
+        $countQuery = clone $query;
+        $pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize' => 2,'pageSizeParam' => false]);
+        $news = $query->offset($pages->offset)
+            ->limit($pages->limit)
+            ->all();
+
+        return $this->render('news', [
+            'news' => $news,
+            'menu' => $menu,
+            'pages'=>$pages
+        ]);
+    }
+    public function actionSubcat() {
+        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        $out = [];
+        if (isset($_POST['depdrop_parents'])) {
+            $parents = $_POST['depdrop_parents'];
+            if ($parents != null) {
+                $cat_id = $parents[0];
+                $out = Employees::find()->select(['id','name'=>'fullname_uz'])->where(['section_id'=>$cat_id])->asArray()->all();
+                // the getSubCatList function will query the database based on the
+                // cat_id and return an array like below:
+                // [
+                //    ['id'=>'<sub-cat-id-1>', 'name'=>'<sub-cat-name1>'],
+                //    ['id'=>'<sub-cat_id_2>', 'name'=>'<sub-cat-name2>']
+                // ]
+                return ['output'=>$out, 'selected'=>''];
+            }
+        }
+        return ['output'=>'', 'selected'=>''];
     }
 }

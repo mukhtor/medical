@@ -11,6 +11,7 @@ class AdminAsset extends AssetBundle
     public $css = [
         'css/style.css',
         'css/site.min.css',
+        'css/special.css',
         'css/cards-gallery.css',
         'plugins/bootstrap/css/bootstrap.min.css',
         'plugins/icofont/icofont.min.css',
@@ -21,7 +22,7 @@ class AdminAsset extends AssetBundle
         'js/contact.js',
         'js/script.js',
         'js/specialview.js',
-        'plugins/jquery/jquery.js',
+        'js/specialview2.js',
         'plugins/bootstrap/js/popper.js',
         'plugins/bootstrap/js/bootstrap.min.js',
         'plugins/counterup/jquery.easing.js',

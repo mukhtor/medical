@@ -19,7 +19,7 @@ AdminAsset::register($this);
 
 $title = "title_" . Yii::$app->language;
 $name = "name_" . Yii::$app->language;
-$menus = Menu::find()->where(['parent' => null])->andWhere(['status'=>10])->all()
+$menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->all()
 ?>
 <?php $this->beginPage() ?>
     <html lang="zxx">
@@ -40,8 +40,9 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status'=>10])->all(
                     <div class="col-lg-6">
                         <ul class="top-bar-info list-inline-item pl-0 mb-0">
                             <li class="list-inline-item"><a href="mailto:support@gmail.com"><i
-                                            class="icofont-support-faq mr-2"></i>support@novena.com</a></li>
-                            <li class="list-inline-item"><i class="icofont-location-pin mr-2"></i>HJ5M+WGX, Urganch, Uzbekistan
+                                            class="icofont-support-faq mr-2"></i>xvkttm@gmail.com</a></li>
+                            <li class="list-inline-item"><i class="icofont-location-pin mr-2"></i>HJ5M+WGX, Urganch,
+                                Uzbekistan
                             </li>
                         </ul>
                     </div>
@@ -51,9 +52,6 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status'=>10])->all(
                                 <span>Call Now : </span>
                                 <span class="h4">+99862-228-10-65</span>
                             </a>
-
-                            <a class="vi-open" id="elem" href="javascript:(0)"><i class="fas fa-glasses"></i></a>
-
                         </div>
                     </div>
                 </div>
@@ -61,8 +59,9 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status'=>10])->all(
         </div>
         <nav class="navbar navbar-expand-lg navigation" id="navbar">
             <div class="container">
-                <a class="navbar-brand" href="<?=Url::to(['/'])?>">
-<!--                    <img src="--><?php //= '/style/images/logo.png'?><!--" alt="" class="img-fluid">-->
+                <a class="navbar-brand" href="<?= Url::to(['/']) ?>">
+                    <!--                    <img src="-->
+                    <?php //= '/style/images/logo.png'?><!--" alt="" class="img-fluid">-->
                     <h4 style="font-size: 32px;"><i class="icofont-medical-sign-alt"></i> XVKTTM.UZ</h4>
                 </a>
 
@@ -74,15 +73,16 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status'=>10])->all(
                 <div class="collapse navbar-collapse" id="navbarmain">
                     <ul class="navbar-nav ml-auto">
                         <?php foreach ($menus as $menu) : ?>
-                        <li class="nav-item dropdown">
+                            <li class="nav-item dropdown">
 
-                            <a class="nav-link" href="<?= Url::to([$menu->url]) ?>"><?=$menu[$name]?></a>
-                            <?php foreach (Menu::find()->where(['not', ['parent' => null]])->where('parent=' . $menu->id)->all() as $item):?>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="<?= Url::to([$item->url]) ?>"><?=$item[$name]?></a></li>
-                            </ul>
-                            <?php endforeach;?>
-                        </li>
+                                <a class="nav-link" href="<?= Url::to([$menu->url]) ?>"><?= $menu[$name] ?></a>
+                                <?php foreach (Menu::find()->where(['not', ['parent' => null]])->where('parent=' . $menu->id)->all() as $item): ?>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item"
+                                               href="<?= Url::to([$item->url]) ?>"><?= $item[$name] ?></a></li>
+                                    </ul>
+                                <?php endforeach; ?>
+                            </li>
                         <?php endforeach; ?>
 
                     </ul>
@@ -100,25 +100,24 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status'=>10])->all(
     </header>
 
     <main role="main" class="flex-shrink-0">
-            <?= Breadcrumbs::widget([
-                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-            ]) ?>
-            <?= Alert::widget() ?>
-            <?= $content ?>
+        <?= Breadcrumbs::widget([
+            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+        ]) ?>
+        <?= Alert::widget() ?>
+        <?= $content ?>
     </main>
     <!-- footer Start -->
-    <footer class="footer section bg-gray" >
+    <footer class="footer section bg-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mr-auto col-sm-6">
                     <div class="widget mb-5 mb-lg-0">
                         <div class="logo mb-4">
-                            <a class="navbar-brand" href="<?=Url::to(['/'])?>">
+                            <a class="navbar-brand" href="<?= Url::to(['/']) ?>">
                                 <h4 style="font-size: 32px;"><i class="icofont-medical-sign-alt"></i> XVKTTM.UZ</h4>
                             </a>
                         </div>
-                        <p>Tempora dolorem voluptatum nam vero assumenda voluptate, facilis ad eos obcaecati tenetur
-                            veritatis eveniet distinctio possimus.</p>
+                        <p>Xorazm Viloyati Ko'p Tarmoqli Tibbiyot Markazi</p>
 
                         <ul class="list-inline footer-socials mt-4">
                             <li class="list-inline-item"><a href="https://www.facebook.com/themefisher"><i
@@ -169,15 +168,15 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status'=>10])->all(
                         <div class="footer-contact-block mb-4">
                             <div class="icon d-flex align-items-center">
                                 <i class="icofont-email mr-3"></i>
-                                <span class="h6 mb-0"> Xizmat ko'rsatish vaxti 24/7</span>
+                                <span class="h6 mb-0"> Xizmat ko'rsatish vaqti 24/7</span>
                             </div>
-                            <h4 class="mt-2"><a href="tel:+23-345-67890">Support@email.com</a></h4>
+                            <h4 class="mt-2"><a target="_blank" href="xvkttm@gmail.com">xvkttm@gmail.com</a></h4>
                         </div>
 
                         <div class="footer-contact-block ">
                             <div class="icon d-flex align-items-center">
                                 <i class="icofont-support mr-3"></i>
-                                <span class="h6 mb-0">Xizmat ko'rsatish vaxti 24/7</span>
+                                <span class="h6 mb-0">Xizmat ko'rsatish vaqti 24/7</span>
                             </div>
                             <h4 class="mt-3"><a href="tel:+99862-228-10-65">+99862-228-10-65</a></h4>
                             <h4 class="mt-2"><a href="tel:+99862-228-11-22">+99862-228-11-22</a></h4>
@@ -198,7 +197,16 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status'=>10])->all(
         </div>
     </footer>
     <?php $this->endBody() ?>
-    <script src="//code.jivo.ru/widget/966fFDVT9J" async></script>
+    <script>
+        window.replainSettings = {id: 'd0de7570-d6e4-495c-8efe-fb7c470d470a'};
+        (function (u) {
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = u;
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+        })('https://widget.replain.cc/dist/client.js');
+    </script>
     </body>
     </html>
-<?php $this->endPage()?>
+<?php $this->endPage() ?>
