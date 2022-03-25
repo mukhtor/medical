@@ -459,6 +459,7 @@ a:focus {
   background: url("../images/bg/22.jpg") no-repeat 50% 50%;
   background-size: cover;
   position: relative;
+  height: 25%;
 }
 
 .banner {

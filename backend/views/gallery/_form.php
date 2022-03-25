@@ -15,6 +15,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'type')->dropDownList([
+        1=>'Image',
+        2=>'Video'
+    ],['prompt'=>'Select Type']) ?>
+
     <?= $form->field($model, 'image')->widget(InputFile::class, [
         'language' => 'ru',
         'controller' => 'elfinder', // вставляем название контроллера, по умолчанию равен elfinder
@@ -26,10 +31,7 @@ use yii\widgets\ActiveForm;
         'multiple' => false,       // возможность выбора нескольких файлов
 
     ]); ?>
-    <?= $form->field($model, 'type')->dropDownList([
-            1=>'Image',
-            2=>'Video'
-    ],['prompt'=>'Select Type']) ?>
+
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>

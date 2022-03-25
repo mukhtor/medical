@@ -1,26 +1,14 @@
 <?php
 
-?>
-
-<?php
+$this->title = Yii::t('app','Video');
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <style>
     .container{
         max-width: 80%!important;
     }
 </style>
-<section class="page-title bg-1">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="block text-center">
-                    <h1 class="text-capitalize mb-5 text-lg"><?=Yii::t('app','Video')?></h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
 <section class="gallery-block cards-gallery">
     <div class="container">
         <div class="heading">
@@ -31,7 +19,7 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="card border-0 transform-on-hover">
                         <a class="lightbox">
-                            <video controls style="width: 100%" src="<?=$gallery->image?>" class="card-img-top">
+                            <iframe width="476" height="315" src="https://www.youtube.com/embed/<?=$gallery->image?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </a>
                         <div class="card-body">
                             <p class="text-muted card-text"><?=$gallery->name?></p>

@@ -4,26 +4,12 @@ $title = "title_" . Yii::$app->language;
 $name = "name_" . Yii::$app->language;
 $desc = "desc_" . Yii::$app->language;
 $fullname = "fullname_" . Yii::$app->language;
+$this->title = Yii::t('app','Employee More');
+$this->params['breadcrumbs'][] = ['label' => 'Employees', 'url' => ['site/employee']];
+$this->params['breadcrumbs'][] = $more->id;
 ?>
-<section class="page-title bg-1">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="block text-center">
-                    <span class="text-white"><?=$more->position[$name]?></span>
-                    <h1 class="text-capitalize mb-5 text-lg"><?=$more[$fullname]?></h1>
 
-                    <!-- <ul class="list-inline breadcumb-nav">
-                      <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
-                      <li class="list-inline-item"><span class="text-white">/</span></li>
-                      <li class="list-inline-item"><a href="#" class="text-white-50">Doctor Details</a></li>
-                    </ul> -->
-                </div>
-            </div>
-        </div>
-    </div>
-</section><section class="section doctor-single">
+<section class="section doctor-single">
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-6">

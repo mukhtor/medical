@@ -6,20 +6,10 @@ use yii\helpers\Url;
 $title = "title_" . Yii::$app->language;
 $name = "name_" . Yii::$app->language;
 $fullname = "fullname_" . Yii::$app->language;
+$this->title = Yii::t('app','Managers');
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<section class="page-title bg-1">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="block text-center">
-                    <h1 class="text-capitalize mb-5 text-lg"><?=Yii::t('app','Managers')?></h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 <section class="section doctors">
     <div class="container">
         <div class="row justify-content-center">

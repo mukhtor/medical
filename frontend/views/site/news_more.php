@@ -1,26 +1,12 @@
 <?php
 
 use common\models\Menu;
-use yii\helpers\Url; ?>
-<section class="page-title bg-1">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="block text-center">
-                    <span class="text-white">News details</span>
-                    <h1 class="text-capitalize mb-5 text-lg">Blog Single</h1>
+use yii\helpers\Url;
+$this->title = 'News';
+$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/news']];
+$this->params['breadcrumbs'][] = $more->id;
+?>
 
-                    <!-- <ul class="list-inline breadcumb-nav">
-                      <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
-                      <li class="list-inline-item"><span class="text-white">/</span></li>
-                      <li class="list-inline-item"><a href="#" class="text-white-50">News details</a></li>
-                    </ul> -->
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 <section class="section blog-wrap">
     <div class="container">
         <div class="row">

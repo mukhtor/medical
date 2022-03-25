@@ -10,6 +10,7 @@ use common\models\Employees;
 use common\models\News;
 use common\models\Sections;
 use kv4nt\owlcarousel\OwlCarouselWidget;
+use yii\bootstrap4\Breadcrumbs;
 use yii\helpers\Url;
 
 $this->title = 'My Yii Application';
@@ -20,10 +21,6 @@ $desc = "desc_" . Yii::$app->language;
 $text = "text_" . Yii::$app->language;
 ?>
 <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-            crossorigin="anonymous"></script>
     <style>
         .taga {
             text-decoration: none;
@@ -134,9 +131,8 @@ $text = "text_" . Yii::$app->language;
                         </div>
                         <h4 class="mb-3">Ish Vaxti</h4>
                         <ul class="w-hours list-unstyled">
-                            <li class="d-flex justify-content-between">Sun - Wed : <span>8:00 - 17:00</span></li>
-                            <li class="d-flex justify-content-between">Thu - Fri : <span>9:00 - 17:00</span></li>
-                            <li class="d-flex justify-content-between">Sat - sun : <span>10:00 - 17:00</span></li>
+                            <li class="d-flex justify-content-between">Mon-Sat : <span>08:00 – 18:00</span></li>
+                            <li class="d-flex justify-content-between">Sun : <span>Closed</span></li>
                         </ul>
                     </div>
 

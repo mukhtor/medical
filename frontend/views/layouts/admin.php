@@ -49,8 +49,8 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
                     <div class="col-lg-6">
                         <div class="text-lg-right top-right-bar mt-2 mt-lg-0">
                             <a href="tel:+23-345-67890">
-                                <span>Call Now : </span>
-                                <span class="h4">+99862-228-10-65</span>
+                                <span>Tezkor Aloqa : </span>
+                                <span class="h6">+99862-228-10-65</span>
                             </a>
                         </div>
                     </div>
@@ -100,13 +100,38 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
     </header>
 
     <main role="main" class="flex-shrink-0">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
+
+       <?php if ($this->title != 'My Yii Application'):?>
+           <section class="page-title bg-1">
+               <div class="overlay"></div>
+               <div class="row">
+                   <div class="col-md-12">
+                       <div class="block text-center">
+                           <h1 class="text-capitalize mb-5 text-lg"><?=Yii::t('app',$this->title)?></h1>
+                           <p class="text-white">
+                               <?= Breadcrumbs::widget([
+                                   'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                                   'options' => [
+                                       'class'=>'my-1',
+                                       'style'=> 'background:white'
+                                   ]
+                               ]) ?>
+                           </p>
+                       </div>
+                   </div>
+               </div>
+           </section>
+        <?php endif;?>
+
+
+
         <?= Alert::widget() ?>
         <?= $content ?>
+
     </main>
     <!-- footer Start -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11941.856966197643!2d60.632965277770985!3d41.55919614530905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41dfced40ff9fa85%3A0x41213b3ab751e15c!2z0J7QsdC70LDRgdGC0L3QsNGPINCR0L7Qu9GM0L3QuNGG0LA!5e0!3m2!1sru!2s!4v1648214313035!5m2!1sru!2s" width="1920" height="1080" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> </div>
+
     <footer class="footer section bg-gray">
         <div class="container">
             <div class="row">

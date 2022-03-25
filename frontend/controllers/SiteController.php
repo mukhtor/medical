@@ -412,4 +412,8 @@ class SiteController extends Controller
         }
         return ['output'=>'', 'selected'=>''];
     }
+    public function actionSectionAjax(){
+        var_dump(Yii::$app->request->get('section'));
+        exit();
+    }
 }

@@ -8,19 +8,11 @@ $title = "title_" . Yii::$app->language;
 $name = "name_" . Yii::$app->language;
 $desc = "desc_" . Yii::$app->language;
 $fullname = "fullname_" . Yii::$app->language;
+$this->title = Yii::t('app','Sections More');
+$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['site/news']];
+$this->params['breadcrumbs'][] = $more->id;
 ?>
-<section class="page-title bg-1">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="block text-center">
-                    <h1 class="text-capitalize mb-5 text-lg"><?=$more[$name]?></h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
 <section class="section department-single blog-wrap">
     <div class="container">
         <div class="row">

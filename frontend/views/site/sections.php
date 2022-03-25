@@ -1,19 +1,10 @@
 <?php
 $title = "title_" . Yii::$app->language;
 $name = "name_" . Yii::$app->language;
+$this->title = Yii::t('app','Sections');
+$this->params['breadcrumbs'][] = $this->title;
 ?>
-<section class="page-title bg-1">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="block text-center">
-                    <h1 class="text-capitalize mb-5 text-lg"><?=Yii::t('app','Department')?></h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
 <section class="section service-2">
     <div class="container">
         <div class="row">
