@@ -21,12 +21,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <div class="col-12 text-center  mb-5">
             <?php foreach (Sections::find()->where(['status' => 10])->all() as $value) : ?>
-                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label class="btn">
-                        <form action="<?=Url::to(['site/section-ajax'])?>">
-                            <input type="radio" name="section" value="<?= $value->id ?>"><?= $value[$name] ?>
-                        </form>
-                    </label>
+                <div class="btn-group btn-group-toggle">
+                        <a class="btn btn-danger text-white" href="<?=Url::to(['site/section-ajax','id'=>$value->id])?>"><?=$value->name_uz?></a>
                 </div>
             <?php endforeach; ?>
         </div>

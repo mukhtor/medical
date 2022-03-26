@@ -412,8 +412,10 @@ class SiteController extends Controller
         }
         return ['output'=>'', 'selected'=>''];
     }
-    public function actionSectionAjax(){
-        var_dump(Yii::$app->request->get('section'));
-        exit();
+    public function actionSectionAjax(int $id){
+        $data = Employees::find()->where(['section_id'=>$id])->all();
+        return $this->render('employees',[
+            'employees'=>$data
+        ]);
     }
 }
