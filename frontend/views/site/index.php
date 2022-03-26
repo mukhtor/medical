@@ -347,8 +347,8 @@ $text = "text_" . Yii::$app->language;
         </div>
     </div>
 </section>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11941.856966197643!2d60.632965277770985!3d41.55919614530905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41dfced40ff9fa85%3A0x41213b3ab751e15c!2z0J7QsdC70LDRgdGC0L3QsNGPINCR0L7Qu9GM0L3QuNGG0LA!5e0!3m2!1sru!2s!4v1648214313035!5m2!1sru!2s" width="1920" height="700" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> </div>
 
-<hr>
 <script type="text/javascript">
     var myCarousel = document.querySelector('#myCarousel')
     var carousel = new bootstrap.Carousel(myCarousel, {

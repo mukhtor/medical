@@ -146,9 +146,15 @@ class SiteController extends Controller
 
             return $this->refresh();
         }
+        $register = new Register();
+        if ($this->request->isPost && $register->load($this->request->post())) {
+            $register->date = strtotime($_POST['Register']['date']);
+            $register->save();
+            Yii::$app->session->setFlash('success', 'Malumotlaringiz muvaffaqiyatli yuklandi!!!');
+        }
 
         return $this->render('contact', [
-            'model' => $model,
+            'register' => $register
         ]);
     }
 

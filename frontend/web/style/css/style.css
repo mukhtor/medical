@@ -866,10 +866,10 @@ a:focus {
   width: 48%;
   height: 100%;
   top: 0;
-  left: 0px;
+  left: 10px;
   position: absolute;
   content: "";
-  background: url("../images/bg/bg-2.jpg") no-repeat 50% 50%;
+  background: url("../image_1/123.png") no-repeat 50% 50%;
 }
 
 .testimonial .slick-dots {

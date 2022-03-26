@@ -130,7 +130,6 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
 
     </main>
     <!-- footer Start -->
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11941.856966197643!2d60.632965277770985!3d41.55919614530905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41dfced40ff9fa85%3A0x41213b3ab751e15c!2z0J7QsdC70LDRgdGC0L3QsNGPINCR0L7Qu9GM0L3QuNGG0LA!5e0!3m2!1sru!2s!4v1648214313035!5m2!1sru!2s" width="1920" height="1080" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> </div>
 
     <footer class="footer section bg-gray">
         <div class="container">
@@ -161,26 +160,25 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
                         <div class="divider mb-4"></div>
 
                         <ul class="list-unstyled footer-menu lh-35">
-                            <li><a href="#">Surgery </a></li>
-                            <li><a href="#">Wome's Health</a></li>
-                            <li><a href="#">Radiology</a></li>
-                            <li><a href="#">Cardioc</a></li>
-                            <li><a href="#">Medicine</a></li>
+                            <li><a href="#"><?=Yii::t('app','Muassasa')?></a></li>
+                            <li><a href="#"><?=Yii::t('app','Sections')?></a></li>
+                            <li><a href="#"><?=Yii::t('app','Employees')?></a></li>
+                            <li><a href="#"><?=Yii::t('app','News')?></a></li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="widget mb-5 mb-lg-0">
-                        <h4 class="text-capitalize mb-3">Support</h4>
+                        <br>
+                        <br>
                         <div class="divider mb-4"></div>
 
                         <ul class="list-unstyled footer-menu lh-35">
-                            <li><a href="#">Terms &amp; Conditions</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Company Support </a></li>
-                            <li><a href="#">FAQuestions</a></li>
-                            <li><a href="#">Company Licence</a></li>
+                            <li><a href="#"><?=Yii::t('app','Gallery')?></a></li>
+                            <li><a href="#"><?=Yii::t('app','Video')?></a></li>
+                            <li><a href="#"><?=Yii::t('app','Register')?></a></li>
+                            <li><a href="#"><?=Yii::t('app','Contact')?></a></li>
                         </ul>
                     </div>
                 </div>
