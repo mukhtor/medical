@@ -46,12 +46,38 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
                             </li>
                         </ul>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-5">
                         <div class="text-lg-right top-right-bar mt-2 mt-lg-0">
                             <a href="tel:+23-345-67890">
                                 <span>Tezkor Aloqa : </span>
                                 <span class="h6">+99862-228-10-65</span>
                             </a>
+                        </div>
+                    </div>
+                    <div class="dropdown open col-lg-1">
+                        <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <img src="/style/svg/eye.svg" alt="">
+                        </a>
+
+                        <div class="dropdown-menu styledDrop dropdown-menu-right specialViewArea no-propagation">
+                            <div class="appearance">
+                                <p class="specialTitle">Turi</p>
+
+                                <div class="squareAppearances">
+                                    <div class="squareBox spcNormal" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Odatiy rejim">A
+                                    </div>
+                                </div>
+                                <div class="squareAppearances">
+                                    <div class="squareBox spcWhiteAndBlack" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Oq-qora rejimi">A
+                                    </div>
+                                </div>
+                                <div class="squareAppearances">
+                                    <div class="squareBox spcDark" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Qorong'i rejimi">A
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="clearfix"></div>
                         </div>
                     </div>
                 </div>

@@ -21,7 +21,9 @@ class AdminAsset extends AssetBundle
     public $js = [
         'js/contact.js',
         'js/script.js',
-        'js/specialview.js',
+        'js/jquery-ui.js',
+        'js/jquery.cookie.min.js',
+        'js/specialView.js',
         'js/specialview2.js',
         'plugins/bootstrap/js/popper.js',
         'plugins/bootstrap/js/bootstrap.min.js',
