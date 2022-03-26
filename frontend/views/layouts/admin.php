@@ -160,10 +160,10 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
                         <div class="divider mb-4"></div>
 
                         <ul class="list-unstyled footer-menu lh-35">
-                            <li><a href="#"><?=Yii::t('app','Muassasa')?></a></li>
-                            <li><a href="#"><?=Yii::t('app','Sections')?></a></li>
-                            <li><a href="#"><?=Yii::t('app','Employees')?></a></li>
-                            <li><a href="#"><?=Yii::t('app','News')?></a></li>
+                            <li><a href="<?=Url::to(['site/about'])?>"><?=Yii::t('app','Muassasa')?></a></li>
+                            <li><a href="<?=Url::to(['site/section'])?>"><?=Yii::t('app','Sections')?></a></li>
+                            <li><a href="<?=Url::to(['site/employee'])?>"><?=Yii::t('app','Employees')?></a></li>
+                            <li><a href="<?=Url::to(['site/news'])?>"><?=Yii::t('app','News')?></a></li>
                         </ul>
                     </div>
                 </div>
@@ -175,10 +175,10 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
                         <div class="divider mb-4"></div>
 
                         <ul class="list-unstyled footer-menu lh-35">
-                            <li><a href="#"><?=Yii::t('app','Gallery')?></a></li>
-                            <li><a href="#"><?=Yii::t('app','Video')?></a></li>
-                            <li><a href="#"><?=Yii::t('app','Register')?></a></li>
-                            <li><a href="#"><?=Yii::t('app','Contact')?></a></li>
+                            <li><a href="<?=Url::to(['site/gallery'])?>"><?=Yii::t('app','Gallery')?></a></li>
+                            <li><a href="<?=Url::to(['site/video'])?>"><?=Yii::t('app','Video')?></a></li>
+                            <li><a href="<?=Url::to(['site/register'])?>"><?=Yii::t('app','Register')?></a></li>
+                            <li><a href="<?=Url::to(['site/contact'])?>"><?=Yii::t('app','Contact')?></a></li>
                         </ul>
                     </div>
                 </div>
