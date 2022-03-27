@@ -28,6 +28,9 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <?php $this->registerCsrfMetaTags() ?>
         <title>Xorazm Tibbiyot Markazi</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+              integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+              crossorigin="anonymous" referrerpolicy="no-referrer"/>
         <?php $this->head() ?>
     </head>
     <body id="top">
@@ -37,7 +40,7 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
         <div class="header-top-bar">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
+                    <div class="col-lg-5">
                         <ul class="top-bar-info list-inline-item pl-0 mb-0">
                             <li class="list-inline-item"><a href="mailto:support@gmail.com"><i
                                             class="icofont-support-faq mr-2"></i>xvkttm@gmail.com</a></li>
@@ -46,7 +49,7 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
                             </li>
                         </ul>
                     </div>
-                    <div class="col-lg-5">
+                    <div class="col-lg-7">
                         <div class="text-lg-right top-right-bar mt-2 mt-lg-0">
                             <a href="tel:+23-345-67890">
                                 <span>Tezkor Aloqa : </span>
@@ -54,32 +57,7 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
                             </a>
                         </div>
                     </div>
-                    <div class="dropdown open col-lg-1">
-                        <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <img src="/style/svg/eye.svg" alt="">
-                        </a>
 
-                        <div class="dropdown-menu styledDrop dropdown-menu-right specialViewArea no-propagation">
-                            <div class="appearance">
-                                <p class="specialTitle">Turi</p>
-
-                                <div class="squareAppearances">
-                                    <div class="squareBox spcNormal" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Odatiy rejim">A
-                                    </div>
-                                </div>
-                                <div class="squareAppearances">
-                                    <div class="squareBox spcWhiteAndBlack" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Oq-qora rejimi">A
-                                    </div>
-                                </div>
-                                <div class="squareAppearances">
-                                    <div class="squareBox spcDark" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Qorong'i rejimi">A
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -120,6 +98,44 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
                             'calling_controller' => $this->context
                         ]); ?>
                     </ul>
+                    <ul class="pull-right">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <a title="Ko'zi ojizlar uchun" style="color: rgba(63,61,61,0.68)" href="#" class="dropdown open " data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="true">
+                                    <i class="fa fa-eye "></i>
+                                </a>
+
+                                <div class="dropdown-menu styledDrop dropdown-menu-right specialViewArea no-propagation">
+                                    <div class="appearance">
+                                        <p class="specialTitle">Turi</p>
+
+                                        <div class="squareAppearances">
+                                            <div class="squareBox spcNormal" data-toggle="tooltip" data-placement="bottom"
+                                                 title="" data-original-title="Odatiy rejim">A
+                                            </div>
+                                        </div>
+                                        <div class="squareAppearances">
+                                            <div class="squareBox spcWhiteAndBlack" data-toggle="tooltip"
+                                                 data-placement="bottom" title="" data-original-title="Oq-qora rejimi">A
+                                            </div>
+                                        </div>
+                                        <div class="squareAppearances">
+                                            <div class="squareBox spcDark" data-toggle="tooltip" data-placement="bottom"
+                                                 title="" data-original-title="Qorong'i rejimi">A
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <a href="#" title="Mobil Versiya " style="color: rgba(63,61,61,0.68)" class="adaptive"><i class="fa fa-mobile-alt"></i></a>
+                            </div>
+                        </div>
+
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -127,27 +143,27 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
 
     <main role="main" class="flex-shrink-0">
 
-       <?php if ($this->title != 'My Yii Application'):?>
-           <section class="page-title bg-1">
-               <div class="overlay"></div>
-               <div class="row">
-                   <div class="col-md-12">
-                       <div class="block text-center">
-                           <h1 class="text-capitalize mb-5 text-lg"><?=Yii::t('app',$this->title)?></h1>
-                           <p class="text-white">
-                               <?= Breadcrumbs::widget([
-                                   'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                                   'options' => [
-                                       'class'=>'my-1',
-                                       'style'=> 'background:white'
-                                   ]
-                               ]) ?>
-                           </p>
-                       </div>
-                   </div>
-               </div>
-           </section>
-        <?php endif;?>
+        <?php if ($this->title != 'My Yii Application'): ?>
+            <section class="page-title bg-1">
+                <div class="overlay"></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="block text-center">
+                            <h1 class="text-capitalize mb-5 text-lg"><?= Yii::t('app', $this->title) ?></h1>
+                            <p class="text-white">
+                                <?= Breadcrumbs::widget([
+                                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                                    'options' => [
+                                        'class' => 'my-1',
+                                        'style' => 'background:white'
+                                    ]
+                                ]) ?>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <?php endif; ?>
 
 
 
@@ -186,10 +202,10 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
                         <div class="divider mb-4"></div>
 
                         <ul class="list-unstyled footer-menu lh-35">
-                            <li><a href="<?=Url::to(['site/about'])?>"><?=Yii::t('app','Muassasa')?></a></li>
-                            <li><a href="<?=Url::to(['site/section'])?>"><?=Yii::t('app','Sections')?></a></li>
-                            <li><a href="<?=Url::to(['site/employee'])?>"><?=Yii::t('app','Employees')?></a></li>
-                            <li><a href="<?=Url::to(['site/news'])?>"><?=Yii::t('app','News')?></a></li>
+                            <li><a href="<?= Url::to(['site/about']) ?>"><?= Yii::t('app', 'Muassasa') ?></a></li>
+                            <li><a href="<?= Url::to(['site/section']) ?>"><?= Yii::t('app', 'Sections') ?></a></li>
+                            <li><a href="<?= Url::to(['site/employee']) ?>"><?= Yii::t('app', 'Employees') ?></a></li>
+                            <li><a href="<?= Url::to(['site/news']) ?>"><?= Yii::t('app', 'News') ?></a></li>
                         </ul>
                     </div>
                 </div>
@@ -201,10 +217,10 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
                         <div class="divider mb-4"></div>
 
                         <ul class="list-unstyled footer-menu lh-35">
-                            <li><a href="<?=Url::to(['site/gallery'])?>"><?=Yii::t('app','Gallery')?></a></li>
-                            <li><a href="<?=Url::to(['site/video'])?>"><?=Yii::t('app','Video')?></a></li>
-                            <li><a href="<?=Url::to(['site/register'])?>"><?=Yii::t('app','Register')?></a></li>
-                            <li><a href="<?=Url::to(['site/contact'])?>"><?=Yii::t('app','Contact')?></a></li>
+                            <li><a href="<?= Url::to(['site/gallery']) ?>"><?= Yii::t('app', 'Gallery') ?></a></li>
+                            <li><a href="<?= Url::to(['site/video']) ?>"><?= Yii::t('app', 'Video') ?></a></li>
+                            <li><a href="<?= Url::to(['site/register']) ?>"><?= Yii::t('app', 'Register') ?></a></li>
+                            <li><a href="<?= Url::to(['site/contact']) ?>"><?= Yii::t('app', 'Contact') ?></a></li>
                         </ul>
                     </div>
                 </div>

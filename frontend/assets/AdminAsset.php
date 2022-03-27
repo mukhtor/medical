@@ -15,8 +15,11 @@ class AdminAsset extends AssetBundle
         'css/cards-gallery.css',
         'plugins/bootstrap/css/bootstrap.min.css',
         'plugins/icofont/icofont.min.css',
+        'plugins/icomoon/style.css',
+        'plugins/icomoon/demo-files/demo.css',
         'plugins/slick-carousel/slick/slick.css',
         'plugins/slick-carousel/slick/slick-theme.css',
+
     ];
     public $js = [
         'js/contact.js',
@@ -25,6 +28,7 @@ class AdminAsset extends AssetBundle
         'js/jquery.cookie.min.js',
         'js/specialView.js',
         'js/specialview2.js',
+        'js/custom.js',
         'plugins/bootstrap/js/popper.js',
         'plugins/bootstrap/js/bootstrap.min.js',
         'plugins/counterup/jquery.easing.js',
@@ -33,7 +37,7 @@ class AdminAsset extends AssetBundle
         'plugins/counterup/jquery.waypoints.min.js',
         'plugins/shuffle/shuffle.min.js',
         'plugins/counterup/jquery.counterup.min.js',
-        'plugins/google-map/map.js',
+        'plugins/google-map/map.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
