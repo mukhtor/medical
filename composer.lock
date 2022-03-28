@@ -4,90 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a3fa3faf3e2abdfbafc1f74a509ffa01",
+    "content-hash": "0fe9332b27b57dc2cf8c75457884d86b",
     "packages": [
-        {
-            "name": "almasaeed2010/adminlte",
-            "version": "v3.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ColorlibHQ/AdminLTE.git",
-                "reference": "bd4d9c72931f1dd28601b6bfb387554a381ad540"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ColorlibHQ/AdminLTE/zipball/bd4d9c72931f1dd28601b6bfb387554a381ad540",
-                "reference": "bd4d9c72931f1dd28601b6bfb387554a381ad540",
-                "shasum": ""
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Colorlib"
-                }
-            ],
-            "description": "AdminLTE - admin control panel and dashboard that's based on Bootstrap 4",
-            "homepage": "https://adminlte.io/",
-            "keywords": [
-                "JS",
-                "admin",
-                "back-end",
-                "css",
-                "less",
-                "responsive",
-                "template",
-                "theme",
-                "web"
-            ],
-            "support": {
-                "issues": "https://github.com/ColorlibHQ/AdminLTE/issues",
-                "source": "https://github.com/ColorlibHQ/AdminLTE/tree/v3.2.0"
-            },
-            "time": "2022-02-07T20:33:09+00:00"
-        },
-        {
-            "name": "bower-asset/inputmask",
-            "version": "3.3.11",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:RobinHerbots/Inputmask.git",
-                "reference": "5e670ad62f50c738388d4dcec78d2888505ad77b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/RobinHerbots/Inputmask/zipball/5e670ad62f50c738388d4dcec78d2888505ad77b",
-                "reference": "5e670ad62f50c738388d4dcec78d2888505ad77b"
-            },
-            "require": {
-                "bower-asset/jquery": ">=1.7"
-            },
-            "type": "bower-asset",
-            "license": [
-                "http://opensource.org/licenses/mit-license.php"
-            ]
-        },
-        {
-            "name": "bower-asset/jquery",
-            "version": "3.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jquery/jquery-dist.git",
-                "reference": "e786e3d9707ffd9b0dd330ca135b66344dcef85a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/e786e3d9707ffd9b0dd330ca135b66344dcef85a",
-                "reference": "e786e3d9707ffd9b0dd330ca135b66344dcef85a"
-            },
-            "type": "bower-asset",
-            "license": [
-                "MIT"
-            ]
-        },
         {
             "name": "bower-asset/jquery-ui",
             "version": "1.12.1",
@@ -108,39 +26,6 @@
             "license": [
                 "MIT"
             ]
-        },
-        {
-            "name": "bower-asset/owl.carousel",
-            "version": "2.3.4",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:OwlFonk/OwlCarousel2.git",
-                "reference": "af851f9b567630d115930abd5480ffebccc72372"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/OwlFonk/OwlCarousel2/zipball/af851f9b567630d115930abd5480ffebccc72372",
-                "reference": "af851f9b567630d115930abd5480ffebccc72372"
-            },
-            "require": {
-                "bower-asset/jquery": ">=1.8.3"
-            },
-            "type": "bower-asset"
-        },
-        {
-            "name": "bower-asset/punycode",
-            "version": "v1.3.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mathiasbynens/punycode.js.git",
-                "reference": "38c8d3131a82567bfef18da09f7f4db68c84f8a3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mathiasbynens/punycode.js/zipball/38c8d3131a82567bfef18da09f7f4db68c84f8a3",
-                "reference": "38c8d3131a82567bfef18da09f7f4db68c84f8a3"
-            },
-            "type": "bower-asset"
         },
         {
             "name": "bower-asset/yii2-pjax",
@@ -899,60 +784,6 @@
             "time": "2022-03-04T10:11:54+00:00"
         },
         {
-            "name": "kv4nt/yii2-owl-carousel2",
-            "version": "v1.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kv4nt/yii2-owl-carousel2.git",
-                "reference": "0cc0ccdd811d3d9b9c6d417daa9272a3b91547cb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kv4nt/yii2-owl-carousel2/zipball/0cc0ccdd811d3d9b9c6d417daa9272a3b91547cb",
-                "reference": "0cc0ccdd811d3d9b9c6d417daa9272a3b91547cb",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/owl.carousel": "*",
-                "yiisoft/yii2": "*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "kv4nt\\owlcarousel\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Victor Shumeyko",
-                    "email": "kvant90@gmail.com"
-                }
-            ],
-            "description": "A Yii2 widget for owl carousel 2",
-            "keywords": [
-                "carousel",
-                "extension",
-                "owl",
-                "owlcarousel",
-                "owlcarousel2",
-                "yii2",
-                "yii2 carousel",
-                "yii2 owl",
-                "yii2 owl carousel",
-                "yii2 owlcarousel",
-                "yii2-owl-carousel"
-            ],
-            "support": {
-                "issues": "https://github.com/kv4nt/yii2-owl-carousel2/issues",
-                "source": "https://github.com/kv4nt/yii2-owl-carousel2/tree/v1.0.3"
-            },
-            "time": "2021-04-12T12:08:21+00:00"
-        },
-        {
             "name": "mihaildev/yii2-ckeditor",
             "version": "1.0.1",
             "source": {
@@ -1062,18 +893,6 @@
                 "source": "https://github.com/MihailDev/yii2-elfinder/tree/1.4.0"
             },
             "time": "2019-06-07T20:43:53+00:00"
-        },
-        {
-            "name": "npm-asset/bootstrap",
-            "version": "4.6.1",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/bootstrap/-/bootstrap-4.6.1.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
         },
         {
             "name": "paragonie/random_compat",

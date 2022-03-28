@@ -5,7 +5,7 @@ use yii\web\JqueryAsset;
 return [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
+        '@npm' => '@vendor/npm-asset',
     ],
     'vendorPath' => dirname(__DIR__, 2) . '/vendor',
     'components' => [
@@ -15,55 +15,42 @@ return [
         'assetManager' => [
             'linkAssets' => true,
             'bundles' => [
+                \yii\web\JqueryAsset::class => [
+                    'sourcePath' => null,
+                    'js' => [
+                        '//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js',
+                    ]
+                ],
+                \hail812\adminlte3\assets\FontAwesomeAsset::class => [
+                    'sourcePath' => null,
+                    'css' => [
+                        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css',
+                    ]
+                ],
+                \hail812\adminlte3\assets\AdminLteAsset::class => [
+                    'sourcePath' => null,
+                    'css' => [
+                        'https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.2.0/css/adminlte.min.css',
+                    ],
+                    'js' => [
+                        'https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.2.0/js/adminlte.min.js',
+                    ]
+                ],
+                \yii\bootstrap4\BootstrapAsset::class => [
+                    'sourcePath' => null,
+                    'css' => [
+                        'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css',
+                    ],
 
-//                \yii\web\JqueryAsset::class => [
-//                    'sourcePath' => null,   // не опубликовывать комплект
-//                    'basePath' => '@webroot/assets/jquery',
-//                    'baseUrl' => '@web/assets/jquery',
-//                    'js' => [
-//                        'dist/jquery.min.js',
-//                    ]
-//                ],
-//                \hail812\adminlte3\assets\FontAwesomeAsset::class => [
-//                    'sourcePath' => null,
-//                    'basePath' => '@webroot/assets/fontawesome-free',
-//                    'baseUrl' => '@web/assets/fontawesome-free',
-//                    'css' => [
-//                        'css/all.min.css',
-//                    ]
-//                ],
-//                \hail812\adminlte3\assets\AdminLteAsset::class => [
-//                    'sourcePath' => null,
-//                    'basePath' => '@webroot/assets/adminlte',
-//                    'baseUrl' => '@web/assets/adminlte',
-//                    'css' => [
-//                        'css/adminlte.min.css',
-//                    ],
-//                    'js' => [
-//                        'js/adminlte.min.js',
-//                    ]
-//                ],
-//                \yii\bootstrap4\BootstrapAsset::class=>[
-//                    'sourcePath' => null,
-//                    'basePath' => '@webroot/assets/bootstrap',
-//                    'baseUrl' => '@web/assets/bootstrap',
-//                    'css' => [
-//                        'css/bootstrap.min.css',
-//                    ],
-//
-//                ],
-//                \yii\bootstrap4\BootstrapPluginAsset::class=>[
-//                    'sourcePath' => null,
-//                    'basePath' => '@webroot/assets/bootstrap',
-//                    'baseUrl' => '@web/assets/bootstrap',
-//                    'js' => [
-//                        'js/bootstrap.bundle.min.js',
-//                    ]
-//                ],
-
-
+                ],
+                \yii\bootstrap4\BootstrapPluginAsset::class => [
+                    'sourcePath' => null,
+                    'js' => [
+                        '//cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.bundle.min.js',
+                    ]
+                ],
 
             ],
-            ]
+        ]
     ],
 ];

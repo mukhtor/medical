@@ -24,7 +24,6 @@
         "mihaildev/yii2-elfinder": "^1.3",
         "kartik-v/yii2-widget-datepicker": "^1.4",
         "hail812/yii2-adminlte3": "~1.1",
-        "kv4nt/yii2-owl-carousel2": "^1.0",
         "kartik-v/yii2-widget-depdrop": "^1.0"
     },
     "require-dev": {
@@ -40,7 +39,13 @@
             "yiisoft/yii2-composer": true
         }
     },
-
+    "provide": {
+        "almasaeed2010/adminlte": "*",
+        "npm-asset/bootstrap": "^4.3",
+        "bower-asset/jquery": "3.6.*@stable | 3.5.*@stable | 3.4.*@stable | 3.3.*@stable | 3.2.*@stable | 3.1.*@stable | 2.2.*@stable | 2.1.*@stable | 1.11.*@stable | 1.12.*@stable",
+        "bower-asset/inputmask": "~3.2.2 | ~3.3.5",
+        "bower-asset/punycode": "1.3.*"
+    },
     "repositories": [
         {
             "type": "composer",
