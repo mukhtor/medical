@@ -49,6 +49,9 @@ return [
                         '//cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.bundle.min.js',
                     ]
                 ],
+                \hail812\adminlte3\assets\PluginAsset::class => [
+                    'sourcePath' => null,
+                ],
 
             ],
         ]
