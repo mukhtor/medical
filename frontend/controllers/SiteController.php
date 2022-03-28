@@ -424,4 +424,12 @@ class SiteController extends Controller
             'employees'=>$data
         ]);
     }
+
+    public function actionEvents(){
+
+    }
+    public function actionManagement(){
+
+    }
+
 }

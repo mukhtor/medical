@@ -32,6 +32,7 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
               integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
               crossorigin="anonymous" referrerpolicy="no-referrer"/>
         <?php $this->head() ?>
+
     </head>
     <body id="top">
     <?php $this->beginBody() ?>
@@ -63,7 +64,7 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
             </div>
         </div>
         <nav class="navbar navbar-expand-lg navigation" id="navbar">
-            <div class="container">
+            <div class="container" style="max-width: 70%!important;">
                 <a class="navbar-brand" href="<?= Url::to(['/']) ?>">
                     <!--                    <img src="-->
                     <?php //= '/style/images/logo.png'?><!--" alt="" class="img-fluid">-->

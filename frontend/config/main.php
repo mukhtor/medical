@@ -17,6 +17,7 @@ return [
     'controllerNamespace' => 'frontend\controllers',
     'homeUrl' => '/',
     'components' => [
+
         'request' => [
             'csrfParam' => '_csrf-frontend',
             'baseUrl' => '',
