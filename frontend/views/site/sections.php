@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="content">
                             <h4 class="mt-4 mb-2 title-color"><?=$section[$name]?></h4>
                             <br>
-                            <a href="<?=\yii\helpers\Url::to(['section-more','id'=>$section->id])?>" class="read-more"><?=Yii::t('app','Learn More')?><i
+                            <a href="<?=\yii\helpers\Url::to(['section-more','id'=>$section->id])?>" class="read-more"><?=Yii::t('app','Read more')?><i
                                         class="icofont-simple-right ml-2"></i></a>
                         </div>
                     </div>

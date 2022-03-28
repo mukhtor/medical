@@ -5,7 +5,7 @@
 use common\models\Employees;
 use yii\helpers\Html;
 
-$this->title = 'Muassasa Haqida';
+$this->title = Yii::t('app','Institution').' '.Yii::t('app','About');
 $name = "name_" . Yii::$app->language;
 $fullname = "fullname_" . Yii::$app->language;
 ?>
@@ -15,7 +15,7 @@ $fullname = "fullname_" . Yii::$app->language;
         <div class="row">
             <div class="col-lg-6 offset-lg-6">
                 <div class="section-title">
-                    <h2 class="mb-4">Xorazm viloyat ko’p tarmoqli tibbiyot markazi</h2>
+                    <h2 class="mb-4"><?=Yii::t('app','Khorezm Regional Multidisciplinary Medical Center')?></h2>
                     <div class="divider  my-4"></div>
                 </div>
             </div>
@@ -27,11 +27,9 @@ $fullname = "fullname_" . Yii::$app->language;
                         <div class="testimonial-block slick-slide slick-cloned" style="width: 540px;">
 
                             <p style="font-size: 24px">
-                                412 ta shifo o’rindan iborat, bo’lib
-                                14 ta davolash bo’limlari, konsultativ poliklinika va diagnostika, reabilitatsiya,
-                                laboratoriya, ichki dorixona va boshqa yordamchi bo’limlardan tashkil topgan.
-                                Xozirda markazda 151 ta shifokor,
-                                556 ta xamshira, 278 kichik tibbiy xodim xalqimizga astoydil xizmat ko’rsatishadi.
+<?=Yii::t('app','
+It consists of 412 sanatoriums, consisting of 14 treatment departments, consulting polyclinic and diagnostics, rehabilitation, laboratory, internal pharmacy and other ancillary departments. At present, the center has 151 doctors, 556 nurses and 278 junior medical staff.
+')?>
                             </p>
                             <i class="icofont-quote-right"></i>
                         </div>
@@ -42,36 +40,34 @@ $fullname = "fullname_" . Yii::$app->language;
 </section>
 <section>
     <div class="container">
-        <h2 class="text-center">Inavatsion dastur bo’yicha
-            amalga oshirilgan qurilish, tamirlash ishlari.
+        <h2 class="text-center">
+            <?=Yii::t('app','Construction and repair works carried out under the innovative program.')?>
         </h2>
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th>Yil</th>
-                <th>Rekonstruksiya</th>
+                <th><?=Yii::t('app','Year')?></th>
+                <th><?=Yii::t('app','Reconstruction')?></th>
             </tr>
             </thead>
             <tbody>
             <tr>
                 <td>2015</td>
-                <td>Konsultatiuv Poliklinika va Diagnostika bo’limlari rekonstruksiya qilindi</td>
+                <td><?=Yii::t('app','The Consultative Polyclinic and Diagnostic Departments have been reconstructed')?></td>
             </tr>
             <tr>
                 <td>2016</td>
-                <td>207 ta shifo o’rindan iborat Terapiya bloki rekonstruksiya qilindi.</td>
+                <td><?=Yii::t('app','The therapy block with 207 beds was reconstructed.')?></td>
             </tr>
             <tr>
                 <td>2018</td>
-                <td>40 ta shifo o’rindan iborat Otorinolaringologiya va
-                    yuz-jag’ bo’limi, Laboratoriya, Ichki dorixona va Qon banki bo’limlari rekonstruksiya qilindi.
+                <td>
+                    <?=Yii::t('app','The Department of Otorhinolaryngology and Oral and Maxillofacial Surgery, the Laboratory, the Internal Pharmacy and the Blood Bank were reconstructed.')?>
                 </td>
             </tr>
             <tr>
                 <td>2020</td>
-                <td>2020 yil 31 avgustdan
-                    170 ta shifo o’rindan iborat Xirurgiya bloki va qabul bo’limi qayta qurib bitkazilib foydalanishga
-                    topshirildi.
+                <td><?=Yii::t('app','As of August 31, 2020, the Surgery Unit and Admissions Department, consisting of 170 sanatoriums, have been reconstructed and put into operation.')?>
                 </td>
             </tr>
             </tbody>
@@ -83,66 +79,22 @@ $fullname = "fullname_" . Yii::$app->language;
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
-                <h3 class="title-color">BOSH SHIFOKOR:
+                <h3 class="title-color"><?=Yii::t('app','Chief Physician')?>:
                 </h3>
             </div>
             <div class="col-lg-8">
-                <h4>Egamberdiyev Shuhrat Iskandarovich <p style="font-style: italic">"Tibbiyot fanlar nomzodi"</p></h4>
+                <h4>Egamberdiyev Shuhrat Iskandarovich <p style="font-style: italic"><?=Yii::t('app','"Candidate of Medical Sciences"')?></p></h4>
                 <img src="/style/images/about/sign.png" alt="" class="img-fluid">
             </div>
         </div>
     </div>
 </section>
-<!--<section class="section awards">-->
-<!--    <div class="container">-->
-<!--        <div class="row align-items-center">-->
-<!--            <div class="col-lg-4">-->
-<!--                <h2 class="title-color">Our Doctors achievements </h2>-->
-<!--                <div class="divider mt-4 mb-5 mb-lg-0"></div>-->
-<!--            </div>-->
-<!--            <div class="col-lg-8">-->
-<!--                <div class="row">-->
-<!--                    <div class="col-lg-4 col-md-6 col-sm-6">-->
-<!--                        <div class="award-img">-->
-<!--                            <img src="/style/images/about/3.png" alt="" class="img-fluid">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-lg-4 col-md-6 col-sm-6">-->
-<!--                        <div class="award-img">-->
-<!--                            <img src="/style/images/about/4.png" alt="" class="img-fluid">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-lg-4 col-md-6 col-sm-6">-->
-<!--                        <div class="award-img">-->
-<!--                            <img src="/style/images/about/1.png" alt="" class="img-fluid">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-lg-4 col-md-6 col-sm-6">-->
-<!--                        <div class="award-img">-->
-<!--                            <img src="/style/images/about/2.png" alt="" class="img-fluid">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-lg-4 col-md-6 col-sm-6">-->
-<!--                        <div class="award-img">-->
-<!--                            <img src="/style/images/about/5.png" alt="" class="img-fluid">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-lg-4 col-md-6 col-sm-6">-->
-<!--                        <div class="award-img">-->
-<!--                            <img src="/style/images/about/6.png" alt="" class="img-fluid">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
 <section class="section team">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 <div class="section-title text-center">
-                    <h2 class="mb-4">Tibbiyot Markazimiz Mudirlari</h2>
+                    <h2 class="mb-4"><?=Yii::t('app','At our medical center')?> <?=Yii::t('app','Managers')?></h2>
                     <div class="divider mx-auto my-4"></div>
                 </div>
             </div>

@@ -82,11 +82,9 @@ $text = "text_" . Yii::$app->language;
             <div class="col-lg-6 col-md-6 col-xl-7">
                 <div class="block">
                     <div class="divider mb-3"></div>
-                    <h3 class="mb-4 pr-5" style="font-style: italic;color: rgba(0,0,0,0.54)">"Hech qachon davolanishni
-                        keyinroq
-                        qoldirmang"<br><br>
-                        “Shifokor qo'rqoq bo'lmasligi kerak. Ruhi zaif odamga kasallar ishonmaydi."
-                    </h3><sub style="font-size: 20px">(Gippokrat)</sub>
+                    <h3 class="mb-4 pr-5" style="font-style: italic;color: rgba(0,0,0,0.54)">"<?=Yii::t('app','Never delay treatment')?>"<br><br>
+                        “<?=Yii::t('app','The doctor should not be cowardly. Patients do not trust the weak person')?>."
+                    </h3><sub style="font-size: 20px">(<?=Yii::t('app','Hippocrates')?>)</sub>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-xl-5">
@@ -95,12 +93,12 @@ $text = "text_" . Yii::$app->language;
                     <ul class=" footer-menu lh-35" style="font-size: 20px">
                       <div class="row">
                           <div class="col-lg-6">
-                              <li class="my-3"><a target="_blank" href="https://pm.gov.uz/uz#/">Virtual Qabulxona</a></li>
-                              <li class="my-3"><a target="_blank" href="https://reg.ssv.uz/Chmu/Index">Imtiyozli xizmatlar ko'rsatish</a></li>
+                              <li class="my-3"><a target="_blank" href="https://pm.gov.uz/uz#/"><?=Yii::t('app','Virtual Reception')?></a></li>
+                              <li class="my-3"><a target="_blank" href="https://reg.ssv.uz/Chmu/Index"><?=Yii::t('app','Provision Of Preferential Services')?></a></li>
                           </div>
                           <div class="col-lg-6">
-                              <li class="my-3"><a target="_blank" href="https://reg.ssv.uz/">Elektron poliklinika</a></li>
-                              <li class="my-3"><a target="_blank" href="https://data.gov.uz/uz/sphere/2">Sog'likni saqlash sohasi faktlari va raqamlari</a></li>
+                              <li class="my-3"><a target="_blank" href="https://reg.ssv.uz/"><?=Yii::t('app','Electronic Polyclinic')?></a></li>
+                              <li class="my-3"><a target="_blank" href="https://data.gov.uz/uz/sphere/2"><?=Yii::t('app','Health Facts And Figures')?></a></li>
 
                           </div>
                       </div>
@@ -119,20 +117,20 @@ $text = "text_" . Yii::$app->language;
                         <div class="feature-icon mb-4">
                             <i class="icofont-surgeon-alt"></i>
                         </div>
-                        <span>Kuniga 24 soat xizmat</span>
-                        <h4 class="mb-3">Muassasa Haqida</h4>
-                        <p class="mb-4">Eng so'ngi texnologiyalar va jihozlar bilan taminlangan. Oliy toifali shifokorlar sizning xizmatingizda!</p>
-                        <a href="<?=Url::to(['site/about'])?>" class="btn btn-main btn-round-full">Batafsil</a>
+                        <span><?=Yii::t('app','Service 24 hours a day')?></span>
+                        <h4 class="mb-3"><?=Yii::t('app','About the institution ')?></h4>
+                        <p class="mb-4"><?=Yii::t('app','Equipped with the latest technology and equipment. High-class doctors are at your service')?>!</p>
+                        <a href="<?=Url::to(['site/about'])?>" class="btn btn-main btn-round-full"><?=Yii::t('app','Read more')?></a>
                     </div>
 
                     <div class="feature-item mb-5 mb-lg-0">
                         <div class="feature-icon mb-4">
                             <i class="icofont-ui-clock"></i>
                         </div>
-                        <h4 class="mb-3">Ish Vaxti</h4>
+                        <h4 class="mb-3"><?=Yii::t('app','Working hours ')?></h4>
                         <ul class="w-hours list-unstyled">
-                            <li class="d-flex justify-content-between">Mon-Sat : <span>08:00 – 18:00</span></li>
-                            <li class="d-flex justify-content-between">Sun : <span>Closed</span></li>
+                            <li class="d-flex justify-content-between"><?=Yii::t('app','Mon-Sat ')?>: <span>08:00 – 18:00</span></li>
+                            <li class="d-flex justify-content-between"><?=Yii::t('app','Sun')?> : <span><?=Yii::t('app','Closed')?></span></li>
                         </ul>
                     </div>
 
@@ -143,7 +141,7 @@ $text = "text_" . Yii::$app->language;
                         <span></span>
                         <h4 class="mb-3">+99862-228-10-65</h4>
                         <h4 class="mb-3">+99862-228-11-22</h4>
-                        <p>Biz sizga xizmat ko'rsatishdan mamnunmiz!<br><strong>24/7</strong></p>
+                        <p><?=Yii::t('app','We are happy to serve you')?>!<br><strong>24/7</strong></p>
                     </div>
                 </div>
             </div>
@@ -157,25 +155,31 @@ $text = "text_" . Yii::$app->language;
         <div class="row align-items-center">
             <div class="col-lg-4 col-sm-6">
                 <div class="about-img">
-                    <img src="style/images/about/img-1.jpg" alt="" class="img-fluid">
-                    <img src="style/images/about/img-2.jpg" alt="" class="img-fluid mt-4">
+                    <img src="/style/image_1/photo_2021-06-23_16-02-39.jpg" alt="" class="img-fluid">
+                    <img src="/style/image_1/photo_2021-06-23_16-03-06 (2).jpg" alt="" class="img-fluid mt-4">
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6">
                 <div class="about-img mt-4 mt-lg-0">
-                    <img src="style/images/about/img-3.jpg" alt="" class="img-fluid">
+                    <img src="/style/image_1/photo_2021-06-23_16-03-01 (2).jpg" alt="" class="img-fluid">
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="about-content pl-4 mt-4 mt-lg-0">
-                    <h2 class="title-color">Personal care <br>&amp; healthy living</h2>
-                    <p class="mt-4 mb-5">We provide best leading medicle service Nulla perferendis veniam deleniti
-                        ipsum officia dolores repellat laudantium obcaecati neque.</p>
-
-                    <a href="service.html" class="btn btn-main-2 btn-round-full btn-icon">Services<i
-                                class="icofont-simple-right ml-3"></i></a>
+            <div class="col-lg-4 col-sm-6">
+                <div class="about-img">
+                    <img src="/style/image_1/photo_2021-06-23_16-03-02.jpg" alt="" class="img-fluid">
+                    <img src="/style/image_1/photo_2021-06-24_10-57-46 (2).jpg" alt="" class="img-fluid mt-4">
                 </div>
             </div>
+<!--            <div class="col-lg-4">-->
+<!--                <div class="about-content pl-4 mt-4 mt-lg-0">-->
+<!--                    <h2 class="title-color">Personal care <br>&amp; healthy living</h2>-->
+<!--                    <p class="mt-4 mb-5">We provide best leading medicle service Nulla perferendis veniam deleniti-->
+<!--                        ipsum officia dolores repellat laudantium obcaecati neque.</p>-->
+<!---->
+<!--                    <a href="service.html" class="btn btn-main-2 btn-round-full btn-icon">Services<i-->
+<!--                                class="icofont-simple-right ml-3"></i></a>-->
+<!--                </div>-->
+<!--            </div>-->
         </div>
     </div>
 </section>
@@ -201,8 +205,8 @@ $text = "text_" . Yii::$app->language;
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="counter-stat">
                         <i class="icofont-badge"></i>
-                        <span class="h3"><?= Employees::find()->count() ?></span>
-                        <p><?= Yii::t('app', 'Expert Doctors') ?></p>
+                        <span class="h3"><?= Employees::find()->where(['position_id'=>1])->count() ?></span>
+                        <p><?= Yii::t('app', 'Managers ') ?></p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
@@ -222,8 +226,8 @@ $text = "text_" . Yii::$app->language;
             <div class="col-lg-7 text-center">
                 <div class="section-title">
                     <div class="divider mx-auto my-4"></div>
-                    <p>Eng So'ngi</p>
-                    <h2>Yangiliklar</h2>
+                    <p><?=Yii::t('app','Latest News')?></p>
+                    <h2><?=Yii::t('app','News')?></h2>
 
                 </div>
             </div>
@@ -260,7 +264,7 @@ $text = "text_" . Yii::$app->language;
         <div class="text-center">
             <div class="widget mb-5 mb-lg-0">
                 <ul class="list-unstyled footer-menu lh-35">
-                    <li><a style="font-size: 28px" href="<?= Url::to(['site/news']) ?>">More</a></li>
+                    <li><a style="font-size: 28px" href="<?= Url::to(['site/news']) ?>"><?=Yii::t('app','Read more')?></a></li>
                 </ul>
             </div>
         </div>
@@ -272,8 +276,8 @@ $text = "text_" . Yii::$app->language;
             <div class="col-lg-7 text-center">
                 <div class="section-title">
                     <div class="divider mx-auto my-4"></div>
-                    <p>Tibbiyot Markazimizning.</p>
-                    <h2>Bo'limlari</h2>
+                    <p><?=Yii::t('app','At our medical center')?>.</p>
+                    <h2><?=Yii::t('app','Sections')?></h2>
 
                 </div>
             </div>
@@ -303,8 +307,8 @@ $text = "text_" . Yii::$app->language;
         <div class="col-lg-7 text-center">
             <div class="section-title">
                 <div class="divider mx-auto my-4"></div>
-                <p>Tibbiyot Markazimizning.</p>
-                <h2>Mudirlari</h2>
+                <p><?=Yii::t('app','At our medical center')?>.</p>
+                <h2><?=Yii::t('app','Managers')?></h2>
 
             </div>
         </div>

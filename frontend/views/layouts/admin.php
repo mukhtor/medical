@@ -40,19 +40,20 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
         <div class="header-top-bar">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-5">
+                    <div class="col-lg-7">
                         <ul class="top-bar-info list-inline-item pl-0 mb-0">
                             <li class="list-inline-item"><a href="mailto:support@gmail.com"><i
                                             class="icofont-support-faq mr-2"></i>xvkttm@gmail.com</a></li>
+
                             <li class="list-inline-item"><i class="icofont-location-pin mr-2"></i>HJ5M+WGX, Urganch,
                                 Uzbekistan
                             </li>
                         </ul>
                     </div>
-                    <div class="col-lg-7">
+                    <div class="col-lg-5">
                         <div class="text-lg-right top-right-bar mt-2 mt-lg-0">
                             <a href="tel:+23-345-67890">
-                                <span>Tezkor Aloqa : </span>
+                                <span><?=Yii::t('app','Fast Communication')?>: </span>
                                 <span class="h6">+99862-228-10-65</span>
                             </a>
                         </div>
@@ -133,7 +134,6 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
                             <div class="col-lg-6">
                                 <a href="#" title="Mobil Versiya " style="color: rgba(63,61,61,0.68)" class="adaptive"><i class="fa fa-mobile-alt"></i></a>
                             </div>
-                        </div>
 
                     </ul>
                 </div>
@@ -183,7 +183,7 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
                                 <h4 style="font-size: 32px;"><i class="icofont-medical-sign-alt"></i> XVKTTM.UZ</h4>
                             </a>
                         </div>
-                        <p>Xorazm Viloyati Ko'p Tarmoqli Tibbiyot Markazi</p>
+                        <p><?=Yii::t('app','Khorezm Regional Multidisciplinary Medical Center')?></p>
 
                         <ul class="list-inline footer-socials mt-4">
                             <li class="list-inline-item"><a href="https://www.facebook.com/themefisher"><i
@@ -198,11 +198,11 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
 
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="widget mb-5 mb-lg-0">
-                        <h4 class="text-capitalize mb-3">Department</h4>
+                        <h4 class="text-capitalize mb-3"><?=Yii::t('app','Departments')?></h4>
                         <div class="divider mb-4"></div>
 
                         <ul class="list-unstyled footer-menu lh-35">
-                            <li><a href="<?= Url::to(['site/about']) ?>"><?= Yii::t('app', 'Muassasa') ?></a></li>
+                            <li><a href="<?= Url::to(['site/about']) ?>"><?= Yii::t('app', 'Institution') ?></a></li>
                             <li><a href="<?= Url::to(['site/section']) ?>"><?= Yii::t('app', 'Sections') ?></a></li>
                             <li><a href="<?= Url::to(['site/employee']) ?>"><?= Yii::t('app', 'Employees') ?></a></li>
                             <li><a href="<?= Url::to(['site/news']) ?>"><?= Yii::t('app', 'News') ?></a></li>
@@ -227,13 +227,13 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
 
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="widget widget-contact mb-5 mb-lg-0">
-                        <h4 class="text-capitalize mb-3">Biz bilan aloqa</h4>
+                        <h4 class="text-capitalize mb-3"><?=Yii::t('app','Contact US')?></h4>
                         <div class="divider mb-4"></div>
 
                         <div class="footer-contact-block mb-4">
                             <div class="icon d-flex align-items-center">
                                 <i class="icofont-email mr-3"></i>
-                                <span class="h6 mb-0"> Xizmat ko'rsatish vaqti 24/7</span>
+                                <span class="h6 mb-0"> <?=Yii::t('app','Service Time')?> 24/7</span>
                             </div>
                             <h4 class="mt-2"><a target="_blank" href="xvkttm@gmail.com">xvkttm@gmail.com</a></h4>
                         </div>
@@ -241,7 +241,7 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
                         <div class="footer-contact-block ">
                             <div class="icon d-flex align-items-center">
                                 <i class="icofont-support mr-3"></i>
-                                <span class="h6 mb-0">Xizmat ko'rsatish vaqti 24/7</span>
+                                <span class="h6 mb-0"><?=Yii::t('app','Service Time')?> 24/7</span>
                             </div>
                             <h4 class="mt-3"><a href="tel:+99862-228-10-65">+99862-228-10-65</a></h4>
                             <h4 class="mt-2"><a href="tel:+99862-228-11-22">+99862-228-11-22</a></h4>

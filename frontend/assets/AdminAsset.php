@@ -15,10 +15,10 @@ class AdminAsset extends AssetBundle
         'css/cards-gallery.css',
         'plugins/bootstrap/css/bootstrap.min.css',
         'plugins/icofont/icofont.min.css',
-        'plugins/icomoon/style.css',
-        'plugins/icomoon/demo-files/demo.css',
-        'plugins/slick-carousel/slick/slick.css',
-        'plugins/slick-carousel/slick/slick-theme.css',
+//        'plugins/icomoon/style.css',
+//        'plugins/icomoon/demo-files/demo.css',
+//        'plugins/slick-carousel/slick/slick.css',
+//        'plugins/slick-carousel/slick/slick-theme.css',
 
     ];
     public $js = [

@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $more->id;
 
 
                     <div class="sidebar-widget tags mb-3">
-                        <h5 class="mb-4">Xodimlar</h5>
+                        <h5 class="mb-4"><?=Yii::t('app','Employees')?></h5>
 
                         <?php foreach (Employees::find()->where(['section_id'=>$more->id])->all() as $value) :?>
                         <a href="<?=Url::to(['site/employee-more','id'=>$value->id])?>"><?=$value[$fullname]?></a>
