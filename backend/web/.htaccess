@@ -1,3 +1,4 @@
+Options +FollowSymlinks
 AddDefaultCharset UTF-8
 RewriteEngine on
 
