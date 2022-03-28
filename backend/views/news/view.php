@@ -30,19 +30,53 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
+            [
+                    'attribute'=>'image',
+                'format'=>'html',
+                'value'=>function($model){
+                    return Html::img($model->image,['style'=>'width:250px']);
+                }
+            ],
             'title_uz',
             'title_ru',
             'title_en',
             'text_uz:ntext',
             'text_ru:ntext',
             'text_en:ntext',
-            'image',
-            'author',
-            'created_at',
-            'updated_at',
+//            'author',
+            [
+                'attribute' => 'author',
+                'value' => function ($model) {
+                    return \common\models\User::findOne(['id' => $model->author])->username;
+                }
+            ],
+//            'created_at',
+            [
+                'attribute' => 'created_at',
+                'value' => function ($model) {
+                    return date('Y m-d', $model->created_at);
+                }
+            ],
+            [
+                'attribute' => 'updated_at',
+                'value' => function ($model) {
+                    return date('Y m-d', $model->updated_at);
+                }
+            ],
+
             'show_count',
             'status',
-            'cate_id',
+//            'cate_id',
+            [
+                'attribute' => 'cate_id',
+                'value' => function ($model) {
+                    $out = '';
+                    foreach ($model->cate as $category) {
+                        $out .= $category->name_uz.'  ';
+                    }
+                    return $out;
+                }
+            ],
         ],
     ]) ?>
 

@@ -302,9 +302,10 @@ class SiteController extends Controller
             'employees' => $employees
         ]);
     }
+
     public function actionManagers()
     {
-        $employees = Employees::find()->where(['status' => 10])->andWhere(['position_id'=>1])->all();
+        $employees = Employees::find()->where(['status' => 10])->andWhere(['position_id' => 1])->all();
         return $this->render('managers', [
             'employees' => $employees
         ]);
@@ -324,7 +325,7 @@ class SiteController extends Controller
         $menu = Menu::find()->where(['status' => 9])->all();
 
         $countQuery = clone $query;
-        $pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize' => 2,'pageSizeParam' => false]);
+        $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize' => 2, 'pageSizeParam' => false]);
         $news = $query->offset($pages->offset)
             ->limit($pages->limit)
             ->all();
@@ -332,7 +333,7 @@ class SiteController extends Controller
         return $this->render('news', [
             'news' => $news,
             'menu' => $menu,
-            'pages'=>$pages
+            'pages' => $pages
         ]);
     }
 
@@ -344,7 +345,7 @@ class SiteController extends Controller
         $more_news->save();
         return $this->render('news_more', [
             'more' => $more_news,
-            'menu'=>$menu
+            'menu' => $menu
         ]);
     }
 
@@ -364,31 +365,34 @@ class SiteController extends Controller
 
     public function actionGallery()
     {
-        $galleries = Gallery::find()->where(['type'=>1])->all();
+        $galleries = Gallery::find()->where(['type' => 1])->all();
         return $this->render('gallery', [
             'galleries' => $galleries
         ]);
     }
+
     public function actionVideo()
     {
-        $video = Gallery::find()->where(['type'=>2])->all();
+        $video = Gallery::find()->where(['type' => 2])->all();
         return $this->render('video', [
             'video' => $video
         ]);
     }
-    public function actionSearch(){
+
+    public function actionSearch()
+    {
         $query = Yii::$app->request->get('query');
-        $query = News::find()->andFilterWhere(['like','title_uz',$query])
-        ->orFilterWhere(['like','title_en',$query])
-        ->orFilterWhere(['like','title_ru',$query])
-            ->orFilterWhere(['like','text_en',$query])
-            ->orFilterWhere(['like','text_ru',$query])
-            ->orFilterWhere(['like','text_uz',$query]);
+        $query = News::find()->andFilterWhere(['like', 'title_uz', $query])
+            ->orFilterWhere(['like', 'title_en', $query])
+            ->orFilterWhere(['like', 'title_ru', $query])
+            ->orFilterWhere(['like', 'text_en', $query])
+            ->orFilterWhere(['like', 'text_ru', $query])
+            ->orFilterWhere(['like', 'text_uz', $query]);
 
         $menu = Menu::find()->where(['status' => 9])->all();
 
         $countQuery = clone $query;
-        $pages = new Pagination(['totalCount' => $countQuery->count(),'pageSize' => 2,'pageSizeParam' => false]);
+        $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize' => 2, 'pageSizeParam' => false]);
         $news = $query->offset($pages->offset)
             ->limit($pages->limit)
             ->all();
@@ -396,40 +400,53 @@ class SiteController extends Controller
         return $this->render('news', [
             'news' => $news,
             'menu' => $menu,
-            'pages'=>$pages
+            'pages' => $pages
         ]);
     }
-    public function actionSubcat() {
+
+    public function actionSubcat()
+    {
         Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         $out = [];
         if (isset($_POST['depdrop_parents'])) {
             $parents = $_POST['depdrop_parents'];
             if ($parents != null) {
                 $cat_id = $parents[0];
-                $out = Employees::find()->select(['id','name'=>'fullname_uz'])->where(['section_id'=>$cat_id])->asArray()->all();
+                $out = Employees::find()->select(['id', 'name' => 'fullname_uz'])->where(['section_id' => $cat_id])->asArray()->all();
                 // the getSubCatList function will query the database based on the
                 // cat_id and return an array like below:
                 // [
                 //    ['id'=>'<sub-cat-id-1>', 'name'=>'<sub-cat-name1>'],
                 //    ['id'=>'<sub-cat_id_2>', 'name'=>'<sub-cat-name2>']
                 // ]
-                return ['output'=>$out, 'selected'=>''];
+                return ['output' => $out, 'selected' => ''];
             }
         }
-        return ['output'=>'', 'selected'=>''];
+        return ['output' => '', 'selected' => ''];
     }
-    public function actionSectionAjax(int $id){
-        $data = Employees::find()->where(['section_id'=>$id])->all();
-        return $this->render('employees',[
-            'employees'=>$data
+
+    public function actionSectionAjax(int $id)
+    {
+        $data = Employees::find()->where(['section_id' => $id])->all();
+        return $this->render('employees', [
+            'employees' => $data
         ]);
     }
 
-    public function actionEvents(){
+    public function actionEvents()
+    {
 
     }
-    public function actionManagement(){
 
+    public function actionManagement()
+    {
+
+        $data = Employees::find()->where(['position_id'=>3])->orWhere(['position_id'=>4])
+            ->orWhere(['position_id'=>5])->orWhere(['position_id'=>6])->orderBy(['degree'=>SORT_ASC])->all();
+
+        return $this->render('management',[
+            'management'=>$data
+        ]);
     }
 
 }

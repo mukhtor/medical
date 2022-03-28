@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "news".
@@ -27,6 +28,14 @@ class News extends \yii\db\ActiveRecord
     const ACTIVE_STATUS = 10;
     const DEACTIVE_STATUS = 9;
     const DELETE_STATUS = 0;
+
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::class
+        ];
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -80,5 +89,8 @@ class News extends \yii\db\ActiveRecord
     public static function find()
     {
         return new \common\models\query\NewsQuery(get_called_class());
+    }
+    public function getCate(){
+        return $this->hasMany(Menu::class,['id'=>'cate_id']);
     }
 }

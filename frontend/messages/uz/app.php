@@ -45,4 +45,11 @@ return [
     'As of August 31, 2020, the Surgery Unit and Admissions Department, consisting of 170 sanatoriums, have been reconstructed and put into operation.'=>'2020 yil 31 avgustdan 170 ta shifo o’rindan iborat Xirurgiya bloki va qabul bo’limi qayta qurib bitkazilib foydalanishga topshirildi',
     'Chief Physician'=>'Bosh Shifokor',
     '"Candidate of Medical Sciences"'=>'"Tibbiyot fanlar nomzodi"',
-];
+    'You can get acquainted with the management of our medical center on this page'=>'Tibbiyot markazimizning raxbariyati bilan ushbu sahifada tanishishingiz mumkin',
+'Management'=>'Raxbariyat',
+    'Email'=>'Elektron manzil',
+    'Phone'=>'Telefon Raqam',
+    'Address'=>'Manzil',
+    'Search'=>'Qidiruv'
+
+    ];

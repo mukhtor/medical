@@ -6,6 +6,7 @@ use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\search\NewsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -26,29 +27,52 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
+//        'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+//            'id',
+
             'title_uz',
-            'title_ru',
-            'title_en',
+
+//            'title_ru',
+//            'title_en',
 //            'text_uz:ntext',
             //'text_ru:ntext',
             //'text_en:ntext',
             //'image',
-            //'author',
-            //'created_at',
-            //'updated_at',
+            [
+                'attribute' => 'author',
+                'value' => function (News $news) {
+                    return \common\models\User::findOne(['id' => $news->author])->username;
+                }
+            ],
+//            'created_at',
+            [
+                'attribute' => 'created_at',
+                'value' => function (News $news) {
+                    return date('Y m-d', $news->created_at);
+                }
+            ],
+//            'updated_at',
             //'show_count',
             //'status',
-            //'cate_id',
+//            'cate_id',
             [
-                'class' => ActionColumn::className(),
+                'attribute' => 'cate_id',
+                'value' => function (News $news) {
+                    $out = '';
+                    foreach ($news->cate as $category) {
+                        $out .= $category->name_uz.'  ';
+                    }
+                    return $out;
+                }
+            ],
+            [
+                'class' => ActionColumn::class,
                 'urlCreator' => function ($action, News $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
-                 }
+                }
             ],
         ],
     ]); ?>

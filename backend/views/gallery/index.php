@@ -30,11 +30,29 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+//            'id',
+//            'image',
+        [
+                'attribute' => 'image',
+            'format' => 'raw',
+            'value' => function(Gallery $gallery){
+               if ($gallery->type == 1){
+                   return Html::img($gallery->image,['style'=>'width:300px']);
+               }
+               elseif ($gallery->type == 2){
+                   return '<iframe width="300" height="200" src="https://www.youtube.com/embed/'.$gallery->image.'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+               }
+            }
+        ],
             'name',
-            'image',
-            'status',
-            'created_at',
+//            'status',
+//            'created_at',
+            [
+                    'attribute' => 'created_at',
+                'value' => function(Gallery $gallery){
+                    return date('Y m-d',$gallery->created_at);
+                }
+            ],
             //'updated_at',
             [
                 'class' => ActionColumn::className(),

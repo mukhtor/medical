@@ -30,21 +30,40 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+//            'id',
+            [
+                'attribute' => 'created_at',
+                'format' => 'html',
+                'value' => function (Employees $employees) {
+                    return Html::img($employees->image,['style'=>'width:150px']);
+                }
+            ],
             'fullname_uz',
-            'fullname_en',
-            'fullname_ru',
-            'section_id',
-            //'position_id',
-            //'phone_1',
+//            'fullname_en',
+//            'fullname_ru',
+//            'section_id',
+            [
+                    'attribute' => 'section_id',
+                'value' => function(Employees $employees){
+                    return $employees->section->name_uz;
+                }
+            ],
+//            'position_id',
+        [
+                'attribute' => 'position_id',
+            'value' => function(Employees $employees){
+                return $employees->position->name_uz;
+            }
+        ],
+            'phone_1',
             //'phone_2',
-            //'email:email',
+            'email:email',
             //'data_birth',
             //'address_birth',
             //'completed_institution',
             //'spec',
             //'degree',
-            //'image',
+//            'image',
             //'status',
             //'created_at',
             //'updated_at',

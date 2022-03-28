@@ -75,9 +75,7 @@ use mihaildev\elfinder\ElFinder as ElFinderAlias;
                 ],
             ]) ?>
 
-            <?= $form->field($model,'created_at')->widget(\kartik\date\DatePicker::class,[
 
-            ])?>
             <div class="form-group">
                 <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
             </div>

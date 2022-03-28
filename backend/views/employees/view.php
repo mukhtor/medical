@@ -30,11 +30,30 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
+            [
+                    'attribute'=>'image',
+                'format'=>'html',
+                'value'=>function($model){
+                    return Html::img($model->image,['style'=>'width:250px']);
+                }
+            ],
             'fullname_uz',
             'fullname_en',
             'fullname_ru',
-            'section_id',
-            'position_id',
+//            'section_id',
+//            'position_id',
+            [
+                'attribute'=>'section_id',
+                'value'=>function($model){
+                    return $model->section->name_uz;
+                }
+            ],
+            [
+                'attribute'=>'position_id',
+                'value'=>function($model){
+                    return $model->position->name_uz;
+                }
+            ],
             'phone_1',
             'phone_2',
             'email:email',
@@ -43,10 +62,21 @@ $this->params['breadcrumbs'][] = $this->title;
             'completed_institution',
             'spec',
             'degree',
-            'image',
+//            'image',
             'status',
-            'created_at',
-            'updated_at',
+            [
+                'attribute'=>'created_at',
+                'value'=>function($model){
+                    return date('Y m-d',$model->created_at);
+                }
+            ],  [
+                'attribute'=>'updated-at',
+                'value'=>function($model){
+                    return date('Y m-d',$model->updated_at);
+                }
+            ],
+//            'created_at',
+//            'updated_at',
         ],
     ]) ?>
 

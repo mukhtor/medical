@@ -30,16 +30,35 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
+            [
+                'attribute' => 'image',
+                'format' => 'html',
+                'value' => function($model){
+                    return Html::img($model->image,['style'=>'width:250px']);
+                }
+            ],
             'name_uz',
             'name_en',
             'name_ru',
             'desc_uz:ntext',
             'desc_en:ntext',
             'desc_ru:ntext',
-            'image',
+//            'image',
             'status',
-            'created_at',
-            'updated_at',
+            [
+                'attribute' => 'created_at',
+                'value' => function ($model) {
+                    return date('Y m-d', $model->created_at);
+                }
+            ],
+            [
+                'attribute' => 'updated_at',
+                'value' => function ($model) {
+                    return date('Y m-d', $model->created_at);
+                }
+            ],
+//            'created_at',
+//            'updated_at',
         ],
     ]) ?>
 

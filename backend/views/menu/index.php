@@ -30,15 +30,32 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+//            'id',
             'name_uz',
-            'name_en',
-            'name_ru',
+//            'name_en',
+//            'name_ru',
 //            'slug',
-            //'url:url',
+            'url:url',
             //'parent',
+            [
+                    'attribute' => 'parent',
+                'value' => function(Menu $menu){
+                    if ($menu->parent != null){
+                        return Menu::findOne(['id'=>$menu->parent])->name_uz;
+                    }
+                    else{
+                        return '';
+                    }
+                }
+            ],
             //'status',
-            //'created_at',
+//            'created_at',
+            [
+                    'attribute' => 'created_at',
+                'value' => function(Menu $menu){
+                    return date('Y m-d',$menu->created_at);
+                }
+            ],
             //'updated_at',
             [
                 'class' => ActionColumn::className(),

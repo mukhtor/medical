@@ -53,6 +53,14 @@ return [
                     'sourcePath' => null,
                 ],
 
+                \yii\gii\GiiAsset::class => [
+                    'sourcePath' => null,
+                    'js'=>[
+                        '//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js',
+                    ]
+
+                ]
+
             ],
         ]
     ],

@@ -30,11 +30,46 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
+            [
+                'attribute' => 'image',
+                'format' => 'raw',
+                'value' => function($model){
+                    if ($model->type == 1){
+                        return Html::img($model->image,['style'=>'width:300px']);
+                    }
+                    elseif ($model->type == 2){
+                        return '<iframe width="300" height="200" src="https://www.youtube.com/embed/'.$model->image.'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                    }
+                }
+            ],
             'name',
-            'image',
+//            'image',
+        [
+                'attribute'=>'type',
+            'value'=>function($model){
+                if ($model->type ==1) {
+                    return 'Surat';
+                }
+                elseif ($model->type ==2 ){
+                    return 'video lavha';
+                }
+            }
+        ],
             'status',
-            'created_at',
-            'updated_at',
+            [
+                'attribute' => 'created_at',
+                'value' => function($model){
+                    return date('Y m-d',$model->created_at);
+                }
+            ],
+            [
+                'attribute' => 'updated_at',
+                'value' => function($model){
+                    return date('Y m-d',$model->updated_at);
+                }
+            ],
+//            'created_at',
+//            'updated_at',
         ],
     ]) ?>
 

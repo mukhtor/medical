@@ -57,7 +57,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                         ?>...</p>
 
                                     <a href="<?= Url::to(['site/news-more', 'id' => $new->id]) ?>"
-                                       class="btn btn-red"><?= Yii::t('app', 'Read More') ?> <i
+                                       class="btn btn-red"><?= Yii::t('app', 'Read more') ?> <i
                                                 class="icofont-simple-right ml-2"></i></a>
                                 </div>
 
@@ -91,7 +91,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         </form>
                     </div>
                     <div class="sidebar-widget tags mb-3">
-                        <h5 class="mb-4"><?=Yii::t('app','Tags')?></h5>
+                        <h5 class="mb-4"><?=Yii::t('app','Departments')?></h5>
                         <?php foreach ($menu as $value): ?>
                             <a href="#"><?= $value->name_uz ?></a>
                         <?php endforeach; ?>
