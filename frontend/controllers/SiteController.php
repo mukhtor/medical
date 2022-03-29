@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 use common\models\Employees;
+use common\models\Events;
 use common\models\Gallery;
 use common\models\Menu;
 use common\models\News;
@@ -435,17 +436,31 @@ class SiteController extends Controller
 
     public function actionEvents()
     {
-
+        $events = Events::find()->orderBy(['created_at'=>SORT_DESC])->all();
+        return $this->render('events',[
+            'events'=>$events
+        ]);
     }
+    public function actionEventsMore($id)
+    {
+        $menu = Menu::find()->where(['status' => 9])->all();
 
+        $data = Events::findOne(['id'=>$id]);
+        $data->count += 1;
+        $data->save();
+        return $this->render('events_more',[
+            'more'=>$data,
+            'menu'=>$menu
+        ]);
+    }
     public function actionManagement()
     {
 
-        $data = Employees::find()->where(['position_id'=>3])->orWhere(['position_id'=>4])
-            ->orWhere(['position_id'=>5])->orWhere(['position_id'=>6])->orderBy(['degree'=>SORT_ASC])->all();
+        $data = Employees::find()->where(['position_id' => 3])->orWhere(['position_id' => 4])
+            ->orWhere(['position_id' => 5])->orWhere(['position_id' => 6])->orderBy(['degree' => SORT_ASC])->all();
 
-        return $this->render('management',[
-            'management'=>$data
+        return $this->render('management', [
+            'management' => $data
         ]);
     }
 

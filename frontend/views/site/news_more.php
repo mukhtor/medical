@@ -42,13 +42,13 @@ $fullname = "fullname_" . Yii::$app->language;
                                         <?php endforeach;?>
                                     </ul>
 
-                                    <ul class="float-right list-inline">
-                                        <li class="list-inline-item"> Share: </li>
-                                        <li class="list-inline-item"><a href="#" target="_blank"><i class="icofont-facebook" aria-hidden="true"></i></a></li>
-                                        <li class="list-inline-item"><a href="#" target="_blank"><i class="icofont-twitter" aria-hidden="true"></i></a></li>
-                                        <li class="list-inline-item"><a href="#" target="_blank"><i class="icofont-pinterest" aria-hidden="true"></i></a></li>
-                                        <li class="list-inline-item"><a href="#" target="_blank"><i class="icofont-linkedin" aria-hidden="true"></i></a></li>
-                                    </ul>
+<!--                                    <ul class="float-right list-inline">-->
+<!--                                        <li class="list-inline-item"> Share: </li>-->
+<!--                                        <li class="list-inline-item"><a href="#" target="_blank"><i class="icofont-facebook" aria-hidden="true"></i></a></li>-->
+<!--                                        <li class="list-inline-item"><a href="#" target="_blank"><i class="icofont-twitter" aria-hidden="true"></i></a></li>-->
+<!--                                        <li class="list-inline-item"><a href="#" target="_blank"><i class="icofont-pinterest" aria-hidden="true"></i></a></li>-->
+<!--                                        <li class="list-inline-item"><a href="#" target="_blank"><i class="icofont-linkedin" aria-hidden="true"></i></a></li>-->
+<!--                                    </ul>-->
                                 </div>
                             </div>
                         </div>
@@ -73,30 +73,25 @@ $fullname = "fullname_" . Yii::$app->language;
                         <?php endforeach;?>
                     </div>
 
+                    <div class="sidebar-widget latest-post mb-3">
+                        <h5><?=Yii::t('app','Latest Events')?></h5>
 
-<!--                    <div class="sidebar-widget schedule-widget mb-3">-->
-<!--                        <h5 class="mb-4">Time Schedule</h5>-->
-<!---->
-<!--                        <ul class="list-unstyled">-->
-<!--                            <li class="d-flex justify-content-between align-items-center">-->
-<!--                                <a href="#">Monday - Friday</a>-->
-<!--                                <span>9:00 - 17:00</span>-->
-<!--                            </li>-->
-<!--                            <li class="d-flex justify-content-between align-items-center">-->
-<!--                                <a href="#">Saturday</a>-->
-<!--                                <span>9:00 - 16:00</span>-->
-<!--                            </li>-->
-<!--                            <li class="d-flex justify-content-between align-items-center">-->
-<!--                                <a href="#">Sunday</a>-->
-<!--                                <span>Closed</span>-->
-<!--                            </li>-->
-<!--                        </ul>-->
-<!---->
-<!--                        <div class="sidebar-contatct-info mt-4">-->
-<!--                            <p class="mb-0">Need Urgent Help?</p>-->
-<!--                            <h3>+23-4565-65768</h3>-->
-<!--                        </div>-->
-<!--                    </div>-->
+                        <?php foreach (\common\models\Events::find()->orderBy(['created_at' => SORT_DESC])->limit(5)->all() as $item): ?>
+                            <div class="py-2">
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <img src="<?= $item->image?>" class="img-fluid">
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <h6 class="my-2"><a href="#"><?=substr($item[$title],0,40)?>...</a></h6>
+                                        <span class="text-sm text-muted"><?=date('Y m-d',$item->created_at)?></span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        <?php endforeach; ?>
+
+                    </div>
 
                 </div>
             </div>

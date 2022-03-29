@@ -55,7 +55,8 @@ return [
     'You can make an online queue at any doctor’s office. To do this, fill in the information below !!!'=>'Siz istalgan shifokoringiz huzuriga online navbatga yozilishingiz mumkin. Buning uchun quyidagi ma\'lumotlarni to\'ldiring!!!',
     'Select Section'=>'Bo\'limni Tanlang',
     'Briefly about the problem that is bothering you' => 'Sizni qiynayotgan muommo haqida qisqacha',
-    'Submit'=>'Jo\'natish'
+    'Submit'=>'Jo\'natish',
+    'Latest Events'=>'So\'ngi E\'lonlar'
 
 
 

@@ -15,6 +15,11 @@ return [
         '@npm' => '@vendor/npm-asset',
     ],
     'vendorPath' => dirname(__DIR__, 2) . '/vendor',
+//    'container'=>[
+//        'definitions'=>[
+//            \yii\gii\Module::class => \common\components\GiiModule::class,
+//        ],
+//    ],
     'components' => [
         'cache' => [
             'class' => 'yii\caching\FileCache',

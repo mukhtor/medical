@@ -19,9 +19,10 @@ $fullname = "fullname_" . Yii::$app->language;
 
     <div class="container">
         <div class="row align-items-center">
-            <?php foreach ($management as $value):?>
             <div class="col-lg-12 testimonial-wrap-2 slick-initialized slick-slider slick-dotted">
-                <div class="slick-list draggable">
+                <?php foreach ($management as $value):?>
+
+                    <div class="slick-list draggable">
                     <div class="slick-track">
 
                         <div class="testimonial-block style-2 gray-bg " >
@@ -57,8 +58,9 @@ $fullname = "fullname_" . Yii::$app->language;
                         </div>
 
                     </div>
-                </div>
-            <?php endforeach;?>
+                        <?php endforeach;?>
+
+                    </div>
 
             </div>
         </div>

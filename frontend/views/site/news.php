@@ -97,30 +97,25 @@ $this->params['breadcrumbs'][] = $this->title;
                         <?php endforeach; ?>
                     </div>
 
+                    <div class="sidebar-widget latest-post mb-3">
+                        <h5><?=Yii::t('app','Latest Events')?></h5>
 
-<!--                    <div class="sidebar-widget schedule-widget mb-3">-->
-<!--                        <h5 class="mb-4">Time Schedule</h5>-->
-<!---->
-<!--                        <ul class="list-unstyled">-->
-<!--                            <li class="d-flex justify-content-between align-items-center">-->
-<!--                                <a href="#">Monday - Friday</a>-->
-<!--                                <span>9:00 - 17:00</span>-->
-<!--                            </li>-->
-<!--                            <li class="d-flex justify-content-between align-items-center">-->
-<!--                                <a href="#">Saturday</a>-->
-<!--                                <span>9:00 - 16:00</span>-->
-<!--                            </li>-->
-<!--                            <li class="d-flex justify-content-between align-items-center">-->
-<!--                                <a href="#">Sunday</a>-->
-<!--                                <span>Closed</span>-->
-<!--                            </li>-->
-<!--                        </ul>-->
-<!---->
-<!--                        <div class="sidebar-contatct-info mt-4">-->
-<!--                            <p class="mb-0">Need Urgent Help?</p>-->
-<!--                            <h3>+998 62-228-11-22</h3>-->
-<!--                        </div>-->
-<!--                    </div>-->
+                        <?php foreach (\common\models\Events::find()->orderBy(['created_at' => SORT_DESC])->limit(5)->all() as $item): ?>
+                            <div class="py-2">
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <img src="<?= $item->image?>" class="img-fluid">
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <h6 class="my-2"><a href="#"><?=substr($item[$title],0,40)?>...</a></h6>
+                                        <span class="text-sm text-muted"><?=date('Y m-d',$item->created_at)?></span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        <?php endforeach; ?>
+
+                    </div>
 
                 </div>
             </div>

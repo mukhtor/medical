@@ -25,7 +25,7 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
     <html lang="zxx">
     <head>
         <meta charset="<?= Yii::$app->charset ?>">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="initial-scale=1.0, width=device-width">
         <?php $this->registerCsrfMetaTags() ?>
         <title>Xorazm Tibbiyot Markazi</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -81,7 +81,7 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
                         <?php foreach ($menus as $menu) : ?>
                             <li class="nav-item dropdown">
 
-                                <a class="nav-link" href="<?= Url::to([$menu->url]) ?>"><?= $menu[$name] ?></a>
+                                <a class="nav-link" href="<?= $menu->url ? Url::to([$menu->url]) : '#'?>"><?=$menu[$name] ?></a>
                                 <?php foreach (Menu::find()->where(['not', ['parent' => null]])->where('parent=' . $menu->id)->all() as $item): ?>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item"
