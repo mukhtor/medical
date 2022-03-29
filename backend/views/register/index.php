@@ -29,13 +29,31 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'section_id',
-            'employee_id',
+//            'id',
+//            'section_id',
+            [
+                    'attribute' => 'section_id',
+                'value' => function(Register $register){
+                    return $register->sections->name_uz;
+                }
+            ],
+            [
+                    'attribute' => 'employee_id',
+                'value' => function(Register $register){
+                    return $register->employees->fullname_uz;
+                }
+            ],
+//            'employee_id',
             'fullname',
             'phone',
             //'email:email',
-            //'date',
+//            'date',
+            [
+                    'attribute' => 'date',
+                'value' => function(Register $register){
+                    return date('Y m-d',$register->date);
+                }
+            ],
             //'information:ntext',
             //'status',
             //'created_at',

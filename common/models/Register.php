@@ -85,4 +85,12 @@ class Register extends \yii\db\ActiveRecord
     {
         return new \common\models\query\RegisterQuery(get_called_class());
     }
+
+
+    public function getSections(){
+        return $this->hasOne(Sections::class,['id'=>'section_id']);
+    }
+    public function getEmployees(){
+       return $this->hasOne(Employees::class,['id'=>'employee_id']);
+    }
 }

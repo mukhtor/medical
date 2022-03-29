@@ -22,8 +22,8 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="row">
             <div class="col-lg-8 col-sm-6 col-md-6">
                 <div class="appoinment-wrap mt-5 mt-lg-0 pl-lg-5">
-                    <h2 class="mb-2 title-color text-center">Online Navbatga Yozilish</h2>
-                    <p class="mb-4 text-center">Siz istalgan shifokoringiz huzuriga online navbatga yozilishingiz mumkin. Buning uchun quyidagi ma'lumotlarni to'ldiring!!!</p>
+                    <h2 class="mb-2 title-color"><?=Yii::t('app','Online admission')?></h2>
+                    <p class="mb-4"><?=Yii::t('app','You can make an online queue at any doctor’s office. To do this, fill in the information below !!!')?></p>
                     <?php $form = ActiveForm::begin(['options' => ['class'=>'appoinment-form']]); ?>
 
                     <div class="row">
@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="form-group">
                                 <?=$form->field($register,'section_id')->dropDownList(
                                     ArrayHelper::map(Sections::find()->where(['status'=>10])->all(),'id','name_uz')
-                                    , ['id'=>'cat-id','prompt'=>'--Bo\'limni Tanlang--'])->label(false)?>
+                                    , ['id'=>'cat-id','prompt'=>'--'.Yii::t('app','Select Section').'--'])->label(false)?>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -56,12 +56,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <?= $form->field($register, 'fullname')->textInput(['placeholder'=>'To\'liq ism sharifingiz'])->label(false) ?>
+                                <?= $form->field($register, 'fullname')->textInput(['placeholder'=>Yii::t('app','Full Name')])->label(false) ?>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <?= $form->field($register, 'email')->input('email',['placeholder'=>'Elektron manzilingiz'])->label(false) ?>
+                                <?= $form->field($register, 'email')->input('email',['placeholder'=>Yii::t('app','Email')])->label(false) ?>
                             </div>
                         </div>
 
@@ -70,14 +70,14 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <?= $form->field($register, 'phone')->widget(MaskedInput::class,[
                                     'mask' => '+99-999-999-99-99',
                                     'options' => [
-                                        'placeholder'=>'Telefon Raqamingiz'
+                                        'placeholder'=>Yii::t('app','Phone')
                                     ]
                                 ])->label(false) ?>
                             </div>
                         </div>
                     </div>
                     <div class="form-group-2 mb-4">
-                        <?=$form->field($register,'information')->textarea(['placeholder'=>'Sizni qiynayotgan muommo haqida qisqacha'])->label(false)?>
+                        <?=$form->field($register,'information')->textarea(['placeholder'=>Yii::t('app','Briefly about the problem that is bothering you')])->label(false)?>
                     </div>
 
                     <div class="form-group">
@@ -92,18 +92,18 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="col-lg-4 col-sm-6 col-md-6">
                 <div class="contact-block mb-4 mb-lg-0">
                     <i class="icofont-live-support"></i>
-                    <h5>Call Us</h5>
+                    <h5><?=Yii::t('app','Contact US')?></h5>
                     +99862-228-10-65<br>
                     +99862-228-11-22
                 </div>
                 <div class="contact-block mb-4 mb-lg-0">
                     <i class="icofont-support-faq"></i>
-                    <h5>Email Us</h5>
+                    <h5><?=Yii::t('app','Email')?></h5>
                     xvkttm@gmail.com
                 </div>
                 <div class="contact-block mb-4 mb-lg-0">
                     <i class="icofont-location-pin"></i>
-                    <h5>Location</h5>
+                    <h5><?=Yii::t('app','Address')?></h5>
                     HJ5M+WGX, Urganch, Uzbekistan
                 </div>
             </div>

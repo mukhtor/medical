@@ -35,6 +35,7 @@
             echo \hail812\adminlte\widgets\Menu::widget([
                 'items' => [
                     ['label' => 'News', 'url' => ['news/index'], 'icon' => 'plus'],
+                    ['label' => 'Events', 'url' => ['events/index'], 'icon' => 'plus'],
                     ['label' => 'Sections', 'url' => ['sections/index'], 'icon' => 'plus'],
                     ['label' => 'Employee', 'url' => ['employees/index'], 'icon' => 'plus'],
                     ['label' => 'Gallery', 'url' => ['gallery/index'], 'icon' => 'plus'],

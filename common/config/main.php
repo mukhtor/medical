@@ -1,6 +1,13 @@
 <?php
 
+use hail812\adminlte3\assets\AdminLteAsset;
+use hail812\adminlte3\assets\FontAwesomeAsset;
+use hail812\adminlte3\assets\PluginAsset;
+use yii\bootstrap4\BootstrapAsset;
+use yii\bootstrap4\BootstrapPluginAsset;
+use yii\gii\GiiAsset;
 use yii\web\JqueryAsset;
+use yii\widgets\MaskedInputAsset;
 
 return [
     'aliases' => [
@@ -15,19 +22,19 @@ return [
         'assetManager' => [
             'linkAssets' => true,
             'bundles' => [
-                \yii\web\JqueryAsset::class => [
+                JqueryAsset::class => [
                     'sourcePath' => null,
                     'js' => [
                         '//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js',
                     ]
                 ],
-                \hail812\adminlte3\assets\FontAwesomeAsset::class => [
+                FontAwesomeAsset::class => [
                     'sourcePath' => null,
                     'css' => [
                         'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css',
                     ]
                 ],
-                \hail812\adminlte3\assets\AdminLteAsset::class => [
+                AdminLteAsset::class => [
                     'sourcePath' => null,
                     'css' => [
                         'https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.2.0/css/adminlte.min.css',
@@ -36,30 +43,31 @@ return [
                         'https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.2.0/js/adminlte.min.js',
                     ]
                 ],
-                \yii\bootstrap4\BootstrapAsset::class => [
+                BootstrapAsset::class => [
                     'sourcePath' => null,
                     'css' => [
                         'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css',
                     ],
 
                 ],
-                \yii\bootstrap4\BootstrapPluginAsset::class => [
+                BootstrapPluginAsset::class => [
                     'sourcePath' => null,
                     'js' => [
                         '//cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.bundle.min.js',
                     ]
                 ],
-                \hail812\adminlte3\assets\PluginAsset::class => [
+                PluginAsset::class => [
                     'sourcePath' => null,
                 ],
 
-                \yii\gii\GiiAsset::class => [
-                    'sourcePath' => null,
-                    'js'=>[
-                        '//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js',
-                    ]
+//                GiiAsset::class => [
+//                    'sourcePath' => null,
+//                    'js' => [
+//                        'https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/4.1.2/bootstrap-native.min.js'
+//                    ]
+//
+//                ],
 
-                ]
 
             ],
         ]

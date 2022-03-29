@@ -4,14 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Register */
+/* @var $model common\models\Events */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Registers'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Events'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="register-view">
+<div class="events-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -31,28 +31,19 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             [
-                'attribute' => 'section_id',
+                'attribute' => 'image',
+                'format' => 'raw',
                 'value' => function($model){
-                    return $model->sections->name_uz;
+                    return Html::img($model->image,['style'=>'width:200px']);
                 }
             ],
-            [
-                'attribute' => 'employee_id',
-                'value' => function($model){
-                    return $model->employees->fullname_uz;
-                }
-            ],
-            'fullname',
-            'phone',
-            'email:email',
-            [
-                'attribute' => 'date',
-                'value' => function($model){
-                    return date('Y m-d',$model->date);
-                }
-            ],
-            'information:ntext',
-            'status',
+            'title_uz',
+            'title_en',
+            'title_ru',
+            'text_uz:ntext',
+            'text_en:ntext',
+            'text_ru:ntext',
+            'count',
             [
                 'attribute' => 'created_at',
                 'value' => function($model){
