@@ -26,7 +26,7 @@ class AdminAsset extends AssetBundle
         'js/jquery-ui.js',
         'js/jquery.cookie.min.js',
         'js/specialView.js',
-        'js/specialview2.js',
+//        'js/specialview2.js',
         'js/custom.js',
         'plugins/counterup/jquery.easing.js',
         'plugins/counterup/jquery.waypoints.min.js',

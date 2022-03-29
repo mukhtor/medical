@@ -9,7 +9,6 @@
 use common\models\Employees;
 use common\models\News;
 use common\models\Sections;
-use kv4nt\owlcarousel\OwlCarouselWidget;
 use yii\bootstrap4\Breadcrumbs;
 use yii\helpers\Url;
 
@@ -20,7 +19,6 @@ $name = "name_" . Yii::$app->language;
 $desc = "desc_" . Yii::$app->language;
 $text = "text_" . Yii::$app->language;
 ?>
-<head>
     <style>
         .taga {
             text-decoration: none;
@@ -75,7 +73,6 @@ $text = "text_" . Yii::$app->language;
             transform: translateX(0) !important;
         }
     </style>
-</head>
 <section class="banner">
     <div class="container">
         <div class="row">
@@ -236,7 +233,7 @@ $text = "text_" . Yii::$app->language;
             <?php foreach ($latest_news as $news) : ?>
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="service-block mb-5">
-                        <img src="<?= $news->image ?>" alt="" class="img-fluid">
+                        <img src="<?= $news->image ?>" alt="" class="img-fluid" style="width: 100%;height: 45%">
                         <div class="content">
                             <div class="row">
                                 <div class="col-lg-6">
@@ -244,32 +241,33 @@ $text = "text_" . Yii::$app->language;
                                 </div>
                                 <div class="col-lg-6">
                                     <h6 style="float: right" class="mt-4 mb-2 title-color"><i
-                                                class="icofont-eye-alt"><?=$news->show_count?></i></h6>
+                                                class="icofont-eye-alt"> <?=$news->show_count?></i></h6>
                                 </div>
                             </div>
                             <a href="" class="mb-4 list-unstyled footer-menu"></a>
                             <div class="widget">
                                 <ul class="list-unstyled footer-menu lh-35">
                                     <li><a style="text-decoration: none"
-                                           href="<?= Url::to(['site/news-more', 'id' => $news->id]) ?>"><?= $news[$title]?>
+                                           href="<?= Url::to(['site/news-more', 'id' => $news->id]) ?>"><?= substr($news[$title],0,80)?>
                                         </a></li>
                                 </ul>
                             </div>
-                            <p><?=substr($news[$text],0,200)?>...</p>
+                            <p><?=substr($news[$text],0,300)?>...</p>
                         </div>
                     </div>
                 </div>
             <?php endforeach; ?>
         </div>
-        <div class="text-center">
-            <div class="widget mb-5 mb-lg-0">
-                <ul class="list-unstyled footer-menu lh-35">
-                    <li><a style="font-size: 28px" href="<?= Url::to(['site/news']) ?>"><?=Yii::t('app','Read more')?></a></li>
-                </ul>
-            </div>
-        </div>
+
     </div>
 </section>
+    <div class="text-center">
+        <div class="widget mb-5 mb-lg-0">
+            <ul class="list-unstyled footer-menu lh-35">
+                <li><a style="font-size: 28px" href="<?= Url::to(['site/news']) ?>"><?=Yii::t('app','Read more')?></a></li>
+            </ul>
+        </div>
+    </div>
 <section class="section service gray-bg">
     <div class="container">
         <div class="row justify-content-center">
@@ -351,8 +349,9 @@ $text = "text_" . Yii::$app->language;
         </div>
     </div>
 </section>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11941.856966197643!2d60.632965277770985!3d41.55919614530905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41dfced40ff9fa85%3A0x41213b3ab751e15c!2z0J7QsdC70LDRgdGC0L3QsNGPINCR0L7Qu9GM0L3QuNGG0LA!5e0!3m2!1sru!2s!4v1648214313035!5m2!1sru!2s" width="1920" height="700" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> </div>
-
+<div class="col-lg-12 col-md-12 col-sm-12">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11941.856966197643!2d60.632965277770985!3d41.55919614530905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41dfced40ff9fa85%3A0x41213b3ab751e15c!2z0J7QsdC70LDRgdGC0L3QsNGPINCR0L7Qu9GM0L3QuNGG0LA!5e0!3m2!1sru!2s!4v1648214313035!5m2!1sru!2s" width="1870" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
 <script type="text/javascript">
     var myCarousel = document.querySelector('#myCarousel')
     var carousel = new bootstrap.Carousel(myCarousel, {
@@ -377,11 +376,4 @@ $text = "text_" . Yii::$app->language;
         }
     });
 </script>
-<?php
-$script = <<< JS
-  elem.onclick = function(t) {
-  if (t.target === t.currentTarget || t.timeStamp >= r || t.timeStamp <= 0 || t.target.ownerDocument !== document) return a.apply(this, arguments)
-}
-JS;
-$this->registerJs($script);
-?>
+

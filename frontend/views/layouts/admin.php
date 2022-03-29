@@ -41,7 +41,7 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
         <div class="header-top-bar">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-7">
+                    <div class="col-lg-5 col-md-5 col-sm-5">
                         <ul class="top-bar-info list-inline-item pl-0 mb-0">
                             <li class="list-inline-item"><a href="mailto:support@gmail.com"><i
                                             class="icofont-support-faq mr-2"></i>xvkttm@gmail.com</a></li>
@@ -51,13 +51,59 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
                             </li>
                         </ul>
                     </div>
-                    <div class="col-lg-5">
+                    <div class="col-lg-5 col-md-5 col-sm-5">
                         <div class="text-lg-right top-right-bar mt-2 mt-lg-0">
                             <a href="tel:+23-345-67890">
                                 <span><?=Yii::t('app','Fast Communication')?>: </span>
                                 <span class="h6">+99862-228-10-65</span>
                             </a>
                         </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2">
+                            <?= MultiLanguageWidget::widget([
+                                'widget_type' => 'classic', // classic or selector
+                                'image_type' => 'classic', // classic or rounded
+                                'width' => '25',
+                                'calling_controller' => $this->context
+                            ]); ?>
+                        <ul class="pull-right">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <a title="Ko'zi ojizlar uchun" style="color: rgb(255,255,255)" href="#" class="dropdown open " data-toggle="dropdown" aria-haspopup="true"
+                                       aria-expanded="true">
+                                        <i class="fa fa-eye "></i>
+                                    </a>
+
+                                    <div class="dropdown-menu styledDrop dropdown-menu-right specialViewArea no-propagation">
+                                        <div class="appearance">
+                                            <p class="specialTitle">Turi</p>
+
+                                            <div class="squareAppearances">
+                                                <div class="squareBox spcNormal" data-toggle="tooltip" data-placement="bottom"
+                                                     title="" data-original-title="Odatiy rejim">A
+                                                </div>
+                                            </div>
+                                            <div class="squareAppearances">
+                                                <div class="squareBox spcWhiteAndBlack" data-toggle="tooltip"
+                                                     data-placement="bottom" title="" data-original-title="Oq-qora rejimi">A
+                                                </div>
+                                            </div>
+                                            <div class="squareAppearances">
+                                                <div class="squareBox spcDark" data-toggle="tooltip" data-placement="bottom"
+                                                     title="" data-original-title="Qorong'i rejimi">A
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <a href="#" title="Mobil Versiya " style="color: rgb(255,255,255)" class="adaptive"><i class="fa fa-mobile-alt"></i></a>
+                                </div>
+
+
+                        </ul>
                     </div>
 
                 </div>
@@ -92,51 +138,7 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
                         <?php endforeach; ?>
 
                     </ul>
-                    <ul class="pull-right">
-                        <?= MultiLanguageWidget::widget([
-                            'widget_type' => 'classic', // classic or selector
-                            'image_type' => 'classic', // classic or rounded
-                            'width' => '25',
-                            'calling_controller' => $this->context
-                        ]); ?>
-                    </ul>
-                    <ul class="pull-right">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <a title="Ko'zi ojizlar uchun" style="color: rgba(63,61,61,0.68)" href="#" class="dropdown open " data-toggle="dropdown" aria-haspopup="true"
-                                   aria-expanded="true">
-                                    <i class="fa fa-eye "></i>
-                                </a>
 
-                                <div class="dropdown-menu styledDrop dropdown-menu-right specialViewArea no-propagation">
-                                    <div class="appearance">
-                                        <p class="specialTitle">Turi</p>
-
-                                        <div class="squareAppearances">
-                                            <div class="squareBox spcNormal" data-toggle="tooltip" data-placement="bottom"
-                                                 title="" data-original-title="Odatiy rejim">A
-                                            </div>
-                                        </div>
-                                        <div class="squareAppearances">
-                                            <div class="squareBox spcWhiteAndBlack" data-toggle="tooltip"
-                                                 data-placement="bottom" title="" data-original-title="Oq-qora rejimi">A
-                                            </div>
-                                        </div>
-                                        <div class="squareAppearances">
-                                            <div class="squareBox spcDark" data-toggle="tooltip" data-placement="bottom"
-                                                 title="" data-original-title="Qorong'i rejimi">A
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <a href="#" title="Mobil Versiya " style="color: rgba(63,61,61,0.68)" class="adaptive"><i class="fa fa-mobile-alt"></i></a>
-                            </div>
-
-                    </ul>
                 </div>
             </div>
         </nav>
@@ -276,3 +278,13 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
     </body>
     </html>
 <?php $this->endPage() ?>
+<?php
+//
+//$script = <<< JS
+//  elem.onclick = function(t) {
+//  if (t.target === t.currentTarget || t.timeStamp >= r || t.timeStamp <= 0 || t.target.ownerDocument !== document) return a.apply(this, arguments)
+//}
+//JS;
+//$this->registerJs($script);
+//
+//?>

@@ -41,7 +41,9 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="blog-item row">
                             <div class="col-lg-6">
                                 <div class="blog-thumb">
-                                    <a href="<?= Url::to(['site/news-more', 'id' => $new->id]) ?>"><img src="<?= $new->image ?>" alt="" class="img-fluid "></a>
+                                    <a href="<?= Url::to(['site/news-more', 'id' => $new->id]) ?>">
+                                        <img style="width: 100%;" src="<?= $new->image ?>" alt="" >
+                                    </a>
                                 </div>
                             </div>
                             <div class="col-lg-6">
