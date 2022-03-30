@@ -1,6 +1,7 @@
 <?php
 
 use common\models\News;
+use common\models\User;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
@@ -34,11 +35,11 @@ $this->params['breadcrumbs'][] = $this->title;
 //            'id',
 
             [
-                    'attribute' => 'title_uz',
-                    'label' => 'Sarlavha_uz',
-                    'value' => function(News $news){
-        return $news->title_uz;
-                    }
+                'attribute' => 'title_uz',
+                'label' => 'Sarlavha_uz',
+                'value' => function (News $news) {
+                    return @$news->title_uz;
+                }
             ],
 
 //            'title_ru',
@@ -51,7 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'author',
                 'label' => 'Muallif',
                 'value' => function (News $news) {
-                    return \common\models\User::findOne(['id' => $news->author])->username;
+                    return @User::findOne(['id' => $news->author])->username;
                 }
             ],
 //            'created_at',
@@ -72,9 +73,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => function (News $news) {
                     $out = '';
                     foreach ($news->cate as $category) {
-                        $out .= $category->name_uz.'  ';
+                        $out .= @$category->name_uz . '  ';
                     }
-                    return $out;
+                    return @$out;
                 }
             ],
             [

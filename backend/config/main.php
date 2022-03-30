@@ -34,7 +34,7 @@ return [
                 //       'name' => 'Users'
                 //  ],
                 'Documents' => [
-                    'baseUrl' => 'http://medical.loc/uploads',
+                    'baseUrl' => 'http://xvkttm.uz/uploads',
                     'class' => 'mihaildev\elfinder\volume\UserPath',
                     'basePath' => Yii::getAlias('@uploads'),
                     'path' => 'user_files/user_{id}',
