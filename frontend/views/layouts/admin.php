@@ -251,7 +251,7 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
                             <i class="icofont-email mr-3"></i>
                             <span class="h6 mb-0"> <?= Yii::t('app', 'Service Time') ?> 24/7</span>
                         </div>
-                        <h4 class="mt-2"><a target="_blank" href="xvkttm@gmail.com">xvkttm@gmail.com</a></h4>
+                        <h4 class="mt-2 email"><a target="_blank" href="xvkttm@gmail.com">xvkttm@gmail.com</a></h4>
                     </div>
 
                     <div class="footer-contact-block ">
@@ -259,8 +259,8 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
                             <i class="icofont-support mr-3"></i>
                             <span class="h6 mb-0"><?= Yii::t('app', 'Service Time') ?> 24/7</span>
                         </div>
-                        <h4 class="mt-3"><a href="tel:+99862-228-10-65">+99862-228-10-65</a></h4>
-                        <h4 class="mt-2"><a href="tel:+99862-228-11-22">+99862-228-11-22</a></h4>
+                        <h4 class="mt-3 email"><a href="tel:+99862-228-10-65">+99862-228-10-65</a></h4>
+                        <h4 class="mt-2 email"><a href="tel:+99862-228-11-22">+99862-228-11-22</a></h4>
                     </div>
                 </div>
             </div>

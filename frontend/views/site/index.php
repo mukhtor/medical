@@ -210,7 +210,7 @@ $text = "text_" . Yii::$app->language;
 </section>
     <div class="text-center">
         <div class="widget mb-5 mb-lg-0">
-            <ul class="list-unstyled footer-menu lh-35">
+            <ul class="list-unstyled footer-menu lh-35 taga">
                 <li><a style="font-size: 28px" href="<?= Url::to(['site/news']) ?>"><?=Yii::t('app','Read more')?></a></li>
             </ul>
         </div>
@@ -233,8 +233,8 @@ $text = "text_" . Yii::$app->language;
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <a href="<?=Url::to(['site/section-more','id'=>$section->id])?>">
                         <div class="service-item mb-4">
-                            <div class="icon d-flex align-items-center">
-                                <i class="icofont-medical-sign-alt text-lg"></i>
+                            <div class="icon d-flex align-items-center sectionname">
+                                <i class="icofont-medical-sign-alt text-lg "></i>
                                 <h4 class="mt-3 mb-3"><?= $section[$name] ?></h4>
                             </div>
 
@@ -296,7 +296,7 @@ $text = "text_" . Yii::$app->language;
         </div>
     </div>
 </section>
-<div class="col-lg-12 col-md-12 col-sm-12">
+<div class="maps">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11941.856966197643!2d60.632965277770985!3d41.55919614530905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41dfced40ff9fa85%3A0x41213b3ab751e15c!2z0J7QsdC70LDRgdGC0L3QsNGPINCR0L7Qu9GM0L3QuNGG0LA!5e0!3m2!1sru!2s!4v1648214313035!5m2!1sru!2s" width="1870" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 

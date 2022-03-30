@@ -542,8 +542,33 @@ a:focus {
 
 @media (max-width: 992px) {
     .banner {
-        background: url("../img/slider-bg-1.jpg") no-repeat;
+        background: rgb(97,97,97);
+        background: linear-gradient(0deg, rgba(97,97,97,1) 0%, rgba(255,255,255,0.38137261740633754) 56%, rgba(120,120,120,1) 100%);
 
+    }
+    .banner h3{
+        font-size: 20px;
+        font-style: normal!important;
+    }
+    .counter-stat span{
+        font-size: 38px!important;
+    }
+    .taga a{
+        font-size: 18px!important;
+    }
+    .sectionname h4{
+        font-size: 15px!important;
+        text-align: center;
+    }
+    .maps iframe{
+        width: 97%!important;
+        margin-left: 5px!important;
+    }
+    .navbar-brand h4 {
+        font-size: 22px!important;
+    }
+    .email a {
+        font-size: 16px!important;
     }
 }
 
