@@ -2,6 +2,7 @@
 
 namespace frontend\assets;
 
+use yii\bootstrap4\BootstrapPluginAsset;
 use yii\web\AssetBundle;
 
 class AdminAsset extends AssetBundle
@@ -28,6 +29,9 @@ class AdminAsset extends AssetBundle
         'js/specialView.js',
 //        'js/specialview2.js',
         'js/custom.js',
+//        'plugins/bootstrap/js/bootstrap.min.js',
+//        'plugins/bootstrap/js/bootstrap.js',
+//        'plugins/bootstrap/js/popper.js',
         'plugins/counterup/jquery.easing.js',
         'plugins/counterup/jquery.waypoints.min.js',
         'plugins/shuffle/shuffle.min.js',
@@ -37,5 +41,6 @@ class AdminAsset extends AssetBundle
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap4\BootstrapAsset',
+        BootstrapPluginAsset::class,
     ];
 }

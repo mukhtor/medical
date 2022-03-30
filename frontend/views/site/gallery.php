@@ -3,14 +3,9 @@
 $this->title = Yii::t('app','Gallery');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<style>
-    .container{
-        max-width: 80%!important;
-    }
-</style>
 
 <section class="gallery-block cards-gallery">
-    <div class="container">
+    <div class="container" style="max-width: 80%!important;">
         <div class="heading">
             <h2></h2>
         </div>

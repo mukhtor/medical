@@ -19,60 +19,7 @@ $name = "name_" . Yii::$app->language;
 $desc = "desc_" . Yii::$app->language;
 $text = "text_" . Yii::$app->language;
 ?>
-    <style>
-        .taga {
-            text-decoration: none;
-        }
 
-        .taga h5 :hover {
-            color: rgba(117, 18, 18, 0.89);
-        }
-
-        @media (max-width: 768px) {
-            .carousel-inner .carousel-item > div {
-                display: none;
-            }
-
-            .carousel-inner .carousel-item > div:first-child {
-                display: block;
-            }
-        }
-
-        .carousel-inner .carousel-item.active,
-        .carousel-inner .carousel-item-start,
-        .carousel-inner .carousel-item-next,
-        .carousel-inner .carousel-item-prev {
-            display: flex;
-        }
-
-        /* display 4 */
-        @media (min-width: 768px) {
-            .carousel-inner .carousel-item-right.active,
-            .carousel-inner .carousel-item-next,
-            .carousel-item-next:not(.carousel-item-start) {
-                transform: translateX(25%) !important;
-            }
-
-            .carousel-inner .carousel-item-left.active, .carousel-item-prev:not(.carousel-item-end),
-            .active.carousel-item-start, .carousel-item-prev:not(.carousel-item-end) {
-                transform: translateX(-25%) !important;
-            }
-
-            .carousel-item-next.carousel-item-start {
-                transform: translateX(0) !important;
-            }
-
-            .carousel-inner .carousel-item-prev,
-            .carousel-item-prev:not(.carousel-item-end) {
-                transform: translateX(-25%) !important;
-            }
-        }
-
-        .carousel-inner .carousel-item-right,
-        .carousel-inner .carousel-item-left {
-            transform: translateX(0) !important;
-        }
-    </style>
 <section class="banner">
     <div class="container">
         <div class="row">
@@ -352,8 +299,11 @@ $text = "text_" . Yii::$app->language;
 <div class="col-lg-12 col-md-12 col-sm-12">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11941.856966197643!2d60.632965277770985!3d41.55919614530905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41dfced40ff9fa85%3A0x41213b3ab751e15c!2z0J7QsdC70LDRgdGC0L3QsNGPINCR0L7Qu9GM0L3QuNGG0LA!5e0!3m2!1sru!2s!4v1648214313035!5m2!1sru!2s" width="1870" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
-<script type="text/javascript">
-    var myCarousel = document.querySelector('#myCarousel')
+
+<?php
+
+$script = <<< JS
+   var myCarousel = document.querySelector('#myCarousel')
     var carousel = new bootstrap.Carousel(myCarousel, {
         interval: 2000
     })
@@ -375,5 +325,7 @@ $text = "text_" . Yii::$app->language;
             next.children(':first-child').clone().appendTo($(this));
         }
     });
-</script>
+JS;
+$this->registerJs($script);
 
+?>
