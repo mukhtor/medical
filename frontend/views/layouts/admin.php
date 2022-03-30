@@ -140,7 +140,7 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
 
                                     <?php foreach (Menu::find()->where(['not', ['parent' => null]])->where('parent=' . $menu->id)->all() as $item): ?>
 
-                                        <a class="dropdown-item" href="<?= Url::to([$item->url]) ?>">Action</a>
+                                        <a class="dropdown-item" href="<?= Url::to([$item->url]) ?>"><?=$item[$name]?></a>
 
                                     <?php endforeach; ?>
                                 </div>
