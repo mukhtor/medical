@@ -68,7 +68,7 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
                     ]); ?>
                     <ul class="pull-right">
                         <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="col-lg-6 col-md-6 col-sm-2 col-1">
                                 <a id="elem" title="Ko'zi ojizlar uchun" style="color: rgb(255,255,255)" href="#"
                                    class="dropdown open " data-toggle="dropdown" aria-haspopup="true"
                                    aria-expanded="true">
@@ -100,7 +100,7 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="col-lg-6 col-md-6 col-sm-2 col-1">
                                 <a href="#" title="Mobil Versiya " style="color: rgb(255,255,255)" class="adaptive"><i
                                             class="fa fa-mobile-alt"></i></a>
                             </div>

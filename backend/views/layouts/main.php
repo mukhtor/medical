@@ -22,14 +22,8 @@ $assetDir = Yii::$app->assetManager->getPublishedPath(Yii::getAlias('@webroot'))
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<script type="text/javascript">
-    window.onbeforeunload = function(){
-        $.get('removeSession.aspx', function() {
-            // all good
-        });
-    }
-</script>
-<body class="hold-transition sidebar-mini" onunload="deleteAllCookies()">
+
+<body class="hold-transition sidebar-mini">
 <?php $this->beginBody() ?>
 
 <div class="wrapper">
