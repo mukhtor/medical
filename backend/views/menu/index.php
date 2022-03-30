@@ -65,7 +65,7 @@ $this->params['breadcrumbs'][] = $this->title;
 //            'created_at',
             [
                     'attribute' => 'created_at',
-                'label' => 'Kiritilgan vaqti',
+                'label' => 'Kiritilgan vaqt',
                 'value' => function(Menu $menu){
                     return date('Y m-d',$menu->created_at);
                 }
