@@ -570,6 +570,13 @@ a:focus {
     .email a {
         font-size: 16px!important;
     }
+    .mudirp{
+        text-align: center!important;
+    }
+    .content h4{
+        text-align: center!important;
+
+    }
 }
 
 .about-img img {

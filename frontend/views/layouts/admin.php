@@ -112,47 +112,50 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
             </div>
         </div>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-light  container" >
-        <a class="navbar-brand" href="<?= Url::to(['/']) ?>">
-            <!--                    <img src="-->
-            <?php //= '/style/images/logo.png'?><!--" alt="" class="img-fluid">-->
-            <h4 style="font-size: 24px;"><i class="icofont-medical-sign-alt"></i> XVKTTM.UZ</h4>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="row justify-content-around">
+    <nav class="navbar navbar-expand-lg navbar-light    row">
+        <div class="col-md-4 col-lg-1 col-sm-2 col-xl-2"></div>
+        <div class="col-md-4 col-lg-2 col-sm-5 col-xl-3">
+            <a class="navbar-brand" href="<?= Url::to(['/']) ?>">
+                <!--                    <img src="-->
+                <?php //= '/style/images/logo.png'?><!--" alt="" class="img-fluid">-->
+                <h4 style="font-size: 24px;"><i class="icofont-medical-sign-alt"></i> XVKTTM.UZ</h4>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="col-md-12 col-lg-7 col-sm-7 col-xl-5">
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <?php foreach ($menus as $menu) : ?>
 
-            <div class="col-4">
-                <div class="collapse navbar-collapse" id="navbarNavDropdown"  >
-                    <ul class="navbar-nav">
-                        <?php foreach ($menus as $menu) : ?>
 
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"
+                               href="<?= $menu->url ? Url::to([$menu->url]) : '#' ?>"
+                               id="navbarDropdownMenuLink" <?= (!$menu->url) ? 'data-toggle="dropdown"' : '' ?>
+                               aria-haspopup="true"
+                               aria-expanded="false">
+                                <?= $menu[$name] ?>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="<?= $menu->url ? Url::to([$menu->url]) : '#' ?>"
-                                   id="navbarDropdownMenuLink"  <?= (!$menu->url) ? 'data-toggle="dropdown"' :''?> aria-haspopup="true"
-                                   aria-expanded="false">
-                                    <?= $menu[$name] ?>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <?php foreach (Menu::find()->where(['not', ['parent' => null]])->where('parent=' . $menu->id)->all() as $item): ?>
 
-                                    <?php foreach (Menu::find()->where(['not', ['parent' => null]])->where('parent=' . $menu->id)->all() as $item): ?>
+                                    <a class="dropdown-item"
+                                       href="<?= Url::to([$item->url]) ?>"><?= $item[$name] ?></a>
 
-                                        <a class="dropdown-item" href="<?= Url::to([$item->url]) ?>"><?=$item[$name]?></a>
+                                <?php endforeach; ?>
+                            </div>
 
-                                    <?php endforeach; ?>
-                                </div>
+                        </li>
 
-                            </li>
+                    <?php endforeach; ?>
 
-                        <?php endforeach; ?>
-
-                    </ul>
-                </div>
-
+                </ul>
             </div>
+
         </div>
     </nav>
 </header>
