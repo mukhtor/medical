@@ -34,14 +34,14 @@
             <?php
             echo \hail812\adminlte\widgets\Menu::widget([
                 'items' => [
-                    ['label' => 'News', 'url' => ['news/index'], 'icon' => 'plus'],
-                    ['label' => 'Events', 'url' => ['events/index'], 'icon' => 'plus'],
-                    ['label' => 'Sections', 'url' => ['sections/index'], 'icon' => 'plus'],
-                    ['label' => 'Employee', 'url' => ['employees/index'], 'icon' => 'plus'],
-                    ['label' => 'Gallery', 'url' => ['gallery/index'], 'icon' => 'plus'],
+                    ['label' => 'Yangiliklar', 'url' => ['news/index'], 'icon' => 'plus'],
+                    ['label' => 'E\'lonlar', 'url' => ['events/index'], 'icon' => 'plus'],
+                    ['label' => 'Bo\'limlar', 'url' => ['sections/index'], 'icon' => 'plus'],
+                    ['label' => 'Hodimlar', 'url' => ['employees/index'], 'icon' => 'plus'],
+                    ['label' => 'Gallereya', 'url' => ['gallery/index'], 'icon' => 'plus'],
                     ['label' => 'Menu', 'url' => ['menu/index'], 'icon' => 'plus'],
-                    ['label' => 'Position', 'url' => ['position/index'], 'icon' => 'plus'],
-                    ['label' => 'Register', 'url' => ['register/index'], 'icon' => 'plus'],
+                    ['label' => 'Lavozimlar', 'url' => ['position/index'], 'icon' => 'plus'],
+                    ['label' => 'Navbatga yozilishlar', 'url' => ['register/index'], 'icon' => 'plus'],
                 ],
             ]);
             ?>

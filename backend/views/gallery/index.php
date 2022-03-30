@@ -10,7 +10,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel common\models\search\GallerySearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Galleries');
+$this->title = Yii::t('app', 'Gallereyalar');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="gallery-index">
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Gallery'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Gallereya yaratish'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -34,6 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
 //            'image',
         [
                 'attribute' => 'image',
+            'label' => 'Rasmlar',
             'format' => 'raw',
             'value' => function(Gallery $gallery){
                if ($gallery->type == 1){
@@ -45,10 +46,18 @@ $this->params['breadcrumbs'][] = $this->title;
             }
         ],
             'name',
+            [
+                    'attribute' => 'name',
+                'label' => 'Nomi',
+                'value' => function(Gallery $gallery){
+                return $gallery->name;
+                }
+            ],
 //            'status',
 //            'created_at',
             [
                     'attribute' => 'created_at',
+                'label' => 'Kiritilgan vaqti',
                 'value' => function(Gallery $gallery){
                     return date('Y m-d',$gallery->created_at);
                 }

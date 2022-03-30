@@ -10,7 +10,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel common\models\search\EmployeesSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Employees');
+$this->title = Yii::t('app', 'Hodimlar');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="employees-index">
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Employees'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Hodim qo\'shish'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -33,17 +33,25 @@ $this->params['breadcrumbs'][] = $this->title;
 //            'id',
             [
                 'attribute' => 'created_at',
+                'label' => 'Kiritilgan sana',
                 'format' => 'html',
                 'value' => function (Employees $employees) {
                     return Html::img($employees->image,['style'=>'width:150px']);
                 }
             ],
-            'fullname_uz',
+            [
+                    'attribute' => 'fullname_uz',
+                'label' => 'To\'liq ismi',
+                'value' => function(Employees $employees){
+        return $employees->fullname_uz;
+                }
+            ],
 //            'fullname_en',
 //            'fullname_ru',
 //            'section_id',
             [
                     'attribute' => 'section_id',
+                'label' => 'Bo\'lim',
                 'value' => function(Employees $employees){
                     return $employees->section->name_uz;
                 }
@@ -51,13 +59,27 @@ $this->params['breadcrumbs'][] = $this->title;
 //            'position_id',
         [
                 'attribute' => 'position_id',
+            'label' => 'Lavozim',
             'value' => function(Employees $employees){
                 return $employees->position->name_uz;
             }
         ],
-            'phone_1',
+
+        [
+            'attribute' =>'phone_1',
+            'label' => 'Telefon raqam',
+            'value' => function(Employees $employees){
+            return $employees->phone_1;
+            }
+        ],
             //'phone_2',
-            'email:email',
+            [
+                'attribute' => 'email',
+                'label' => 'Elektron pochta',
+                'value' => function(Employees $employees){
+                return $employees->email;
+                }
+            ],
             //'data_birth',
             //'address_birth',
             //'completed_institution',

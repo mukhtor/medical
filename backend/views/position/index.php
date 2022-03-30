@@ -10,7 +10,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel common\models\search\PositionSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Positions');
+$this->title = Yii::t('app', 'Lavozimlar');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="position-index">
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Position'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Lavozim yaratish'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -31,10 +31,23 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
 //            'id',
-            'name_uz',
+                [
+                        'attribute' => 'name_uz',
+                    'label' => 'lavozim nomi_uz',
+                    'value' => function(Position $position){
+                        return $position->name_uz;
+                    }
+                ],
 //            'name_en',
 //            'name_ru',
             'degree',
+            [
+                    'attribute' => 'degree',
+                'label' => 'Daraja',
+                'value' => function(Position $position){
+        return $position->degree;
+                }
+            ],
             //'created_at',
             //'updated_at',
             [

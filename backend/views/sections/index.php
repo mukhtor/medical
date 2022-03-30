@@ -10,7 +10,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel common\models\search\SectionsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Sections');
+$this->title = Yii::t('app', 'Bo\'limlar');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="sections-index">
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Sections'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Bo\'lim yaratish'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -33,12 +33,19 @@ $this->params['breadcrumbs'][] = $this->title;
 //            'id',
             [
                     'attribute' => 'image',
+                'label' => 'Rasmlar',
                 'format' => 'html',
                 'value' => function(Sections $sections){
                     return Html::img($sections->image,['style'=>'width:150px']);
                 }
             ],
-            'name_uz',
+            [
+                    'attribute' => 'name_uz',
+                'label' => 'Bo\'lim nomi_uz',
+                'value' => function(Sections $sections){
+            return $sections->name_uz;
+                }
+            ],
 //            'name_en',
 //            'name_ru',
 //            'desc_uz:ntext',
@@ -49,6 +56,7 @@ $this->params['breadcrumbs'][] = $this->title;
 //            'created_at',
             [
                 'attribute' => 'created_at',
+                'label' => 'Kiritilgan vaqti',
                 'value' => function (Sections $sections) {
                     return date('Y m-d', $sections->created_at);
                 }

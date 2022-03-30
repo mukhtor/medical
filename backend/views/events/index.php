@@ -10,7 +10,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel common\models\search\EventsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Events');
+$this->title = Yii::t('app', 'E\'lonlar');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="events-index">
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Events'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'E\'lon yaratish'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -34,21 +34,36 @@ $this->params['breadcrumbs'][] = $this->title;
 //            'image',
             [
                     'attribute' => 'image',
+                'label' => 'Rasmlar',
                 'format' => 'raw',
                 'value' => function(Events $events){
                     return Html::img($events->image,['style'=>'width:150px']);
                 }
             ],
-            'title_uz',
+            [
+                    'attribute' => 'title_uz',
+                'label' => 'Sarlavha_uz',
+                'value' => function(Events $events){
+                    return $events->title_uz;
+                }
+            ],
 //            'title_en',
 //            'title_ru',
             //'text_uz:ntext',
             //'text_en:ntext',
             //'text_ru:ntext',
-            'count',
+            [
+                    'attribute' => 'count',
+                'label' => 'soni',
+                'value' => function(Events $events){
+                return $events->count;
+                }
+            ],
+
 //            'created_at',
             [
                     'attribute' => 'created_at',
+                'label' => 'Kiritilgan sana',
                 'value' => function(Events $events){
                     return date('Y m-d',$events->created_at);
                 }

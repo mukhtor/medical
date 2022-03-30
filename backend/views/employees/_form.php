@@ -23,7 +23,7 @@ use mihaildev\elfinder\ElFinder as ElFinderAlias;
 
             <?php $form = ActiveForm::begin(); ?>
 
-            <?= $form->field($model, 'fullname_uz')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'fullname_uz', )->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'fullname_ru')->textInput(['maxlength' => true]) ?>
             <?= $form->field($model, 'fullname_en')->textInput(['maxlength' => true]) ?>

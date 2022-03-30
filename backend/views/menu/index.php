@@ -10,7 +10,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel common\models\search\MenuSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Menus');
+$this->title = Yii::t('app', 'Menyular');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="menu-index">
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Menu'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Menyu yaratish'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -31,14 +31,27 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
 //            'id',
-            'name_uz',
+            [
+                    'attribute' => 'name_uz',
+                    'label' => 'Menyu nomi',
+                'value' => function(Menu $menu){
+        return $menu->name_uz;
+                }
+            ],
 //            'name_en',
 //            'name_ru',
 //            'slug',
-            'url:url',
+            [
+                    'attribute' => 'url',
+                'label' => 'manzil',
+                'value' => function(Menu $menu){
+        return $menu->url;
+                }
+            ],
             //'parent',
             [
                     'attribute' => 'parent',
+                'label' => 'Parent',
                 'value' => function(Menu $menu){
                     if ($menu->parent != null){
                         return Menu::findOne(['id'=>$menu->parent])->name_uz;
@@ -52,6 +65,7 @@ $this->params['breadcrumbs'][] = $this->title;
 //            'created_at',
             [
                     'attribute' => 'created_at',
+                'label' => 'Kiritilgan vaqti',
                 'value' => function(Menu $menu){
                     return date('Y m-d',$menu->created_at);
                 }

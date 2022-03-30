@@ -11,7 +11,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel common\models\search\NewsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'News');
+$this->title = Yii::t('app', 'Yangiliklar');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="news-index">
@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create News'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Yangilik yaratish'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -33,7 +33,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
 //            'id',
 
-            'title_uz',
+            [
+                    'attribute' => 'title_uz',
+                    'label' => 'Sarlavha_uz',
+                    'value' => function(News $news){
+        return $news->title_uz;
+                    }
+            ],
 
 //            'title_ru',
 //            'title_en',
@@ -43,6 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'image',
             [
                 'attribute' => 'author',
+                'label' => 'Muallif',
                 'value' => function (News $news) {
                     return \common\models\User::findOne(['id' => $news->author])->username;
                 }
@@ -50,6 +57,7 @@ $this->params['breadcrumbs'][] = $this->title;
 //            'created_at',
             [
                 'attribute' => 'created_at',
+                'label' => 'Kiritilgan vaqti',
                 'value' => function (News $news) {
                     return date('Y m-d', $news->created_at);
                 }
@@ -60,6 +68,7 @@ $this->params['breadcrumbs'][] = $this->title;
 //            'cate_id',
             [
                 'attribute' => 'cate_id',
+                'label' => 'Kategoriyasi',
                 'value' => function (News $news) {
                     $out = '';
                     foreach ($news->cate as $category) {
