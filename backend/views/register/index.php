@@ -32,41 +32,41 @@ $this->params['breadcrumbs'][] = $this->title;
 //            'id',
 //            'section_id',
             [
-                    'attribute' => 'section_id',
+                'attribute' => 'section_id',
                 'label' => 'Bo\'lim',
-                'value' => function(Register $register){
-                    return $register->sections->name_uz;
+                'value' => function (Register $register) {
+                    return @$register->sections->name_uz;
                 }
             ],
             [
-                    'attribute' => 'employee_id',
+                'attribute' => 'employee_id',
                 'label' => 'Hodim',
-                'value' => function(Register $register){
-                    return $register->employees->fullname_uz;
+                'value' => function (Register $register) {
+                    return @$register->employees->fullname_uz;
                 }
             ],
 //            'employee_id',
             [
-                    'attribute' => 'fullname',
+                'attribute' => 'fullname',
                 'label' => 'To\'liq ismi',
-                'value' => function(Register $register){
-        return $register->fullname;
+                'value' => function (Register $register) {
+                    return @$register->fullname;
                 }
             ],
             [
-                    'attribute' => 'phone',
+                'attribute' => 'phone',
                 'label' => 'Telefon raqam',
-                'value' => function(Register $register){
-        return $register->phone;
+                'value' => function (Register $register) {
+                    return @$register->phone;
                 }
             ],
             //'email:email',
 //            'date',
             [
-                    'attribute' => 'date',
+                'attribute' => 'date',
                 'label' => 'Ro\'yxatga olingan vaqti',
-                'value' => function(Register $register){
-                    return date('Y m-d',$register->date);
+                'value' => function (Register $register) {
+                    return date('Y m-d', $register->date);
                 }
             ],
             //'information:ntext',
@@ -77,7 +77,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Register $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
-                 }
+                }
             ],
         ],
     ]); ?>

@@ -6,6 +6,7 @@ use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\search\SectionsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -32,18 +33,18 @@ $this->params['breadcrumbs'][] = $this->title;
 
 //            'id',
             [
-                    'attribute' => 'image',
+                'attribute' => 'image',
                 'label' => 'Rasmlar',
                 'format' => 'html',
-                'value' => function(Sections $sections){
-                    return Html::img($sections->image,['style'=>'width:150px']);
+                'value' => function (Sections $sections) {
+                    return Html::img($sections->image, ['style' => 'width:150px']);
                 }
             ],
             [
-                    'attribute' => 'name_uz',
+                'attribute' => 'name_uz',
                 'label' => 'Bo\'lim nomi_uz',
-                'value' => function(Sections $sections){
-            return $sections->name_uz;
+                'value' => function (Sections $sections) {
+                    return @$sections->name_uz;
                 }
             ],
 //            'name_en',
@@ -66,7 +67,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Sections $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
-                 }
+                }
             ],
         ],
     ]); ?>

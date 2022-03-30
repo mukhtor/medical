@@ -48,6 +48,7 @@ class Sections extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['name_uz','name_en','name_ru','desc_uz','desc_ru','desc_en','image'],'required'],
             [['desc_uz', 'desc_en', 'desc_ru'], 'string'],
             [['status', 'created_at', 'updated_at'], 'integer'],
             [['status'], 'default', 'value' => self::ACTIVE_STATUS],

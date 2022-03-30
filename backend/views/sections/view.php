@@ -32,27 +32,49 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             [
                 'attribute' => 'image',
+                'label' => 'Surat',
                 'format' => 'html',
-                'value' => function($model){
-                    return Html::img($model->image,['style'=>'width:250px']);
+                'value' => function ($model) {
+                    return Html::img($model->image, ['style' => 'width:250px']);
                 }
             ],
-            'name_uz',
-            'name_en',
-            'name_ru',
-            'desc_uz:ntext',
-            'desc_en:ntext',
-            'desc_ru:ntext',
+            [
+                'attribute' => 'name_uz',
+                'label' => 'Nomi Uz'
+            ], [
+                'attribute' => 'name_ru',
+                'label' => 'Nomi Ru'
+            ], [
+                'attribute' => 'name_en',
+                'label' => 'Nomi En'
+            ],
+
+            [
+                'attribute' => 'desc_uz',
+                'label' => 'Ma\'lumot Uz'
+            ],
+            [
+                'attribute' => 'desc_ru',
+                'label' => 'Ma\'lumot Ru'
+            ],
+            [
+                'attribute' => 'desc_en',
+                'label' => 'Ma\'lumot En'
+            ],
 //            'image',
             'status',
             [
                 'attribute' => 'created_at',
+                'label' => 'Kiritilingan Sana',
+
                 'value' => function ($model) {
                     return date('Y m-d', $model->created_at);
                 }
             ],
             [
                 'attribute' => 'updated_at',
+                'label' => 'O\'zgartirilgan Sana',
+
                 'value' => function ($model) {
                     return date('Y m-d', $model->created_at);
                 }

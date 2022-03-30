@@ -43,6 +43,7 @@ class Position extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['name_uz','name_ru','name_en','degree'],'required'],
             [['status', 'created_at', 'updated_at','degree'], 'integer'],
             [['status'],'default','value' => self::ACTIVE_STATUS],
             [['name_uz', 'name_en', 'name_ru'], 'string', 'max' => 200],

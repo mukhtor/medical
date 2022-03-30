@@ -30,15 +30,39 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'name_uz',
-            'name_en',
-            'name_ru',
-            'slug',
-            'url:url',
+            [
+                'attribute' => 'name_uz',
+                'label' => 'Nomi Uz'
+            ], [
+                'attribute' => 'name_ru',
+                'label' => 'Nomi Ru'
+            ], [
+                'attribute' => 'name_en',
+                'label' => 'Nomi En'
+            ],
+//            'slug',
+            [
+                'attribute' => 'url',
+                'label' => 'Manzili',
+            ],
             'parent',
             'status',
-            'created_at',
-            'updated_at',
+            [
+                'attribute' => 'created_at',
+                'label' => 'Kiritilingan Sana',
+
+                'value' => function ($model) {
+                    return date('Y m-d', $model->created_at);
+                }
+            ],
+            [
+                'attribute' => 'updated_at',
+                'label' => 'O\'zgartirilgan Sana',
+
+                'value' => function ($model) {
+                    return date('Y m-d', $model->created_at);
+                }
+            ],
         ],
     ]) ?>
 

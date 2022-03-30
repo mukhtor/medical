@@ -49,7 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'name',
                 'label' => 'Nomi',
                 'value' => function (Gallery $gallery) {
-                    return $gallery->name;
+                    return @$gallery->name;
                 }
             ],
 //            'status',

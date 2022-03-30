@@ -31,21 +31,40 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             [
-                    'attribute'=>'image',
-                'format'=>'html',
-                'value'=>function($model){
-                    return Html::img($model->image,['style'=>'width:250px']);
+                'attribute' => 'image',
+                'label' => 'Suat',
+                'format' => 'html',
+                'value' => function ($model) {
+                    return Html::img($model->image, ['style' => 'width:250px']);
                 }
             ],
-            'title_uz',
-            'title_ru',
-            'title_en',
-            'text_uz:ntext',
-            'text_ru:ntext',
-            'text_en:ntext',
+            [
+                'attribute' => 'title_uz',
+                'label' => 'Sarlavha Uz'
+            ],
+            [
+                'attribute' => 'title_en',
+                'label' => 'Sarlavha En'
+            ],
+            [
+                'attribute' => 'title_ru',
+                'label' => 'Sarlavha Ru'
+            ],
+
+            [
+                'attribute' => 'text_uz',
+                'label' => 'Ma\'lumot Uz'
+            ], [
+                'attribute' => 'text_ru',
+                'label' => 'Ma\'lumot Ru'
+            ], [
+                'attribute' => 'text_en',
+                'label' => 'Ma\'lumot En',
+            ],
 //            'author',
             [
                 'attribute' => 'author',
+                'label' => 'Muallif',
                 'value' => function ($model) {
                     return \common\models\User::findOne(['id' => $model->author])->username;
                 }
@@ -53,26 +72,35 @@ $this->params['breadcrumbs'][] = $this->title;
 //            'created_at',
             [
                 'attribute' => 'created_at',
+                'label' => 'Kiritilingan Sana',
+
                 'value' => function ($model) {
                     return date('Y m-d', $model->created_at);
                 }
             ],
             [
                 'attribute' => 'updated_at',
+                'label' => 'O\'zgartirilgan Sana',
+
                 'value' => function ($model) {
                     return date('Y m-d', $model->updated_at);
                 }
             ],
 
-            'show_count',
+            [
+                'attribute' => 'show_count',
+                'label' => 'Ko\'rilganlar Soni',
+            ],
             'status',
 //            'cate_id',
             [
                 'attribute' => 'cate_id',
+                'label' => 'Kategoriya',
+
                 'value' => function ($model) {
                     $out = '';
                     foreach ($model->cate as $category) {
-                        $out .= $category->name_uz.'  ';
+                        $out .= $category->name_uz . '  ';
                     }
                     return $out;
                 }

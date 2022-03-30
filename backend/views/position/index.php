@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'degree',
                 'label' => 'Daraja',
                 'value' => function (Position $position) {
-                    return $position->degree;
+                    return @$position->degree;
                 }
             ],
             //'created_at',

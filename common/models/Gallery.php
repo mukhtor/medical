@@ -41,6 +41,7 @@ class Gallery extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['image'],'required'],
             [['status', 'created_at', 'updated_at','type'], 'integer'],
             [['status'],'default','value' => self::ACTIVE_STATUS],
             [['name', 'image'], 'string', 'max' => 200],

@@ -33,6 +33,7 @@ class Employees extends \yii\db\ActiveRecord
     const ACTIVE_STATUS = 10;
     const DEACTIVE_STATUS = 9;
     const DELETE_STATUS = 0;
+
     public function behaviors()
     {
         return [
@@ -53,7 +54,7 @@ class Employees extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['fullname_uz','fullname_ru','fullname_en','activity'],'required'],
+            [['fullname_uz','fullname_ru','fullname_en','activity','section_id','position_id','phone_1','data_birth','address_birth','completed_institution','spec','degree'],'required'],
             [['section_id', 'position_id', 'status', 'created_at', 'updated_at'], 'integer'],
             [['data_birth'], 'safe'],
             [['status'],'default','value' => self::ACTIVE_STATUS],

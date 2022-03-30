@@ -6,6 +6,7 @@ use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\search\MenuSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -32,31 +33,30 @@ $this->params['breadcrumbs'][] = $this->title;
 
 //            'id',
             [
-                    'attribute' => 'name_uz',
-                    'label' => 'Menyu nomi',
-                'value' => function(Menu $menu){
-        return $menu->name_uz;
+                'attribute' => 'name_uz',
+                'label' => 'Menyu nomi',
+                'value' => function (Menu $menu) {
+                    return @$menu->name_uz;
                 }
             ],
 //            'name_en',
 //            'name_ru',
 //            'slug',
             [
-                    'attribute' => 'url',
+                'attribute' => 'url',
                 'label' => 'manzil',
-                'value' => function(Menu $menu){
-        return $menu->url;
+                'value' => function (Menu $menu) {
+                    return @$menu->url;
                 }
             ],
             //'parent',
             [
-                    'attribute' => 'parent',
+                'attribute' => 'parent',
                 'label' => 'Parent',
-                'value' => function(Menu $menu){
-                    if ($menu->parent != null){
-                        return Menu::findOne(['id'=>$menu->parent])->name_uz;
-                    }
-                    else{
+                'value' => function (Menu $menu) {
+                    if ($menu->parent != null) {
+                        return @Menu::findOne(['id' => $menu->parent])->name_uz;
+                    } else {
                         return '';
                     }
                 }
@@ -64,10 +64,10 @@ $this->params['breadcrumbs'][] = $this->title;
             //'status',
 //            'created_at',
             [
-                    'attribute' => 'created_at',
+                'attribute' => 'created_at',
                 'label' => 'Kiritilgan vaqt',
-                'value' => function(Menu $menu){
-                    return date('Y m-d',$menu->created_at);
+                'value' => function (Menu $menu) {
+                    return date('Y m-d', $menu->created_at);
                 }
             ],
             //'updated_at',
@@ -75,7 +75,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Menu $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
-                 }
+                }
             ],
         ],
     ]); ?>

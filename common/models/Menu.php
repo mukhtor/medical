@@ -45,6 +45,7 @@ class Menu extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['name_uz','name_en','name_ru'],'required'],
             [['parent', 'status', 'created_at', 'updated_at'], 'integer'],
             [['status'],'default','value' => self::ACTIVE_STATUS],
             [['name_uz', 'name_en', 'name_ru', 'slug', 'url'], 'string', 'max' => 200],

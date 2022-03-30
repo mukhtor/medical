@@ -32,40 +32,47 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             [
                 'attribute' => 'image',
+                'label' => 'Surat',
                 'format' => 'raw',
-                'value' => function($model){
-                    if ($model->type == 1){
-                        return Html::img($model->image,['style'=>'width:300px']);
-                    }
-                    elseif ($model->type == 2){
-                        return '<iframe width="300" height="200" src="https://www.youtube.com/embed/'.$model->image.'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                'value' => function ($model) {
+                    if ($model->type == 1) {
+                        return Html::img($model->image, ['style' => 'width:300px']);
+                    } elseif ($model->type == 2) {
+                        return '<iframe width="300" height="200" src="https://www.youtube.com/embed/' . $model->image . '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
                     }
                 }
             ],
-            'name',
+            [
+                'attribute' => 'name',
+                'label' => 'Nomi',
+            ],
 //            'image',
-        [
-                'attribute'=>'type',
-            'value'=>function($model){
-                if ($model->type ==1) {
-                    return 'Surat';
+            [
+                'attribute' => 'type',
+                'label' => 'Turi',
+                'value' => function ($model) {
+                    if ($model->type == 1) {
+                        return 'Surat';
+                    } elseif ($model->type == 2) {
+                        return 'video lavha';
+                    }
                 }
-                elseif ($model->type ==2 ){
-                    return 'video lavha';
-                }
-            }
-        ],
+            ],
             'status',
             [
                 'attribute' => 'created_at',
-                'value' => function($model){
-                    return date('Y m-d',$model->created_at);
+                'label' => 'Kiritilingan Sana',
+
+                'value' => function ($model) {
+                    return date('Y m-d', $model->created_at);
                 }
             ],
             [
                 'attribute' => 'updated_at',
-                'value' => function($model){
-                    return date('Y m-d',$model->updated_at);
+                'label' => 'O\'zgartirilgan Sana',
+
+                'value' => function ($model) {
+                    return date('Y m-d', $model->updated_at);
                 }
             ],
 //            'created_at',

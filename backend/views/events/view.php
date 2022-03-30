@@ -32,28 +32,50 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             [
                 'attribute' => 'image',
+                'label' => 'Surat',
                 'format' => 'raw',
-                'value' => function($model){
-                    return Html::img($model->image,['style'=>'width:200px']);
+                'value' => function ($model) {
+                    return Html::img($model->image, ['style' => 'width:200px']);
                 }
             ],
-            'title_uz',
-            'title_en',
-            'title_ru',
-            'text_uz:ntext',
-            'text_en:ntext',
-            'text_ru:ntext',
-            'count',
+            [
+                'attribute' => 'title_uz',
+                'label' => 'Sarlavha Uz'
+            ],
+            [
+                'attribute' => 'title_en',
+                'label' => 'Sarlavha En'
+            ],
+            [
+                'attribute' => 'title_ru',
+                'label' => 'Sarlavha Ru'
+            ],
+            [
+                'attribute' => 'text_uz',
+                'label' => 'Ma\'lumot Uz'
+            ], [
+                'attribute' => 'text_ru',
+                'label' => 'Ma\'lumot Ru'
+            ], [
+                'attribute' => 'text_en',
+                'label' => 'Ma\'lumot En'
+            ],
+            [
+                'attribute' => 'count',
+                'label' => 'Ko\'rilganlar Soni'
+            ],
             [
                 'attribute' => 'created_at',
-                'value' => function($model){
-                    return date('Y m-d',$model->created_at);
+                'label'=>'Kiritilingan Sana',
+                'value' => function ($model) {
+                    return date('Y m-d', $model->created_at);
                 }
             ],
             [
                 'attribute' => 'updated_at',
-                'value' => function($model){
-                    return date('Y m-d',$model->updated_at);
+                'label'=>'O\'zgartirilgan Sana',
+                'value' => function ($model) {
+                    return date('Y m-d', $model->updated_at);
                 }
             ],
         ],

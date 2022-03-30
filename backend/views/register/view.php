@@ -32,37 +32,53 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             [
                 'attribute' => 'section_id',
-                'value' => function($model){
-                    return $model->sections->name_uz;
+                'label' => 'Bo\'lim',
+                'value' => function ($model) {
+                    return @$model->sections->name_uz;
                 }
             ],
             [
                 'attribute' => 'employee_id',
-                'value' => function($model){
-                    return $model->employees->fullname_uz;
+                'label' => 'Hodim',
+                'value' => function ($model) {
+                    return @$model->employees->fullname_uz;
                 }
             ],
-            'fullname',
-            'phone',
+            [
+                'attribute' => 'fullname',
+                'label' => 'To\'liq Ismi',
+            ],
+            [
+                'attribute' => 'phone',
+                'label' => 'Telefon Raqami',
+            ],
             'email:email',
             [
                 'attribute' => 'date',
-                'value' => function($model){
-                    return date('Y m-d',$model->date);
+                'label' => 'Qabulga Yozilgan Vaqt',
+                'value' => function ($model) {
+                    return date('Y m-d', $model->date);
                 }
             ],
-            'information:ntext',
+            [
+                'attribute' => 'information',
+                'label' => 'Kasallik Haqida',
+            ],
             'status',
             [
                 'attribute' => 'created_at',
-                'value' => function($model){
-                    return date('Y m-d',$model->created_at);
+                'label' => 'Kiritilingan Sana',
+
+                'value' => function ($model) {
+                    return date('Y m-d', $model->created_at);
                 }
             ],
             [
                 'attribute' => 'updated_at',
-                'value' => function($model){
-                    return date('Y m-d',$model->updated_at);
+                'label' => 'O\'zgartirilgan Sana',
+
+                'value' => function ($model) {
+                    return date('Y m-d', $model->updated_at);
                 }
             ],
         ],

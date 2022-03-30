@@ -44,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'attribute' => 'title_uz',
                 'label' => 'Sarlavha_uz',
                 'value' => function(Events $events){
-                    return $events->title_uz;
+                    return @$events->title_uz;
                 }
             ],
 //            'title_en',
@@ -56,7 +56,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'attribute' => 'count',
                 'label' => 'soni',
                 'value' => function(Events $events){
-                return $events->count;
+                return @$events->count;
                 }
             ],
 
