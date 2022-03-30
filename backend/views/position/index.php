@@ -6,6 +6,7 @@ use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\search\PositionSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -31,21 +32,20 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
 //            'id',
-                [
-                        'attribute' => 'name_uz',
-                    'label' => 'lavozim nomi_uz',
-                    'value' => function(Position $position){
-                        return $position->name_uz;
-                    }
-                ],
+            [
+                'attribute' => 'name_uz',
+                'label' => 'lavozim nomi_uz',
+                'value' => function (Position $position) {
+                    return $position->name_uz;
+                }
+            ],
 //            'name_en',
 //            'name_ru',
-            'degree',
             [
-                    'attribute' => 'degree',
+                'attribute' => 'degree',
                 'label' => 'Daraja',
-                'value' => function(Position $position){
-        return $position->degree;
+                'value' => function (Position $position) {
+                    return $position->degree;
                 }
             ],
             //'created_at',
@@ -54,7 +54,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Position $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
-                 }
+                }
             ],
         ],
     ]); ?>

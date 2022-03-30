@@ -62,13 +62,13 @@ return [
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => false,
-            'authTimeout' => 10,
+            'authTimeout' => 100,
             'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
         ],
         'session' => [
             // this is the name of the session cookie used for login on the backend
             'name' => 'advanced-backend',
-            'timeout' => 10,
+            'timeout' => 100,
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,

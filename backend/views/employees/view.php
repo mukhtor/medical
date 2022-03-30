@@ -16,8 +16,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a(Yii::t('app', 'Delete'), ['delete', 'id' => $model->id], [
+        <?= Html::a(Yii::t('app', 'Tahrirlash'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a(Yii::t('app', 'O\'chirish'), ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => Yii::t('app', 'Are you sure you want to delete this item?'),
@@ -32,45 +32,82 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             [
                     'attribute'=>'image',
+                'label'=>'Surat',
                 'format'=>'html',
                 'value'=>function($model){
                     return Html::img($model->image,['style'=>'width:250px']);
                 }
             ],
-            'fullname_uz',
-            'fullname_en',
-            'fullname_ru',
+//            'fullname_uz',
+            [
+                    'attribute'=>'fullname_uz',
+                    'label'=>'To\'liq Nomi_uz',
+            ],
+            [
+                'attribute'=>'fullname_ru',
+                'label'=>'To\'liq Nomi_ru',
+            ],
+            [
+                'attribute'=>'fullname_en',
+                'label'=>'To\'liq Nomi_en',
+            ],
 //            'section_id',
 //            'position_id',
             [
                 'attribute'=>'section_id',
+                'label'=>'Bo\'lim',
                 'value'=>function($model){
                     return $model->section->name_uz;
                 }
             ],
             [
                 'attribute'=>'position_id',
+                'label'=>'Lavozim',
                 'value'=>function($model){
                     return $model->position->name_uz;
                 }
             ],
-            'phone_1',
-            'phone_2',
+            [
+                'attribute'=>'phone_1',
+                'label'=>'Telefon Raqami 1',
+            ],
+            [
+                'attribute'=>'phone_2',
+                'label'=>'Telefon Raqami 2',
+            ],
             'email:email',
-            'data_birth',
-            'address_birth',
-            'completed_institution',
-            'spec',
-            'degree',
+            [
+                'attribute'=>'data_birth',
+                'label'=>'Tug\'ilgan Sana',
+            ],
+            [
+                    'attribute'=>'address_birth',
+                'label'=>'Tug\'ilgan Manzil'
+            ],
+            [
+                'attribute'=>'completed_institution',
+                'label'=>'Yakunlagan Muassasasi',
+            ],
+            [
+                'attribute'=>'spec',
+                'label'=>'Mutaxassisligi',
+            ],
+            [
+                'attribute'=>'degree',
+                'label'=>'Unvoni',
+            ],
+
 //            'image',
             'status',
             [
                 'attribute'=>'created_at',
+                'label'=>'Kiritilgan Vaqt',
                 'value'=>function($model){
                     return date('Y m-d',$model->created_at);
                 }
             ],  [
                 'attribute'=>'updated-at',
+                'label'=>'Tahrirlangan Vaqt',
                 'value'=>function($model){
                     return date('Y m-d',$model->updated_at);
                 }

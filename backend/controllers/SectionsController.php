@@ -24,13 +24,10 @@ class SectionsController extends Controller
             [
                 'access' => [
                     'class' => AccessControl::className(),
+                    'only' => ['index','update','delete','create','view'],
                     'rules' => [
                         [
-                            'actions' => ['login', 'error'],
-                            'allow' => true,
-                        ],
-                        [
-                            'actions' => ['logout', 'index'],
+                            'actions' => ['update','index','create','delete','view'],
                             'allow' => true,
                             'roles' => ['@'],
                         ],

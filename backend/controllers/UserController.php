@@ -2,17 +2,16 @@
 
 namespace backend\controllers;
 
-use common\models\Events;
-use common\models\search\EventsSearch;
-use yii\filters\AccessControl;
+use common\models\User;
+use common\models\search\UserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * EventsController implements the CRUD actions for Events model.
+ * UserController implements the CRUD actions for User model.
  */
-class EventsController extends Controller
+class UserController extends Controller
 {
     /**
      * @inheritDoc
@@ -22,17 +21,6 @@ class EventsController extends Controller
         return array_merge(
             parent::behaviors(),
             [
-                'access' => [
-                    'class' => AccessControl::className(),
-                    'only' => ['index','update','delete','create','view'],
-                    'rules' => [
-                        [
-                            'actions' => ['update','index','create','delete','view'],
-                            'allow' => true,
-                            'roles' => ['@'],
-                        ],
-                    ],
-                ],
                 'verbs' => [
                     'class' => VerbFilter::className(),
                     'actions' => [
@@ -44,13 +32,13 @@ class EventsController extends Controller
     }
 
     /**
-     * Lists all Events models.
+     * Lists all User models.
      *
      * @return string
      */
     public function actionIndex()
     {
-        $searchModel = new EventsSearch();
+        $searchModel = new UserSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -60,8 +48,8 @@ class EventsController extends Controller
     }
 
     /**
-     * Displays a single Events model.
-     * @param int $id ID
+     * Displays a single User model.
+     * @param int $id
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -73,16 +61,22 @@ class EventsController extends Controller
     }
 
     /**
-     * Creates a new Events model.
+     * Creates a new User model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new Events();
+        $model = new User();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
+            if ($model->load($this->request->post())) {
+//                var_dump($_POST['User']['password_hash']);
+//                exit();
+                $model->setPassword($_POST['User']['password_hash']);
+                $model->generateAuthKey();
+                $model->generateEmailVerificationToken();
+                $model->save();
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
@@ -95,9 +89,9 @@ class EventsController extends Controller
     }
 
     /**
-     * Updates an existing Events model.
+     * Updates an existing User model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $id ID
+     * @param int $id
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -115,9 +109,9 @@ class EventsController extends Controller
     }
 
     /**
-     * Deletes an existing Events model.
+     * Deletes an existing User model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param int $id ID
+     * @param int $id
      * @return \yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -129,15 +123,15 @@ class EventsController extends Controller
     }
 
     /**
-     * Finds the Events model based on its primary key value.
+     * Finds the User model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $id ID
-     * @return Events the loaded model
+     * @param int $id
+     * @return User the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Events::findOne(['id' => $id])) !== null) {
+        if (($model = User::findOne(['id' => $id])) !== null) {
             return $model;
         }
 
