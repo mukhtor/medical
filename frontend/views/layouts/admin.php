@@ -112,11 +112,11 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
             </div>
         </div>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-light  container" style="max-width: 80%!important;">
+    <nav class="navbar navbar-expand-lg navbar-light  container" >
         <a class="navbar-brand" href="<?= Url::to(['/']) ?>">
             <!--                    <img src="-->
             <?php //= '/style/images/logo.png'?><!--" alt="" class="img-fluid">-->
-            <h4 style="font-size: 32px;"><i class="icofont-medical-sign-alt"></i> XVKTTM.UZ</h4>
+            <h4 style="font-size: 24px;"><i class="icofont-medical-sign-alt"></i> XVKTTM.UZ</h4>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
