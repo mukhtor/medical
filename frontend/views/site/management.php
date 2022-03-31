@@ -49,8 +49,8 @@ $fullname = "fullname_" . Yii::$app->language;
                                         </div>
 
                                         <div class="col-lg-3">
-                                            <strong><?=Yii::t('app','Address')?></strong>
-                                            <p><?=$value->address_birth?></p>
+                                            <strong><?=Yii::t('app','Specialty')?></strong>
+                                            <p><?=$value->spec?></p>
                                         </div>
                                         <div class="col-lg-3 ">
                                             <strong><?=Yii::t('app','Email')?></strong>

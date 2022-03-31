@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="position-relative doctor-inner-box">
                                 <div class="doctor-profile">
                                     <div class="doctor-img">
-                                        <img src="<?= $employee->image ?>" alt="doctor-image" class="img-fluid w-100" style="height: 70%">
+                                        <img src="<?= $employee->image ?>" alt="doctor-image" class="img-fluid w-100" style="height: 65%">
                                     </div>
                                 </div>
                                 <div class="content mt-3">

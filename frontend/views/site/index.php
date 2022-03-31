@@ -194,7 +194,7 @@ $text = "text_" . Yii::$app->language;
                 <?php foreach ($latest_news as $news) : ?>
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="service-block mb-5">
-                            <img src="<?= $news->image ?>" alt="" class="img-fluid" style="width: 100%;height: 45%">
+                            <img src="<?= $news->image ?>" alt="" class="img-fluid" style="width: 100%;height: 35%">
                             <div class="content">
                                 <div class="row">
                                     <div class="col-lg-6">
