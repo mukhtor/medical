@@ -34,7 +34,7 @@ $fullname = "fullname_" . Yii::$app->language;
                         <div class="testimonial-block style-2 gray-bg " >
                             <div class="row">
                                 <div class="col-lg-3">
-                                    <img style="width: 90%" src="<?=$value->image?>" alt="">
+                                    <img style="width: 90%;height: 90%" src="<?=$value->image?>" alt="">
                                 </div>
 
                                 <div class="col-lg-9">

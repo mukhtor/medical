@@ -458,9 +458,8 @@ class SiteController extends Controller
     }
     public function actionManagement()
     {
-        $position = Position::findOne(['type'=>1]);
-        $data = Employees::find()->where(['position_id'=>$position->id])->orderBy(['degree' => SORT_ASC])->all();
-//        VarDumper::dump($data,10,true);die();
+        $data = Employees::find()->innerJoinWith('position','position.id=position_id')
+            ->andWhere(['position.type'=>'1'])->all();
         return $this->render('management', [
             'management' => $data
         ]);
