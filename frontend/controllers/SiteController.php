@@ -328,7 +328,7 @@ class SiteController extends Controller
         $menu = Menu::find()->where(['status' => 9])->all();
 
         $countQuery = clone $query;
-        $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize' => 2, 'pageSizeParam' => false]);
+        $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize' => 3, 'pageSizeParam' => false]);
         $news = $query->offset($pages->offset)
             ->limit($pages->limit)
             ->all();

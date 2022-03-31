@@ -56,6 +56,7 @@ $fullname = "fullname_" . Yii::$app->language;
                                             <strong><?=Yii::t('app','Email')?></strong>
                                             <p><?=$value->email?></p>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>

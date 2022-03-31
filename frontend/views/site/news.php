@@ -45,22 +45,23 @@ $this->params['breadcrumbs'][] = $this->title;
                                         <img style="width: 100%;" src="<?= $new->image ?>" alt="" >
                                     </a>
                                 </div>
+
                             </div>
                             <div class="col-lg-6">
                                 <div class="blog-item-content">
+
                                     <h5 class="title"><a href="<?= Url::to(['site/news-more', 'id' => $new->id]) ?>"><?= $new[$title] ?></a></h5>
                                     <div class="blog-item-meta">
                                         <span class="text-muted text-capitalize mr-3"><i class="icofont-eye-alt mr-2"></i><?=$new->show_count?></span>
                                         <span class="text-black text-capitalize mr-3"><i
                                                     class="icofont-calendar mr-1"></i><?= date('d M Y', $new->created_at) ?></span>
                                     </div>
+                                    <a href="<?= Url::to(['site/news-more', 'id' => $new->id]) ?>">
                                     <p><?php $text = mb_substr($new->text_uz, 0, 295);
                                         print $text."</em>";
                                         ?>...</p>
+                                    </a>
 
-                                    <a href="<?= Url::to(['site/news-more', 'id' => $new->id]) ?>"
-                                       class="btn btn-red"><?= Yii::t('app', 'Read more') ?> <i
-                                                class="icofont-simple-right ml-2"></i></a>
                                 </div>
 
                             </div>
