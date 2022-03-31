@@ -27,9 +27,7 @@ $fullname = "fullname_" . Yii::$app->language;
                         <div class="testimonial-block slick-slide slick-cloned" style="width: 540px;">
 
                             <p style="font-size: 24px">
-<?=Yii::t('app','
-It consists of 412 sanatoriums, consisting of 14 treatment departments, consulting polyclinic and diagnostics, rehabilitation, laboratory, internal pharmacy and other ancillary departments. At present, the center has 151 doctors, 556 nurses and 278 junior medical staff.
-')?>
+<?=Yii::t('app','It consists of 412 sanatoriums, consisting of 14 treatment departments, consulting polyclinic and diagnostics, rehabilitation, laboratory, internal pharmacy and other ancillary departments. At present, the center has 151 doctors, 556 nurses and 278 junior medical staff.')?>
                             </p>
                             <i class="icofont-quote-right"></i>
                         </div>

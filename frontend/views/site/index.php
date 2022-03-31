@@ -196,6 +196,16 @@ $text = "text_" . Yii::$app->language;
                         <div class="service-block mb-5">
                             <img src="<?= $news->image ?>" alt="" class="img-fluid" style="width: 100%;height: 35%">
                             <div class="content">
+                                <a href="" class="mb-4 list-unstyled footer-menu"></a>
+                                <div class="widget">
+                                    <ul class="list-unstyled footer-menu lh-35">
+                                        <li><a style="text-decoration: none;font-weight: bold;font-size: 17px"
+                                               href="<?= Url::to(['site/news-more', 'id' => $news->id]) ?>"><?= substr($news[$title], 0, 80) ?>
+                                            </a></li>
+                                    </ul>
+                                </div>
+
+                                <p><?= substr($news[$text], 0, 300) ?>...</p>
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <h6 class="mt-4 mb-2 title-color"><?= date('Y, m-d', $news->created_at) ?></h6>
@@ -205,15 +215,6 @@ $text = "text_" . Yii::$app->language;
                                                     class="icofont-eye-alt"> <?= $news->show_count ?></i></h6>
                                     </div>
                                 </div>
-                                <a href="" class="mb-4 list-unstyled footer-menu"></a>
-                                <div class="widget">
-                                    <ul class="list-unstyled footer-menu lh-35">
-                                        <li><a style="text-decoration: none"
-                                               href="<?= Url::to(['site/news-more', 'id' => $news->id]) ?>"><?= substr($news[$title], 0, 80) ?>
-                                            </a></li>
-                                    </ul>
-                                </div>
-                                <p><?= substr($news[$text], 0, 300) ?>...</p>
                             </div>
                         </div>
                     </div>

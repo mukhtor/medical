@@ -27,7 +27,7 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
     <?php $this->registerCsrfMetaTags() ?>
-    <title>Xorazm Tibbiyot Markazi</title>
+    <title>Xorazm Viloyati Ko'p Tarmoqli Tibbiyot Markazi</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
           integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
