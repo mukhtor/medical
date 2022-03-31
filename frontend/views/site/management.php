@@ -1,10 +1,16 @@
 <?php
+
+use yii\helpers\VarDumper;
+
 $this->title = Yii::t('app','Management');
 $this->params['breadcrumbs'][] = $this->title;
 
 $title = "title_" . Yii::$app->language;
 $name = "name_" . Yii::$app->language;
 $fullname = "fullname_" . Yii::$app->language;
+
+/* @var $this \yii\web\View */
+/* @var $management \common\models\Employees */
 ?>
 <section class="section testimonial-2 gray-bg">
     <div class="container">

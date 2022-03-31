@@ -2,6 +2,7 @@
 
 namespace common\models;
 
+use backend\models\MStudent;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 
@@ -26,6 +27,9 @@ use yii\behaviors\TimestampBehavior;
  * @property int|null $status
  * @property int|null $created_at
  * @property int|null $updated_at
+ *
+ * @property Position $position
+
  */
 class Employees extends \yii\db\ActiveRecord
 {

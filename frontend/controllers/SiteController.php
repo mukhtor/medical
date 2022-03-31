@@ -7,6 +7,7 @@ use common\models\Events;
 use common\models\Gallery;
 use common\models\Menu;
 use common\models\News;
+use common\models\Position;
 use common\models\Register;
 use common\models\Sections;
 use frontend\models\ResendVerificationEmailForm;
@@ -14,6 +15,7 @@ use frontend\models\VerifyEmailForm;
 use Yii;
 use yii\base\InvalidArgumentException;
 use yii\data\Pagination;
+use yii\helpers\VarDumper;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -455,10 +457,9 @@ class SiteController extends Controller
     }
     public function actionManagement()
     {
-
-        $data = Employees::find()->where(['position_id' => 3])->orWhere(['position_id' => 4])
-            ->orWhere(['position_id' => 5])->orWhere(['position_id' => 6])->orderBy(['degree' => SORT_ASC])->all();
-
+        $position = Position::findOne(['type'=>1]);
+        $data = Employees::find()->where(['position_id'=>$position->id])->orderBy(['degree' => SORT_ASC])->all();
+//        VarDumper::dump($data,10,true);die();
         return $this->render('management', [
             'management' => $data
         ]);

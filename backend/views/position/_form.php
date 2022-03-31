@@ -21,9 +21,9 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'degree')->input('number') ?>
 
     <?= $form->field($model, 'type')->dropDownList([
-            1=>'Raxbariyat',
-            2=>'Hodimlar'
-    ]) ?>
+        1 => 'Raxbariyat',
+        2 => 'Hodimlar'
+    ], ['prompt' => '--Turini Tanlang--']) ?>
 
 
     <div class="form-group">
