@@ -436,6 +436,7 @@ class SiteController extends Controller
         ]);
     }
 
+
     public function actionEvents()
     {
         $events = Events::find()->orderBy(['created_at'=>SORT_DESC])->all();
