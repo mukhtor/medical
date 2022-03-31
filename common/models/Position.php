@@ -14,6 +14,7 @@ use yii\behaviors\TimestampBehavior;
  * @property string|null $name_ru
  * @property int|null $status
  * @property int|null $degree
+ * @property int|null $type
  * @property int|null $created_at
  * @property int|null $updated_at
  */
@@ -44,7 +45,7 @@ class Position extends \yii\db\ActiveRecord
     {
         return [
             [['name_uz','name_ru','name_en','degree'],'required'],
-            [['status', 'created_at', 'updated_at','degree'], 'integer'],
+            [['status', 'created_at', 'updated_at','degree','type'], 'integer'],
             [['status'],'default','value' => self::ACTIVE_STATUS],
             [['name_uz', 'name_en', 'name_ru'], 'string', 'max' => 200],
         ];
