@@ -16,6 +16,7 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'homeUrl' => '/',
+    'language' => 'uz',
     'components' => [
 
         'request' => [
