@@ -56,8 +56,8 @@ return [
     'Select Section'=>'Bo\'limni Tanlang',
     'Briefly about the problem that is bothering you' => 'Sizni qiynayotgan muommo haqida qisqacha',
     'Submit'=>'Jo\'natish',
-    'Latest Events'=>'So\'ngi E\'lonlar'
-
+    'Latest Events'=>'So\'ngi E\'lonlar',
+    'Specialty'=>'Mutaxassisligi'
 
 
 

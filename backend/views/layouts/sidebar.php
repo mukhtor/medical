@@ -61,7 +61,7 @@ $user = Yii::$app->getUser()->getIdentity();
                     $menuItems[] = ['label' => 'Foydalanuvchilar', 'url' => ['user/index'], 'icon' => 'plus'];
 
                 }
-                echo Menu::widget([
+                echo \yii\widgets\Menu::widget([
                     'items' => $menuItems,
                 ]);
             }

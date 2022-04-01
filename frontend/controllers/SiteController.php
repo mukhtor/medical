@@ -460,6 +460,8 @@ class SiteController extends Controller
     {
         $data = Employees::find()->innerJoinWith('position','position.id=position_id')
             ->andWhere(['position.type'=>'1'])->all();
+//        $data = Employees::find()->innerJoin('position',['position.id'=>'position_id'])
+//            ->andWhere(['position.type'=>'1'])->all();
         return $this->render('management', [
             'management' => $data
         ]);
