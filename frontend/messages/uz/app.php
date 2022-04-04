@@ -30,7 +30,7 @@ return [
     'Mon-Sat ' => 'Dush-Shan',
     'Sun' => 'Yak',
     'Closed' => 'Yopiq',
-    'We are happy to serve you ' => 'Biz sizga xizmat ko\'rsatishdan mamnunmiz',
+    'We are happy to serve you' => 'Biz sizga xizmat ko\'rsatishdan mamnunmiz',
     'Managers' => 'Mudirlar',
     'Latest News' => 'So\'ngi Yangiliklar',
     'At our medical center' => 'Tibbiyot markazimizdagi',
@@ -57,7 +57,8 @@ return [
     'Briefly about the problem that is bothering you' => 'Sizni qiynayotgan muommo haqida qisqacha',
     'Submit'=>'Jo\'natish',
     'Latest Events'=>'So\'ngi E\'lonlar',
-    'Specialty'=>'Mutaxassisligi'
+    'Specialty'=>'Mutaxassisligi',
+    'Events'=>'E\'lonlar'
 
 
 
