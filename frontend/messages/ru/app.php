@@ -30,7 +30,7 @@ return [
     'Mon-Sat ' => 'Пон-Суб',
     'Sun' => 'Воск',
     'Closed' => 'Закрыто',
-    'We are happy to serve you' => 'Biz sizga xizmat ko\'rsatishdan mamnunmiz',
+    'We are happy to serve you' => 'Мы рады служить вам',
     'Managers' => 'Менеджеры',
     'Latest News' => 'Последние новости',
     'At our medical center' => 'В нашем медицинском центре',
