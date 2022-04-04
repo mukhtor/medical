@@ -17,7 +17,6 @@ class m220404_103036_create_services_table extends Migration
             'name_uz'=>$this->string(255),
             'name_en'=>$this->string(255),
             'name_ru'=>$this->string(255),
-            ''
         ]);
     }
 
