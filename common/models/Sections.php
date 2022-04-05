@@ -48,7 +48,7 @@ class Sections extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name_uz','name_en','name_ru','desc_uz','desc_ru','desc_en','image'],'required'],
+            [['name_uz', 'name_en', 'name_ru', 'desc_uz', 'desc_ru', 'desc_en', 'image'], 'required'],
             [['desc_uz', 'desc_en', 'desc_ru'], 'string'],
             [['status', 'created_at', 'updated_at'], 'integer'],
             [['status'], 'default', 'value' => self::ACTIVE_STATUS],
@@ -83,5 +83,10 @@ class Sections extends \yii\db\ActiveRecord
     public static function find()
     {
         return new \common\models\query\SectionsQuery(get_called_class());
+    }
+
+    public function getService()
+    {
+        return $this->hasMany(Services::class, ['section_id' => 'id']);
     }
 }
