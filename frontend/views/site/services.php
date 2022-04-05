@@ -7,7 +7,7 @@ use yii\helpers\VarDumper;
 
 $name = "name_" . Yii::$app->language;
 $measurement = Yii::$app->language . "_measurement";
-$this->title = Yii::t('app', 'Paid Services');
+$this->title = Yii::t('app', 'Markazda ko’rsatiladigan pullik tibbiy xizmatlar uchun NARXNOMA');
 $this->params['breadcrumbs'][] = ['label' => $this->title];
 ?>
 
@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title];
         <div class="row">
             <div class="col-lg-3">
                 <div class="sidebar-widget category mb-3">
-                    <h5 class="mb-4"><?= Yii::t('app', 'Sections') ?></h5>
+                    <h6 class="mb-2"><?= Yii::t('app', 'Sections') ?></h6>
                     <ul class="list-unstyled">
                         <?php
                         foreach (Sections::find()
@@ -39,35 +39,30 @@ $this->params['breadcrumbs'][] = ['label' => $this->title];
                 </div>
             </div>
             <div class="col-lg-9">
-                <div class="row d-lg-flex">
-
+                <h4 class="text-center"><?=Yii::$app->request->get('id') ? Sections::findOne(['id'=>Yii::$app->request->get('id')])[$name] : 'Barcha Bo\'limlar'?></h4>
+                <table class="table table-hover">
+                    <thead class="text-center">
+                    <tr>
+                        <th>Pullik Xizmat Nomi</th>
+                        <th>O'lchov Birligi</th>
+                        <th>O'zbekiston Respublikasi fuqorolari uchun(dorilarsiz)</th>
+                        <th>Chet el fuqorolari uchun(dorilarsiz)</th>
+                        <th>Yangilangan Sana</th>
+                    </tr>
+                    </thead>
+                    <tbody class="text-center">
                     <?php foreach ($services as $service) : ?>
-                        <div class="col-lg-6 col-md-12 col-sm-12 col-12 mb-30">
-                            <div class="feature-item mb-5 mb-lg-0">
-                                <div class="feature-icon mb-4">
-                                    <i class="icofont-dollar"></i>
-                                </div>
-                                <h4 class="mb-3"><?= @$service->section[$name] ?></h4>
-                                <ul class="w-hours list-unstyled">
-                                    <li class="d-flex justify-content-between"><strong><?= Yii::t('app', 'Name') ?>
-                                            :</strong><span><?= $service[$name] ?></span></li>
-                                    <li class="d-flex justify-content-between"><strong
-                                                style="width: 70%"><?= Yii::t('app', 'Price Uz') ?>
-                                            :</strong><span><?= $service->uz_price ?></span></li>
-                                    <li class="d-flex justify-content-between">
-                                        <strong><?= Yii::t('app', 'Price Euro') ?>
-                                            :</strong><span><?= $service->eu_price ?></span></li>
-                                    <li class="d-flex justify-content-between">
-                                        <strong><?= Yii::t('app', 'Unit of Measurement') ?>
-                                            :</strong><span><?= $service[$measurement] ?></span></li>
-                                    <li class="d-flex justify-content-between">
-                                        <strong><?= Yii::t('app', 'Updated date') ?>
-                                            :</strong><span><?= date('Y m-d', $service->date) ?></span></li>
-                                </ul>
-                            </div>
-                        </div>
+                        <tr>
+                            <td><?=$service[$name]?></td>
+                            <td><?=$service[$measurement]?></td>
+                            <td><?=$service->uz_price?></td>
+                            <td><?=$service->eu_price?></td>
+                            <td><?=date('Y m-d',$service->date)?></td>
+                        </tr>
                     <?php endforeach; ?>
-                </div>
+                    </tbody>
+                </table>
+
             </div>
         </div>
     </div>

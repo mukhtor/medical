@@ -46,7 +46,7 @@ class Services extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['section_id'],'required'],
+            [['section_id','uz_price','eu_price','date','name_uz','uz_measurement'],'required'],
             [['section_id',  'created_at', 'updated_at'], 'integer'],
             [['name_uz', 'name_en', 'name_ru'], 'string', 'max' => 255],
             [['uz_measurement', 'ru_measurement', 'en_measurement'], 'string', 'max' => 100],
