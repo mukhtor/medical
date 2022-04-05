@@ -58,8 +58,13 @@ return [
     'Submit'=>'Jo\'natish',
     'Latest Events'=>'So\'ngi E\'lonlar',
     'Specialty'=>'Mutaxassisligi',
-    'Events'=>'E\'lonlar'
-
+    'Events'=>'E\'lonlar',
+    'Name' => 'Nomi',
+    'Price Uz'=>'O\'zbekiston fuqorolari uchun',
+    'Price Euro'=>'Chet el fuqorolari uchun',
+    'Unit of Measurement'=>'O\'lchov birligi',
+    'Updated date'=>'Yangilangan Sana',
+    'Paid Services'=>'Pullik Xizmatlar'
 
 
     ];

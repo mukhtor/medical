@@ -59,6 +59,7 @@ $user = Yii::$app->getUser()->getIdentity();
                     $menuItems[] = ['label' => 'Lavozimlar', 'url' => ['position/index'], 'icon' => 'plus'];
                     $menuItems[] = ['label' => 'Navbatga yozilishlar', 'url' => ['register/index'], 'icon' => 'plus'];
                     $menuItems[] = ['label' => 'Foydalanuvchilar', 'url' => ['user/index'], 'icon' => 'plus'];
+                    $menuItems[] = ['label' => 'Pullik Xizmatlar', 'url' => ['services/index'], 'icon' => 'plus'];
 
                 }
                 echo \hail812\adminlte\widgets\Menu::widget([

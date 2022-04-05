@@ -10,6 +10,7 @@ use common\models\News;
 use common\models\Position;
 use common\models\Register;
 use common\models\Sections;
+use common\models\Services;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -464,6 +465,19 @@ class SiteController extends Controller
 //            ->andWhere(['position.type'=>'1'])->all();
         return $this->render('management', [
             'management' => $data
+        ]);
+    }
+
+    public function actionServices(int $id=null){
+        if ($id){
+            $services =Services::find()->where(['section_id'=>$id])->all();
+            return $this->render('services',[
+                'services'=>$services
+            ]);
+        }
+        $services = Services::find()->all();
+        return $this->render('services',[
+            'services'=>$services
         ]);
     }
 
