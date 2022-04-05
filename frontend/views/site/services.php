@@ -42,7 +42,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title];
                 <div class="row d-lg-flex">
 
                     <?php foreach ($services as $service) : ?>
-                        <div class="col-lg-6 mb-30">
+                        <div class="col-lg-6 col-md-12 col-sm-12 col-12 mb-30">
                             <div class="feature-item mb-5 mb-lg-0">
                                 <div class="feature-icon mb-4">
                                     <i class="icofont-dollar"></i>

@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'section_id',
                 'label' => 'Bo\'limlar',
                 'value' => function (Services $services) {
-                    return $services->section->name_uz;
+                    return @$services->section->name_uz;
                 }
             ],
 //            'name_uz',
