@@ -205,7 +205,7 @@ $text = "text_" . Yii::$app->language;
                                     </ul>
                                 </div>
 
-                                <p><?= substr($news[$text], 0, 300) ?>...</p>
+                                <p><?= substr($news[$text], 0, 200) ?>...</p>
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <h6 class="mt-4 mb-2 title-color"><?= date('Y, m-d', $news->created_at) ?></h6>

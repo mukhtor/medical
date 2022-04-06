@@ -472,7 +472,7 @@ class SiteController extends Controller
         if ($id){
             $services =Services::find()->where(['section_id'=>$id]);
             $countQuery = clone $services;
-            $pages = new Pagination(['pageSize' => 15,'totalCount' => $countQuery->count()]);
+            $pages = new Pagination(['pageSize' => 10,'totalCount' => $countQuery->count()]);
             $models = $services->offset($pages->offset)
                 ->limit($pages->limit)
                 ->all();
@@ -483,7 +483,7 @@ class SiteController extends Controller
         }
         $services = Services::find();
         $countQuery = clone $services;
-        $pages = new Pagination(['pageSize' => 15,'totalCount' => $countQuery->count()]);
+        $pages = new Pagination(['pageSize' => 10,'totalCount' => $countQuery->count()]);
         $models = $services->offset($pages->offset)
             ->limit($pages->limit)
             ->all();
