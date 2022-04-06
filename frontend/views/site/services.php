@@ -2,6 +2,7 @@
 
 use common\models\Sections;
 use common\models\Services;
+use yii\bootstrap4\LinkPager;
 use yii\helpers\Url;
 use yii\helpers\VarDumper;
 
@@ -62,7 +63,9 @@ $this->params['breadcrumbs'][] = ['label' => $this->title];
                     <?php endforeach; ?>
                     </tbody>
                 </table>
-
+                <?=LinkPager::widget([
+                    'pagination' => $pages,
+                ]);?>
             </div>
         </div>
     </div>

@@ -470,14 +470,27 @@ class SiteController extends Controller
 
     public function actionServices(int $id=null){
         if ($id){
-            $services =Services::find()->where(['section_id'=>$id])->all();
+            $services =Services::find()->where(['section_id'=>$id]);
+            $countQuery = clone $services;
+            $pages = new Pagination(['pageSize' => 15,'totalCount' => $countQuery->count()]);
+            $models = $services->offset($pages->offset)
+                ->limit($pages->limit)
+                ->all();
             return $this->render('services',[
-                'services'=>$services
+                'services'=>$models,
+                'pages'=>$pages
             ]);
         }
-        $services = Services::find()->all();
+        $services = Services::find();
+        $countQuery = clone $services;
+        $pages = new Pagination(['pageSize' => 15,'totalCount' => $countQuery->count()]);
+        $models = $services->offset($pages->offset)
+            ->limit($pages->limit)
+            ->all();
+
         return $this->render('services',[
-            'services'=>$services
+            'services'=>$models,
+            'pages'=>$pages
         ]);
     }
 
