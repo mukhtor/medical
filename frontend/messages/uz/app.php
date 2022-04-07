@@ -64,7 +64,11 @@ return [
     'Price Euro'=>'Chet el fuqorolari uchun',
     'Unit of Measurement'=>'O\'lchov birligi',
     'Updated date'=>'Yangilangan Sana',
-    'Paid Services'=>'Pullik Xizmatlar'
+    'Paid Services'=>'Pullik Xizmatlar',
+    'Paid Service Name'=>'Pullik Xizmat Nomi',
+    'Unit of measurement'=>'O\'lchov Birligi',
+    'For citizens of the Republic of Uzbekistan (without drugs)'=>'O\'zbekiston Respublikasi fuqorolari uchun(dorilarsiz)',
+    'For foreigners (without drugs)'=>'Chet el fuqorolari uchun(dorilarsiz)',
 
 
     ];

@@ -21,9 +21,8 @@ $this->params['breadcrumbs'][] = ['label' => $this->title];
 <section class="features">
     <div class="container" style="max-width: 70%!important;">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-3">
                 <div class="sidebar-widget category mb-3">
-                    <h6 class="mb-2"><?= Yii::t('app', 'Sections') ?></h6>
                     <ul class="list-unstyled">
                         <?php
                         foreach (Sections::find()
@@ -39,16 +38,16 @@ $this->params['breadcrumbs'][] = ['label' => $this->title];
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-9">
+            <div class="col-lg-9 col-md-9 col-sm-9 col-0">
                 <h4 class="text-center"><?=Yii::$app->request->get('id') ? Sections::findOne(['id'=>Yii::$app->request->get('id')])[$name] : 'Barcha Bo\'limlar'?></h4>
-                <table class="table table-hover">
+                <table class="table table-responsive">
                     <thead class="text-center">
                     <tr>
-                        <th>Pullik Xizmat Nomi</th>
-                        <th>O'lchov Birligi</th>
-                        <th>O'zbekiston Respublikasi fuqorolari uchun(dorilarsiz)</th>
-                        <th>Chet el fuqorolari uchun(dorilarsiz)</th>
-                        <th>Yangilangan Sana</th>
+                        <th><?=Yii::t('app','Paid Service Name')?></th>
+                        <th><?=Yii::t('app','Unit of measurement')?></th>
+                        <th><?=Yii::t('app','For citizens of the Republic of Uzbekistan (without drugs)')?></th>
+                        <th><?=Yii::t('app','For foreigners (without drugs)')?></th>
+                        <th><?=Yii::t('app','Updated date')?></th>
                     </tr>
                     </thead>
                     <tbody class="text-center">

@@ -524,8 +524,8 @@ a:focus {
     .banner {
         min-height: 450px;
         background: url("../img/slider-bg-1.jpg") no-repeat;
-
     }
+
 }
 
 @media (max-width: 768px) {
@@ -545,6 +545,9 @@ a:focus {
         background: rgb(97,97,97);
         background: linear-gradient(0deg, rgba(97,97,97,1) 0%, rgba(255,255,255,0.38137261740633754) 56%, rgba(120,120,120,1) 100%);
 
+    }
+    .block h3{
+        font-size: 18px!important;
     }
     .banner h3{
         font-size: 20px;
@@ -575,7 +578,9 @@ a:focus {
     }
     .content h4{
         text-align: center!important;
-
+    }
+    h3{
+        font-size: 10px!important;
     }
 }
 

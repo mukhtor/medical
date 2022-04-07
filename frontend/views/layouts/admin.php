@@ -168,7 +168,7 @@ $menus = Menu::find()->where(['parent' => null])->andWhere(['status' => 10])->al
             <div class="row">
                 <div class="col-md-12">
                     <div class="block text-center">
-                        <h1 class="text-capitalize mb-5 text-lg"><?= Yii::t('app', $this->title) ?></h1>
+                        <h3 class="text-capitalize text-white"><?= Yii::t('app', $this->title) ?></h3>
                         <p class="text-white">
                             <?= Breadcrumbs::widget([
                                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
