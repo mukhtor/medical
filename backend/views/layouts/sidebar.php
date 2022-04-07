@@ -10,7 +10,7 @@ $user = Yii::$app->getUser()->getIdentity();
 ?>
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="<?=\yii\helpers\Url::to(['/'])?>" class="brand-link">
         <span class="brand-text font-weight-light"><h3 class="text-center">XVKTTM</h3></span>
     </a>
 
@@ -23,7 +23,7 @@ $user = Yii::$app->getUser()->getIdentity();
                      alt="User Image">
             </div>
             <div class="info">
-                <a href="#"
+                <a href="<?=\yii\helpers\Url::to(['/'])?>"
                    class="d-block"><?= Yii::$app->user->isGuest ? '' : Yii::$app->user->identity->username ?></a>
             </div>
         </div>

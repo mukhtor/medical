@@ -113,6 +113,13 @@ class RegisterController extends Controller
             'model' => $model,
         ]);
     }
+    public function actionReceive($id){
+        $model = $this->findModel($id);
+        $model->status = 10;
+        $model->save();
+        \Yii::$app->session->setFlash('success','Bemor Qabul Qilindi');
+        return $this->redirect(['index']);
+    }
 
     /**
      * Deletes an existing Register model.

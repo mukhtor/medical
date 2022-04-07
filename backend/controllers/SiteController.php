@@ -3,6 +3,7 @@
 namespace backend\controllers;
 
 use common\models\LoginForm;
+use common\models\Register;
 use Yii;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
@@ -62,7 +63,15 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        if (Yii::$app->user->identity->role == 8){
+            $register = Register::find()->where(['status'=>9])->andWhere(['employee_id'=>Yii::$app->user->identity->id])->all();
+        }
+        elseif (Yii::$app->user->identity->role == 10){
+            $register = Register::find()->where(['status'=>9])->all();
+        }
+        return $this->render('index',[
+            'register'=>$register
+        ]);
     }
 
     /**

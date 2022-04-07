@@ -2,52 +2,38 @@
 
 /** @var yii\web\View $this */
 
+use yii\helpers\Url;
+
 $this->title = 'My Yii Application';
 ?>
-<div class="site-index">
-
-    <div class="jumbotron text-center bg-transparent">
-        <h1 class="display-4">Congratulations!</h1>
-
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
-        </div>
-
-    </div>
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Bo'lim</th>
+            <th>Hodim</th>
+            <th>Bemorning Ismi Familiyasi</th>
+            <th>Email</th>
+            <th>Qabul Vaqti</th>
+            <th>Shikoyati</th>
+            <th>Amallar</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($register as $value):?>
+        <tr>
+            <td><?=$value->sections->name_uz?></td>
+            <td><?=$value->employees->fullname_uz?></td>
+            <td><?=$value->fullname?></td>
+            <td><?=$value->email?></td>
+            <td><?=date('Y m-d',$value->date)?></td>
+            <td><?=$value->information?></td>
+            <td>
+                <a href="<?= Url::to(['register/view','id'=>$value->id])?>"><i class="fa fa-eye fa-2x text-info"></i></a>
+                <a href="<?= Url::to(['register/receive','id'=>$value->id])?>"> <i class="fa fa-check fa-2x text-yellow"></i></a>
+            </td>
+        </tr>
+        <?php endforeach;?>
+        </tbody>
+    </table>
 </div>

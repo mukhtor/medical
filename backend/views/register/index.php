@@ -71,6 +71,23 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             //'information:ntext',
             //'status',
+            [
+                    'attribute' => 'status',
+                'format' => 'raw',
+                'label' => 'Holati',
+                'value' => function(Register $register){
+                    if ($register->status == 9){
+                        return '<a class="btn btn-warning text-white">Ko`rilmadi</a>';
+                    }
+                    elseif ($register->status == 10){
+                        return '<a class="btn btn-success">Javob Berildi</a>';
+
+                    }
+                    elseif ($register->status == 0){
+                        return '<a class="btn btn-danger">Rad Etildi</a>';
+                    }
+                }
+            ],
             //'created_at',
             //'updated_at',
             [

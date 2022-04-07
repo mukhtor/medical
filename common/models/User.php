@@ -32,6 +32,7 @@ class User extends ActiveRecord implements IdentityInterface
 
     public const ADMINISTRATOR = 10;
     public const TAHRIRCHILAR = 9;
+    public const SHIFOKOR = 8;
 
 
     /**
@@ -227,5 +228,8 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return $this->role === self::TAHRIRCHILAR;
     }
-
+    public function isShifokor(): bool
+    {
+        return $this->role === self::SHIFOKOR;
+    }
 }
