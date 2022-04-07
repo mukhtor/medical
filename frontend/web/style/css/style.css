@@ -513,6 +513,9 @@ a:focus {
         background: url("../img/slider-bg-1.jpg");
 
     }
+    .breadcrumb{
+        font-size: 8px!important;
+    }
 }
 
 @media (max-width: 400px) {
@@ -525,9 +528,16 @@ a:focus {
         min-height: 450px;
         background: url("../img/slider-bg-1.jpg") no-repeat;
     }
+    .breadcrumb{
+        font-size: 7px!important;
+    }
+}
+@media (max-width: 574px) {
+    .breadcrumb{
+        font-size: 12px!important;
+    }
 
 }
-
 @media (max-width: 768px) {
     .banner .block h1 {
         font-size: 56px;
@@ -546,6 +556,7 @@ a:focus {
         background: linear-gradient(0deg, rgba(97,97,97,1) 0%, rgba(255,255,255,0.38137261740633754) 56%, rgba(120,120,120,1) 100%);
 
     }
+
     .block h3{
         font-size: 18px!important;
     }
@@ -844,6 +855,9 @@ a:focus {
 
     .doctors .btn-group .btn {
         margin: 8px 3px;
+    }
+    .breadcrumb{
+        font-size: 8px!important;
     }
 }
 
