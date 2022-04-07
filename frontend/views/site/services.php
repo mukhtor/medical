@@ -8,7 +8,7 @@ use yii\helpers\VarDumper;
 
 $name = "name_" . Yii::$app->language;
 $measurement = Yii::$app->language . "_measurement";
-$this->title = Yii::t('app', 'Markazda ko’rsatiladigan pullik tibbiy xizmatlar uchun NARXNOMA');
+$this->title = Yii::t('app', 'Prices for paid medical services provided at the center');
 $this->params['breadcrumbs'][] = ['label' => $this->title];
 ?>
 
@@ -39,7 +39,7 @@ $this->params['breadcrumbs'][] = ['label' => $this->title];
                 </div>
             </div>
             <div class="col-lg-9 col-md-9 col-sm-9 col-0">
-                <h4 class="text-center"><?=Yii::$app->request->get('id') ? Sections::findOne(['id'=>Yii::$app->request->get('id')])[$name] : 'Barcha Bo\'limlar'?></h4>
+                <h4 class="text-center"><?=Yii::$app->request->get('id') ? Sections::findOne(['id'=>Yii::$app->request->get('id')])[$name] : Yii::t('app','All Sections')?></h4>
                 <table class="table table-responsive">
                     <thead class="text-center">
                     <tr>

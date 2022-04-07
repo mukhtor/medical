@@ -69,6 +69,7 @@ return [
     'Unit of measurement'=>'O\'lchov Birligi',
     'For citizens of the Republic of Uzbekistan (without drugs)'=>'O\'zbekiston Respublikasi fuqorolari uchun(dorilarsiz)',
     'For foreigners (without drugs)'=>'Chet el fuqorolari uchun(dorilarsiz)',
-
+    'Prices for paid medical services provided at the center'=>'Markazda ko’rsatiladigan pullik tibbiy xizmatlar uchun NARXNOMA',
+    'All Sections' =>'Barcha Bo\'limlar',
 
     ];

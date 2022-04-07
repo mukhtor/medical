@@ -64,7 +64,12 @@ return [
     'Price Euro' => 'Для иностранных граждан',
     'Unit of Measurement' => 'Единица измерения',
     'Updated date' => 'Дата обновления',
-    'Paid Services'=>'Платные услуги'
-
+    'Paid Services'=>'Платные услуги',
+    'Paid Service Name'=>'Название платной услуги',
+    'Unit of measurement'=>'Единица измерения',
+    'For citizens of the Republic of Uzbekistan (without drugs)'=>'Для граждан Республики Узбекистан (Без лекарств)',
+    'For foreigners (without drugs)'=>'Для иностранцев (Без лекарств)',
+    'Prices for paid medical services provided at the center'=>'Цены на платные медицинские услуги, оказываемые в центре',
+    'All Sections'=>'Все разделы'
 
 ];
