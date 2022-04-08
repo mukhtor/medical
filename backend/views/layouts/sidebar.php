@@ -52,7 +52,7 @@ $user = Yii::$app->getUser()->getIdentity();
 
                 }
                 if ($user->isAdmin()) {
-                   $menuItems[] = ['label' => 'Bo\'limlar', 'url' => ['sections/index'], 'icon' => 'plus'];
+                    $menuItems[] = ['label' => 'Bo\'limlar', 'url' => ['sections/index'], 'icon' => 'plus'];
                     $menuItems[] = ['label' => 'Hodimlar', 'url' => ['employees/index'], 'icon' => 'plus'];
                     $menuItems[] = ['label' => 'Gallereya', 'url' => ['gallery/index'], 'icon' => 'plus'];
                     $menuItems[] = ['label' => 'Menu', 'url' => ['menu/index'], 'icon' => 'plus'];
@@ -60,6 +60,10 @@ $user = Yii::$app->getUser()->getIdentity();
                     $menuItems[] = ['label' => 'Navbatga yozilishlar', 'url' => ['register/index'], 'icon' => 'plus'];
                     $menuItems[] = ['label' => 'Foydalanuvchilar', 'url' => ['user/index'], 'icon' => 'plus'];
                     $menuItems[] = ['label' => 'Pullik Xizmatlar', 'url' => ['services/index'], 'icon' => 'plus'];
+
+                }
+                if ($user->isShifokor()){
+                    $menuItems[] = ['label' => 'Shifokorga Navbatga Yozilgan Bemorlar Ro\'yxati', 'url' => ['site/index'], 'icon' => 'plus'];
 
                 }
                 echo \hail812\adminlte\widgets\Menu::widget([

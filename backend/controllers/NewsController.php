@@ -110,6 +110,7 @@ class NewsController extends Controller
         $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post())) {
+
             $model->author=\Yii::$app->user->identity->id;
             $model->save();
 

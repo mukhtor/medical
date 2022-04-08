@@ -21,18 +21,21 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'email')->textInput()->label('Elektron Pochta') ?>
 
     <?= $form->field($model, 'role')->dropDownList([
-            10=>'Administrator',
-            9=>'Tahrirchilar',
-            8=>'Shifokor',
-    ],['prompt'=>'--Role ni tanlang--'])->label('Foydalanuvchi Roli') ?>
+        10 => 'Administrator',
+        9 => 'Tahrirchilar',
+        8 => 'Shifokor',
+    ], ['prompt' => '--Role ni tanlang--'])->label('Foydalanuvchi Roli') ?>
 
-    <?= $form->field($model,'employee_id')->widget(Select2::class,[
-        'data' => ArrayHelper::map(Employees::find()->all(),'id','fullname_uz'),
-        'options' => ['placeholder' => 'Select a Menu ...'],
-        'pluginOptions' => [
-            'allowClear' => true
-        ],
-    ])?>
+    <div class="employee" style="display: none">
+        <?= $form->field($model, 'employee_id')->widget(Select2::class, [
+            'data' => ArrayHelper::map(Employees::find()->all(), 'id', 'fullname_uz'),
+            'options' => ['placeholder' => 'Select a Menu ...', 'id' => 'employee'],
+            'pluginOptions' => [
+                'allowClear' => true,
+                'style' => 'display:none'
+            ],
+        ]) ?>
+    </div>
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Saqlash'), ['class' => 'btn btn-success']) ?>
     </div>
@@ -40,3 +43,36 @@ use yii\widgets\ActiveForm;
     <?php ActiveForm::end(); ?>
 
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    // var e = document.getElementById('user-role');
+    // function show(){
+    //     if (e.value == 8){
+    //         console.log(document.getElementById('employee'))
+    //     }
+    // }
+    // e.onchange=show;
+    $(document).ready(function () {
+
+        $('#user-role').change(function () {
+            if ($('#user-role').val() == 8) {
+                $(".employee").show();
+            }else {
+                $(".employee").hide();
+                // alert($(".employee").val(''));
+
+            }
+        })
+        // $("#hide").click(function(){
+        //     $("p").hide();
+        // });
+        //
+        // $("#show").click(function(){
+        //     $("p").show();
+        // });
+
+    });
+</script>
+

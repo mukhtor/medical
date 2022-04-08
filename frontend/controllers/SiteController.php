@@ -325,7 +325,8 @@ class SiteController extends Controller
 
     public function actionNews()
     {
-        $query = News::find()->where(['status' => 10]);
+        $lg=Yii::$app->language;
+        $query = News::find()->andWhere(['not',['title_'.$lg=>null]])->andFilterWhere(['status'=>10]);
         $menu = Menu::find()->where(['status' => 9])->all();
 
         $countQuery = clone $query;
@@ -333,7 +334,6 @@ class SiteController extends Controller
         $news = $query->offset($pages->offset)
             ->limit($pages->limit)
             ->all();
-
         return $this->render('news', [
             'news' => $news,
             'menu' => $menu,
@@ -357,6 +357,7 @@ class SiteController extends Controller
     {
         $register = new Register();
         if ($this->request->isPost && $register->load($this->request->post())) {
+            $register->status = 9;
             $register->date = strtotime($_POST['Register']['date']);
             $register->save();
             Yii::$app->session->setFlash('success', 'Malumotlaringiz muvaffaqiyatli yuklandi!!!');

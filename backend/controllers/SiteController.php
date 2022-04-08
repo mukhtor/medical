@@ -7,6 +7,7 @@ use common\models\Register;
 use Yii;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use yii\helpers\VarDumper;
 use yii\web\Controller;
 use yii\web\Response;
 
@@ -64,11 +65,12 @@ class SiteController extends Controller
     public function actionIndex()
     {
         if (Yii::$app->user->identity->role == 8){
-            $register = Register::find()->where(['status'=>9])->andWhere(['employee_id'=>Yii::$app->user->identity->id])->all();
+            $register = Register::find()->where(['status'=>9])->andWhere(['employee_id'=>Yii::$app->user->identity->employee_id])->all();
         }
         elseif (Yii::$app->user->identity->role == 10){
             $register = Register::find()->where(['status'=>9])->all();
         }
+
         return $this->render('index',[
             'register'=>$register
         ]);

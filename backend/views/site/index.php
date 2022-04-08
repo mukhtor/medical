@@ -30,7 +30,9 @@ $this->title = 'My Yii Application';
             <td><?=$value->information?></td>
             <td>
                 <a href="<?= Url::to(['register/view','id'=>$value->id])?>"><i class="fa fa-eye fa-2x text-info"></i></a>
+
                 <a href="<?= Url::to(['register/receive','id'=>$value->id])?>"> <i class="fa fa-check fa-2x text-yellow"></i></a>
+
             </td>
         </tr>
         <?php endforeach;?>

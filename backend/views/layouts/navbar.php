@@ -8,7 +8,7 @@ use yii\helpers\Url;
 if (Yii::$app->user->identity->role === 10){
     $regiser = Register::find()->where(['status'=>9])->orderBy(['created_at'=>SORT_DESC])->limit(5);
 }elseif (Yii::$app->user->identity->role === 8){
-    $regiser = Register::find()->where(['status'=>9])->andWhere(['employee_id'=>Yii::$app->user->identity->id])->orderBy(['created_at'=>SORT_DESC])->limit(5);
+    $regiser = Register::find()->where(['status'=>9])->andWhere(['employee_id'=>Yii::$app->user->identity->employee_id])->orderBy(['created_at'=>SORT_DESC])->limit(5);
 
 }
 ?>

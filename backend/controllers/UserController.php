@@ -83,8 +83,9 @@ class UserController extends Controller
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post())) {
-//                var_dump($_POST['User']['password_hash']);
-//                exit();
+                if($model->role!=8){
+                    $model->employee_id=null;
+                }
                 $model->setPassword($_POST['User']['password_hash']);
                 $model->generateAuthKey();
                 $model->generateEmailVerificationToken();
