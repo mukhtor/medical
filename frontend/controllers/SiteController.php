@@ -90,7 +90,7 @@ class SiteController extends Controller
     {
         $lg = Yii::$app->language;
         $sections = Sections::find()->where(['status' => 10])->all();
-        $latest_news = News::find()->andWhere(['not',['title_'.$lg=>null]])->where(['status' => 10])->orderBy(['id' => SORT_DESC])->limit('6')->all();
+        $latest_news = News::find()->where(['status' => 10])->andWhere(['not',['title_'.$lg=>null]])->orderBy(['id' => SORT_DESC])->limit('6')->all();
 //        var_dump($latest_news->all());
 //        exit();
         return $this->render('index', [
