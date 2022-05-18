@@ -88,8 +88,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $lg = Yii::$app->language;
         $sections = Sections::find()->where(['status' => 10])->all();
-        $latest_news = News::find()->where(['status' => 10])->orderBy(['id' => SORT_DESC])->limit('6')->all();
+        $latest_news = News::find()->andWhere(['not',['title_'.$lg=>null]])->where(['status' => 10])->orderBy(['id' => SORT_DESC])->limit('6')->all();
 //        var_dump($latest_news->all());
 //        exit();
         return $this->render('index', [
@@ -177,18 +178,18 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionSignup()
-    {
-        $model = new SignupForm();
-        if ($model->load(Yii::$app->request->post()) && $model->signup()) {
-            Yii::$app->session->setFlash('success', 'Thank you for registration. Please check your inbox for verification email.');
-            return $this->goHome();
-        }
-
-        return $this->render('signup', [
-            'model' => $model,
-        ]);
-    }
+//    public function actionSignup()
+//    {
+//        $model = new SignupForm();
+//        if ($model->load(Yii::$app->request->post()) && $model->signup()) {
+//            Yii::$app->session->setFlash('success', 'Thank you for registration. Please check your inbox for verification email.');
+//            return $this->goHome();
+//        }
+//
+//        return $this->render('signup', [
+//            'model' => $model,
+//        ]);
+//    }
 
     /**
      * Requests password reset.
@@ -332,6 +333,7 @@ class SiteController extends Controller
         $countQuery = clone $query;
         $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize' => 3, 'pageSizeParam' => false]);
         $news = $query->offset($pages->offset)
+            ->orderBy(['created_at'=>SORT_DESC])
             ->limit($pages->limit)
             ->all();
         return $this->render('news', [
@@ -352,20 +354,20 @@ class SiteController extends Controller
             'menu' => $menu
         ]);
     }
-
-    public function actionRegister()
-    {
-        $register = new Register();
-        if ($this->request->isPost && $register->load($this->request->post())) {
-            $register->status = 9;
-            $register->date = strtotime($_POST['Register']['date']);
-            $register->save();
-            Yii::$app->session->setFlash('success', 'Malumotlaringiz muvaffaqiyatli yuklandi!!!');
-        }
-        return $this->render('register', [
-            'register' => $register
-        ]);
-    }
+//
+//    public function actionRegister()
+//    {
+//        $register = new Register();
+//        if ($this->request->isPost && $register->load($this->request->post())) {
+//            $register->status = 9;
+//            $register->date = strtotime($_POST['Register']['date']);
+//            $register->save();
+//            Yii::$app->session->setFlash('success', 'Malumotlaringiz muvaffaqiyatli yuklandi!!!');
+//        }
+//        return $this->render('register', [
+//            'register' => $register
+//        ]);
+//    }
 
     public function actionGallery()
     {

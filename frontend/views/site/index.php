@@ -164,7 +164,7 @@ $text = "text_" . Yii::$app->language;
                         <div class="counter-stat">
                             <i class="icofont-badge"></i>
                             <span class="h3"><?= Employees::find()->where(['position_id' => 1])->count() ?></span>
-                            <p><?= Yii::t('app', 'Managers ') ?></p>
+                            <p><?= Yii::t('app', 'Managers') ?></p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6">

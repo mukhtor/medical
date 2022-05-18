@@ -26,6 +26,11 @@ use yii\widgets\ActiveForm;
         8 => 'Shifokor',
     ], ['prompt' => '--Role ni tanlang--'])->label('Foydalanuvchi Roli') ?>
 
+    <?= $form->field($model, 'status')->dropDownList([
+        10 => 'Active',
+        9 => 'DeActive',
+    ], ['prompt' => '--Status ni tanlang--'])->label('Foydalanuvchi Roli') ?>
+
     <div class="employee" style="display: none">
         <?= $form->field($model, 'employee_id')->widget(Select2::class, [
             'data' => ArrayHelper::map(Employees::find()->all(), 'id', 'fullname_uz'),
