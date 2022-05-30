@@ -57,9 +57,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                     class="icofont-calendar mr-1"></i><?= date('d M Y', $new->created_at) ?></span>
                                     </div>
                                     <a href="<?= Url::to(['site/news-more', 'id' => $new->id]) ?>">
-                                    <p><?php $text = mb_substr($new->text_uz, 0, 295);
-                                        print $text."</em>";
-                                        ?>...</p>
+                                    <p><?= strip_tags(mb_substr($new->text_uz, 0, 295))?>...</p>
                                     </a>
 
                                 </div>
