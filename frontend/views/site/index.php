@@ -192,7 +192,7 @@ $text = "text_" . Yii::$app->language;
             </div>
             <div class="row">
                 <?php foreach ($latest_news as $news) : ?>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="col-lg-4 col-xl-4 col-md-6 col-sm-6">
                         <div class="service-block mb-5">
                             <img src="<?= $news->image ?>" alt="" class="img-fluid" style="width: 100%;height: 35%">
                             <div class="content">
@@ -205,7 +205,7 @@ $text = "text_" . Yii::$app->language;
                                     </ul>
                                 </div>
 
-                                <p><?= substr($news[$text], 0, 200) ?>...</p>
+                                <p><?= strip_tags(substr($news[$text], 0, 200)) ?>...</p>
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <h6 class="mt-4 mb-2 title-color"><?= date('Y, m-d', $news->created_at) ?></h6>
