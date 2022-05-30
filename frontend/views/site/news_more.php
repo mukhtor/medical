@@ -15,7 +15,7 @@ $fullname = "fullname_" . Yii::$app->language;
 <section class="section blog-wrap">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
                 <div class="row">
                     <div class="col-lg-12 mb-5">
                         <div class="single-blog-item">
@@ -56,7 +56,7 @@ $fullname = "fullname_" . Yii::$app->language;
 
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
 
                 <div class="sidebar-wrap pl-lg-4 mt-5 mt-lg-0">
                     <div class="sidebar-widget search  mb-3 ">
@@ -99,3 +99,10 @@ $fullname = "fullname_" . Yii::$app->language;
         </div>
     </div>
 </section>
+<style>
+   @media (max-width: 576px) {
+       p img{
+           width: 20%;
+       }
+   }
+</style>
