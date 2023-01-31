@@ -194,7 +194,11 @@ $text = "text_" . Yii::$app->language;
                 <?php foreach ($latest_news as $news) : ?>
                     <div class="col-lg-4 col-xl-4 col-md-6 col-sm-6">
                         <div class="service-block mb-5">
-                            <img src="<?= $news->image ?>" alt="" class="img-fluid" style="width: 100%;height: 35%">
+                            <?php if (!$news->image): ?>
+                                <img style="width: 100%" src="/default-image.png">
+                            <?php else:?>
+                                <img src="<?= $news->image ?>" alt="" class="img-fluid" style="width: 100%;height: 35%">
+                            <?php endif;?>
                             <div class="content">
                                 <a href="" class="mb-4 list-unstyled footer-menu"></a>
                                 <div class="widget">

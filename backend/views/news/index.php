@@ -1,5 +1,6 @@
 <?php
 
+use common\models\Menu;
 use common\models\News;
 use common\models\User;
 use yii\helpers\Html;
@@ -72,7 +73,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => 'Kategoriyasi',
                 'value' => function (News $news) {
                     $out = '';
-                    foreach ($news->cate as $category) {
+                    foreach (Menu::find()->where(['id'=>json_decode($news->cate_id,',')])->all() as $category) {
                         $out .= @$category->name_uz . '  ';
                     }
                     return @$out;

@@ -42,7 +42,11 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="col-lg-6">
                                 <div class="blog-thumb">
                                     <a href="<?= Url::to(['site/news-more', 'id' => $new->id]) ?>">
+                                        <?php if (!$new->image): ?>
+                                        <img style="width: 100%;" src="/default-image.png">
+                                        <?php else:?>
                                         <img style="width: 100%;" src="<?= $new->image ?>" alt="" >
+                                        <?php endif;?>
                                     </a>
                                 </div>
 

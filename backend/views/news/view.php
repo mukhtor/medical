@@ -1,5 +1,6 @@
 <?php
 
+use common\models\Menu;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
@@ -32,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             [
                 'attribute' => 'image',
-                'label' => 'Suat',
+                'label' => 'Surat',
                 'format' => 'html',
                 'value' => function ($model) {
                     return Html::img($model->image, ['style' => 'width:250px']);
@@ -99,10 +100,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 'value' => function ($model) {
                     $out = '';
-                    foreach ($model->cate as $category) {
-                        $out .= $category->name_uz . '  ';
+                    foreach (Menu::find()->where(['id'=>json_decode($model->cate_id,',')])->all() as $category) {
+                        $out .= @$category->name_uz . '  ';
                     }
-                    return $out;
+                    return @$out;
                 }
             ],
         ],

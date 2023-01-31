@@ -8,7 +8,7 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use yii\helpers\VarDumper;
 /**
  * NewsController implements the CRUD actions for News model.
  */
@@ -83,8 +83,8 @@ class NewsController extends Controller
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post())) {
-//                var_dump($_POST['News']['created_at']);
-//                exit();
+                $data = json_encode($_POST['News']['cate_id']);
+                $model->cate_id = $data;
                 $model->author=\Yii::$app->user->identity->id;
                 $model->save();
                 return $this->redirect(['view', 'id' => $model->id]);
@@ -110,7 +110,8 @@ class NewsController extends Controller
         $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post())) {
-
+            $data = json_encode($_POST['News']['cate_id']);
+            $model->cate_id = $data;
             $model->author=\Yii::$app->user->identity->id;
             $model->save();
 

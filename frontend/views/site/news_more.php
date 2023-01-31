@@ -37,7 +37,7 @@ $fullname = "fullname_" . Yii::$app->language;
 
                                 <div class="mt-5 clearfix">
                                     <ul class="float-left list-inline tag-option">
-                                        <?php foreach ($more->cate_id as $item) :?>
+                                        <?php foreach (json_decode($more->cate_id,',') as $item) :?>
                                         <li class="list-inline-item"><a href="#"><?= Menu::findOne(['id'=>$item])[$name]?></a></li>
                                         <?php endforeach;?>
                                     </ul>

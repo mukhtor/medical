@@ -50,7 +50,7 @@ class News extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title_uz','text_uz','cate_id','image'],'required'],
+            [['title_uz','text_uz','cate_id'],'required'],
             [['text_uz', 'text_ru', 'text_en'], 'string'],
             [['author', 'updated_at', 'show_count', 'status'], 'integer'],
             [['cate_id'], 'safe'],
